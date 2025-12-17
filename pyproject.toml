@@ -1,6 +1,6 @@
 [project]
 name = "analysing-attack-skill"
-version = "0.1.0"
+version = "0.2.0"
 description = "Claude skill to assist LLM-powered analysis of Mitre ATT&CK techniques and sub-techniques."
 readme = "README.md"
 requires-python = ">=3.12"
