@@ -35,6 +35,8 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 **ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
 
+**ATT&CK Version Changelog**: Reference for v15→v18.1 changes including deprecated techniques, renamed platforms, and the v18 detection model overhaul. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
+
 ## Best Practice
 
 Use your judgment alongside these guidelines to generate high-quality ATT&CK analysis.

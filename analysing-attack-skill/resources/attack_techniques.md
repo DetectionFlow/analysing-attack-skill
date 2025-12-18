@@ -1,6 +1,6 @@
 # ATT&CK- Techniques | Enterprise | v18.1 | Generated 2025-12-17
-# Tactics: REC=Reconnaissance, RD=Resource Development, IA=Initial Access, EX=Execution, PE=Persistence, PRV=Privilege Escalation, DE=Defense Evasion, CA=Credential Access, DIS=Discovery, LM=Lateral Movement, COL=Collection, C2=Command and Control, EXF=Exfiltration, IMP=Impact
-# Techniques (inc. sub-techniques): 691
+## Tactics: REC=Reconnaissance, RD=Resource Development, IA=Initial Access, EX=Execution, PE=Persistence, PRV=Privilege Escalation, DE=Defense Evasion, CA=Credential Access, DIS=Discovery, LM=Lateral Movement, COL=Collection, C2=Command and Control, EXF=Exfiltration, IMP=Impact
+## Techniques (inc. sub-techniques): 691
 
 |ID|Tactics|Name|Keywords|Description|Platforms|
 |---|---|---|---|---|---|
