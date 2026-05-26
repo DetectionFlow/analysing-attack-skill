@@ -4,7 +4,7 @@
 
 Claude skill to assist LLM-powered analysis of Mitre ATT&CK techniques and sub-techniques. Use during detection engineering, CTI analysis, threat modelling, incident response or any other cybersecurity tasks.
 
-Equips Claude with best practice and guidance for mapping ATT&CK techniques. Includes LLM optimised, token-efficient, resource files containing up to date context on all ATT&CK v18.1 technques and sub-techniques in a format specifiaclly designed for AI agents.
+Equips Claude with best practice and guidance for mapping ATT&CK techniques. Includes LLM optimised, token-efficient, resource files containing up to date context on all ATT&CK v19.1 technques and sub-techniques in a format specifiaclly designed for AI agents.
 
 ## Usage
 
@@ -26,7 +26,7 @@ Each ATT&CK technique has been compressed using an LLM into a single line contai
 
 Skills offer more token-efficent context and reduced tool calling latency over MCP or native tools fucntions and less complex setup and retrival than RAG. 
 
-The included notebook can be used to generate the compressed resouce files. claude-haiku-4-5-20251001 costs approx $0.55 for all 691 techniques.
+The included notebook can be used to generate the compressed resouce files. claude-opus-4-7 costs approx $8-10 for all 697 techniques. Swap `MODEL` in the notebook for a cheaper model (e.g. claude-haiku-4-5) to trade quality for cost.
 
 ## TODO
 

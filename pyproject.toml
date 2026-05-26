@@ -11,3 +11,10 @@ dependencies = [
     "mitreattack-python>=5.3.0",
     "requests>=2.32.5",
 ]
+
+# Launch the compression notebook:  uv run jupyter lab
+[dependency-groups]
+dev = ["jupyterlab"]
+
+[tool.uv]
+default-groups = ["dev"]
