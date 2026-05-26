@@ -9,13 +9,13 @@ description: Analyse Mitre ATT&CK tactics, techniques and sub-techniques. Use wh
 
 This document provides best practices and resources for use when mapping ATT&CK tactics and techniques to threat detections, threat models, security risks or cyber threat intelligence.
 
-Contains information on v18.1 (latest) version of Mitre ATT&CK
+Contains information on v19.1 (latest) version of Mitre ATT&CK
 
 ## Available Resources
 
 Resources folder contains LLM optimised and token-efficient content. Read whole file for broad context or grep or glob for specfic keywords or IDs. Use index files for quick reference keyword searches.
 
-Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial Access, EX=Execution, PE=Persistence, PRV=Privilege Escalation, DE=Defense Evasion, CA=Credential Access, DIS=Discovery, LM=Lateral Movement, COL=Collection, C2=Command and Control, EXF=Exfiltration, IMP=Impact
+Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial Access, EX=Execution, PE=Persistence, PRV=Privilege Escalation, ST=Stealth, DIM=Defense Impairment, CA=Credential Access, DIS=Discovery, LM=Lateral Movement, COL=Collection, C2=Command and Control, EXF=Exfiltration, IMP=Impact
 
 ### Searching Examples
 
@@ -35,7 +35,7 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 **ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
 
-**ATT&CK Version Changelog**: Reference for v15->v18.1 changes including deprecated techniques, renamed platforms, and the v18 detection model overhaul. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
+**ATT&CK Version Changelog**: Reference for v15->v19.1 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
 
 ## Best Practice
 
@@ -92,8 +92,8 @@ Downloaded|fetched payload -> T1105 Ingress Tool Transfer
 Over port 80/443 -> T1071.001 Web Protocols
 
 ### Social Engineering
-Masqueraded|posed as|impersonated -> T1656 Impersonation
-Spoofed|mimicked|fake page -> T1036.005 Match Legitimate Name
+Masqueraded|posed as|impersonated -> T1684.001 Impersonation
+Spoofed|mimicked|fake page -> T1036.005 Match Legitimate Resource Name or Location
 Credential harvest|fake login -> T1598.003 Spearphishing Link (Recon)
 
 ### Technique Pairs
