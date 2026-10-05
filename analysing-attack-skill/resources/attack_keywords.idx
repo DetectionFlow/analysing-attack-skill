@@ -1,6 +1,6 @@
-# ATT&CK Keyword Index | Enterprise | v19.1 | Generated 2026-05-26
-# Format: keyword:technique_ids
-# Usage: grep -wi "keyword" attack_keywords.idx
+# ATT&CK Keyword Index | Enterprise | v19.2
+# Format: keyword:technique_ids (IDs follow the last colon)
+# Usage: grep -i "keyword" attack_keywords.idx
 $data:T1564.004
 $file_name:T1070.006
 $home:T1574.007
@@ -29,7 +29,7 @@ $standard_information:T1070.006
 .desktop:T1547.013
 .dll:T1679
 .doc attachment:T1204.002
-.docx:T1221
+.dotm:T1221
 .dylib:T1129
 .evtx:T1685.005
 .exe:T1679
@@ -107,7 +107,9 @@ $standard_information:T1070.006
 7z:T1027.015
 802.11:T1669
 @rpath:T1574.004
-\\\\.\\c::T1006
+\*\template:T1221
+\\.\c::T1006
+\\.\physicaldrive:T1006
 _vba_project:T1564.007
 a record:T1071.004
 aadinternals:T1484.002
@@ -133,9 +135,10 @@ addmonitor:T1547.010
 addprintprocessor:T1547.012
 address space:T1055
 addsecuritypackage:T1547.005
+adduser:T1136
 admin:T1036.010
 admin shares:T1021.002,T1570
-admin$:T1021.002
+admin$:T1021.002,T1070.005
 administrator:T1078.001
 administrators:T1069.001,T1098.007
 adobe reader:T1203
@@ -212,6 +215,7 @@ at.deny:T1053.002
 atd:T1053.002
 atlassian:T1213.001
 atombombing:T1055.004
+attachedtemplate:T1221
 attachment:T1036.007
 attachuserpolicy:T1098.003
 attrib:T1222.001
@@ -534,6 +538,7 @@ createprocesswithtokenw:T1134.002
 createremotethread:T1055.001,T1055.002
 createservicew:T1543.003
 createtoolhelp32snapshot:T1057
+createuser:T1136
 creddump7:T1003.002
 credential dialog:T1056.002
 credential dump:T1586.002
@@ -577,6 +582,8 @@ csv:T1559.002
 cti feeds:T1597.001
 ctrl+c:T1546.005
 curl:T1048,T1105,T1570
+custom alphabet:T1132.002
+custom base64:T1132.002
 custom compression:T1560.003
 custom encoding:T1132.002
 custom encryption:T1573
@@ -607,6 +614,7 @@ dde:T1559,T1559.002
 ddos:T1498,T1584.005
 ddos-for-hire:T1583.005
 dead code:T1027.016
+dead drop:T1102.003
 debug commands:T1601.001
 debugger:T1546.012
 decoy document:T1683.001
@@ -701,6 +709,7 @@ document close:T1497.002
 document library:T1213.002
 documentation:T1213
 doh:T1572
+domain account:T1136.002
 domain admin:T1078.002
 domain admins:T1069.002
 domain controller:T1556.001
@@ -724,6 +733,7 @@ driverquery.exe:T1652
 dropbox:T1518.002,T1567.002,T1583.006,T1584.006,T1585.003,T1586.003
 droppers:T1587.001
 drsuapi:T1003.006
+dsadd user:T1136.002
 dscacheutil:T1069.002,T1087.002
 dscl:T1033,T1069.001,T1087.001
 dscl -create:T1136.001
@@ -822,6 +832,7 @@ ettercap:T1557.002
 etw:T1685
 etype 23:T1558.003
 event filter:T1546.003
+event id 4720:T1136,T1136.002
 event log:T1027.011,T1654
 event subscription:T1546
 eventlog service:T1685.001
@@ -990,7 +1001,7 @@ getwindowlong:T1055.011
 gflags:T1546.012
 ghosttoken:T1211
 git:T1213.003,T1593.003
-github:T1213.003,T1583.006,T1584.006,T1593.003,T1608
+github:T1102.003,T1213.003,T1583.006,T1584.006,T1593.003,T1608
 github actions:T1195.001,T1677
 github api:T1567.001
 github auth:T1219.001
@@ -1010,6 +1021,7 @@ golden ticket:T1550.003
 google:T1102,T1583.006
 google apps script:T1583.007
 google chat:T1213.005
+google docs:T1102.003
 google dorking:T1593,T1593.002
 google drive:T1567.002
 google workspace:T1114.002
@@ -1217,7 +1229,7 @@ invoke-cimmethod:T1053.005
 invoke-command:T1021.006,T1059.001
 invoke-dosfuscation:T1027.010
 invoke-kerberoast:T1558.003
-invoke-ninjacopy:T1003.003
+invoke-ninjacopy:T1003.003,T1006
 invoke-obfuscation:T1027.010
 invoke-psimage:T1027.003
 invoke-webrequest:T1105
@@ -1233,7 +1245,7 @@ ip ranges:T1590,T1590.005
 ip spoofing:T1498
 ip ssh pubkey-chain:T1098.004
 ipc:T1055,T1559,T1559.002,T1559.003
-ipc$:T1021.002
+ipc$:T1021.002,T1070.005
 ipconfig:T1016
 ipfs:T1608.001,T1608.005
 irrecoverable:T1485
@@ -1407,6 +1419,7 @@ maas:T1588.001
 mac:T1557.002
 mac address:T1497.001
 mach-o:T1036.006,T1546.006
+macos startup item:T1037.005
 macro trigger:T1497.002
 macros:T1059.005
 magic bytes:T1036.008
@@ -1541,15 +1554,16 @@ net share:T1135
 net start:T1007
 net stop:T1489
 net time:T1124
-net use:T1021.002,T1049
+net use:T1021.002,T1049,T1070.005
 net use /delete:T1070.005
 net user:T1087.001,T1531
-net user /add:T1136.001
+net user /add:T1136,T1136.001
 net user /add /domain:T1136.002
 net user /domain:T1087.002
 net view:T1018,T1135
 net.com:T1574.008
-net.exe:T1574.007
+net.exe:T1070.005,T1574.007
+net1.exe:T1070.005
 netboot:T1542.005
 netlogon:T1037.003
 netntlm:T1187
@@ -1570,9 +1584,10 @@ network scan:T1595
 network share infection:T1080
 network tap:T1200
 networkmanager:T1016.002
-new account:T1136
+new-aduser:T1136.002
 new-gpoimmediatetask:T1484.001
 new-inboxrule:T1564.008
+new-localuser:T1136
 new-netfirewallrule:T1686.003
 news sites:T1593
 newsletter signup bot:T1667
@@ -1587,6 +1602,7 @@ nodejs:T1059.007
 nodes:T1613
 nodeselector:T1543.005
 nohup:T1564.011
+non-standard encoding:T1132.002
 non-volatile memory:T1495
 nop:T1027.016
 nopasswd:T1548.003
@@ -1603,7 +1619,7 @@ nsxpcconnection:T1559.003
 ntcreateprocess:T1106
 ntcreateprocessex:T1055.013
 ntdll:T1129
-ntds.dit:T1003.003
+ntds.dit:T1003.003,T1006
 ntdsdsa:T1207
 ntdsutil:T1003.003
 ntlm:T1110.002
@@ -1646,7 +1662,6 @@ one-time url:T1608.005
 one-way c2:T1102.003
 onedrive:T1530,T1567.002,T1585.003,T1586.003
 onion routing:T1090.003
-ooxml:T1221
 opcode padding:T1027.016
 openslp:T1190
 openthread:T1055.003
@@ -1718,7 +1733,7 @@ password-protected document:T1204.002
 password01:T1110.003
 paste command:T1204.004
 paste site:T1567.003
-pastebin:T1567.003,T1608
+pastebin:T1102.003,T1567.003,T1608
 patch diffing:T1587.004
 patch level:T1592.003
 patch vulnerability:T1668
@@ -1750,7 +1765,7 @@ persona text:T1683.001
 personal webmail:T1566.003,T1598.001
 personal.xlsb:T1137.001
 phantom dll:T1574.001
-phishery:T1598.002
+phishery:T1221,T1598.002
 phishing:T1027.012
 phishing lure:T1683.001
 phone impersonation:T1566.004
@@ -1900,6 +1915,7 @@ rassfm.dll:T1556.005
 rat:T1219,T1588.001
 raw disk:T1561
 raw sockets:T1205.001
+raw volume read:T1006
 raw write:T1561.001
 rawdisk:T1561.001
 rc.common:T1037.004
@@ -1952,7 +1968,7 @@ remote desktop services:T1021.001
 remote desktop users:T1098.007
 remote registry:T1112
 remote ssh:T1176.002
-remote template:T1221
+remote template injection:T1221
 remote thread:T1055
 removable drive:T1052
 removable drives:T1025
@@ -2020,7 +2036,6 @@ rpc:T1021.003
 rsa:T1573.002
 rsa securid:T1111
 rsync:T1570
-rtf \\template:T1221
 rtlo:T1036.002
 rubeus:T1558.004
 ruler:T1137,T1137.005
@@ -2107,7 +2122,6 @@ search ranking:T1608.006
 search-ms:T1105
 sec edgar:T1591
 second-stage rat:T1104
-secondary access:T1136
 secpol.msc:T1685.001
 secrets:T1555
 secrets manager:T1555.006
@@ -2184,6 +2198,7 @@ sethc.exe:T1546.008
 setsockopt:T1205.002
 setthreadcontext:T1055.003
 setthreadtoken:T1134.001,T1134.003
+settings.xml.rels:T1221
 setuid:T1548.001
 setwindowlong:T1055.011
 setwindowshookex:T1056.004
@@ -2191,10 +2206,10 @@ sftp:T1570
 sfx:T1027.013,T1027.015
 sh:T1059.004
 shadow copies:T1490
-shadow copy:T1006
 shadowcopy delete:T1047
 shadowlink:T1133
 shamoon:T1485,T1561.002
+share connection removal:T1070.005
 shared algorithm:T1568
 shared key:T1573.001
 shared memory:T1027.011
@@ -2260,7 +2275,6 @@ smb copy:T1570
 smb p2p:T1090.001
 smb relay:T1557.001
 smb share:T1039
-smb share cleanup:T1070.005
 smb shares:T1135
 smi:T1602.002
 smloginitemsetenabled:T1547.015
@@ -2283,7 +2297,7 @@ sns:T1496.004,T1586.003,T1685.002
 so_attach_filter:T1205.002
 social engineering:T1204,T1566
 social media:T1566.003,T1589.003,T1593
-social media c2:T1102
+social media c2:T1102,T1102.003
 social media dm:T1598.001
 social media post:T1102.001
 socket:T1563.001
@@ -2352,6 +2366,7 @@ startup:T1037,T1053
 startup folder:T1547.001,T1547.009
 startup procedure:T1505.001
 startup-config:T1602.002
+startupitems:T1037.005
 startupparameters.plist:T1037.005
 state table:T1499.001
 steal:T1588
@@ -2423,12 +2438,14 @@ systemd generator:T1543.002
 systemd-sleep:T1653
 systeminfo:T1082
 systemsetup:T1082,T1124
+systemstarter:T1037.005
 sysvol:T1484.001,T1552.006,T1615
 takeown:T1222.001
 tar:T1560.001
 target research:T1682
 target-specific:T1480
 target-specific decryption:T1480.001
+target="http:T1221
 tarrask:T1053.005
 task scheduler:T1053,T1053.005
 tasklist:T1057,T1518.001,T1518.002
@@ -2448,7 +2465,6 @@ telecom fraud:T1496.003
 telegram:T1589.001
 telnet:T1021,T1059.008,T1563
 temp directory:T1074.001
-template injection:T1221
 tenant config:T1484
 tenant policy:T1578.005
 terminal server client:T1070.007
@@ -2527,7 +2543,7 @@ ttp reports:T1597.001
 tty_tickets:T1548.003
 tweet:T1102.002
 twilio:T1496.003,T1496.004,T1586.003
-twitter:T1102,T1583.006,T1584.006,T1585.001,T1586.001,T1593.001
+twitter:T1102,T1102.003,T1583.006,T1584.006,T1585.001,T1586.001,T1593.001
 txf:T1055.013
 txt:T1590.002
 txt record:T1071.004
@@ -2576,7 +2592,7 @@ user-agent:T1036.012,T1071.001,T1480,T1592
 user-agent filter:T1665
 user.namespace:T1564.014
 user32.dll:T1546.010,T1574.013
-useradd:T1136.001
+useradd:T1136,T1136.001
 usercustomize.py:T1546.018
 userdata:T1552.005
 userinit:T1547.004
@@ -2678,7 +2694,6 @@ weak linking:T1574.004
 web backdoor:T1505.003
 web console:T1538
 web server:T1499.002
-web service tasking:T1102.003
 web2c2:T1102.002
 webcam:T1125
 webcam audio:T1123
@@ -2736,6 +2751,7 @@ wmic /format:T1220
 wmic logicaldisk:T1680
 wmic.exe:T1047
 wmiprvse.exe:T1546.003
+word/_rels:T1221
 wordlist scan:T1046
 workflow:T1677
 workflows:T1552.008
