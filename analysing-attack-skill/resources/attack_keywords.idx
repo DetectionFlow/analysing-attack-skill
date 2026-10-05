@@ -1,2783 +1,4299 @@
-# ATT&CK Keyword Index | Enterprise | v19.1 | Generated 2026-05-26
-# Format: keyword:technique_ids
-# Usage: grep -wi "keyword" attack_keywords.idx
-$data:T1564.004
+# ATT&CK Keyword Index | Enterprise | v19.2
+# Format: keyword:technique_ids (IDs follow the last colon)
+# Usage: grep -i "keyword" attack_keywords.idx
+#!/usr/bin/osascript:T1059.002
 $file_name:T1070.006
 $home:T1574.007
 $lang:T1614.001
 $path:T1574.007
 $profile:T1546.013
 $standard_information:T1070.006
-%temp% unpack:T1574.005
---force:T1505.006
+$user:T1033
+%appdata%/google/chrome:T1217
+%comspec%:T1059.003
+%temp%:T1074.001,T1574.005
+%username%:T1033
+--disable-gpu-sandbox:T1218.015
 --gpu-launcher:T1218.015
--erroraction:T1564.011
+--load-extension:T1176.001
+--restart=always:T1543.005
+-encodedcommand:T1027,T1027.010,T1059.001
+-erroraction silentlycontinue:T1564.011
+-hp:T1560.001
+-noprofile:T1546.013
+-s -w ldflags:T1027.008
+-w hidden:T1564.003
+-windowstyle hidden:T1564.003
+..namedfork/rsrc:T1564.009
 .ahk:T1059.010
 .application:T1127.002
-.appref-ms:T1127.002
 .au3:T1059.010
-.bash_history:T1070.003,T1552.003,T1690
-.bash_logout:T1546.004
-.bash_profile:T1546.004
-.bashrc:T1546.004
+.aws/credentials:T1552.001
+.bash_history:T1552.003
 .bat:T1059.003
 .chm:T1218.001
 .cmd:T1059.003
-.config file:T1574.014
-.cpl:T1204.002,T1218.002,T1218.011
+.cpl:T1218.002
 .csproj:T1127.001
 .desktop:T1547.013
 .dll:T1679
-.doc attachment:T1204.002
-.docx:T1221
+.doc.lnk:T1036.007
+.docm:T1204.002
+.dotm:T1221
 .dylib:T1129
-.evtx:T1685.005
 .exe:T1679
-.hta:T1218.005
+.exe.config:T1574.014
+.hta:T1059.005,T1059.007,T1218.005
 .iso:T1204.002
 .jam:T1127.003
-.key:T1552.004
-.lnk:T1027.012,T1187,T1204.002,T1679
-.lnk directory pivot:T1080
+.jpg.scr:T1036.007
+.js:T1059.007
+.kdbx:T1555.005
+.lnk:T1027.012,T1080,T1204.002,T1547.009,T1679
+.local:T1574.001
 .lua:T1059.011
+.mof:T1546.003
 .msc:T1218.014
-.msi:T1218.007,T1546.016
-.net:T1059.005,T1127.002,T1218.004,T1218.009
-.net assembly:T1505.002,T1574.014
-.net clr:T1574.012
+.msi:T1218.007
+.net com assembly:T1218.009
+.net profiler:T1574.012
 .onion:T1133
 .ost:T1114.001
+.p12:T1552.004
+.pdf.exe:T1036.007
 .pem:T1552.004
 .pfx:T1552.004
+.pkg:T1546.016
+.ppk:T1552.004
+.proj xml:T1127.001
 .pst:T1114.001
 .pth:T1546.018
 .py:T1059.006
-.rtf:T1204.002
-.scf:T1187
-.scr:T1204.002,T1546.002
-.sct:T1216.001
+.scf file:T1187
+.scr:T1036.002,T1204.002,T1546.002
+.sct:T1218.010
 .sdb:T1546.011
 .service:T1053.006,T1543.002
 .so:T1129
-.ssh:T1552.004
-.sys driver:T1543.003
+.svg:T1027.017
 .timer:T1053.006
+.txt.exe:T1036.007
+.vbs:T1059.005
 .vcrd:T1555.004
 .vgz:T1505.006
-.vmx:T1564.006
+.vscode/extensions:T1176.002
+.wav:T1123
 .wsb:T1564.006
-.xsl:T1220
-.zlogin:T1546.004
 .zsh_history:T1552.003
-.zshrc:T1546.004
+/addfile:T1197
+/bin/bash:T1059.004
+/bin/launchctl:T1569.001
+/bin/sh:T1059.004
+/bin/vmx:T1564.006
+/build:T1612
 /dev:T1652
+/dev/random:T1546.017
 /dev/shm:T1027.011
-/etc/cron:T1053.003
-/etc/emond.d/rules:T1546.014
+/dev/video0:T1125
+/etc/audit/audit.rules:T1685.004
+/etc/cron.d:T1053.003
+/etc/crontab:T1053.003
+/etc/emond.d/rules/:T1546.014
+/etc/group:T1069.001
+/etc/hosts:T1018
+/etc/init.d:T1037.004
+/etc/krb5.conf:T1558.005
+/etc/ld.so.preload:T1574.006
+/etc/networkmanager/system-connections:T1016.002
+/etc/pam.d:T1556.003
+/etc/pam.d/common-password:T1201
 /etc/passwd:T1003.008,T1087.001
 /etc/paths.d:T1574.007
 /etc/profile:T1546.004
+/etc/profile.d:T1546.004
 /etc/rc.local.d/local.sh:T1037.004
 /etc/shadow:T1003.008,T1556.003
+/etc/ssh/keys-:T1098.004
 /etc/sudoers:T1548.003
-/etc/systemd/system:T1053.006
-/etc/udev/rules.d:T1546.017
+/etc/systemd/system:T1053.006,T1543.002
+/etc/udev/rules.d/:T1546.017
 /etc/xdg/autostart:T1547.013
+/etc/zshenv:T1546.004
+/exec:T1609
+/f:T1218.008
+/grant everyone:f:T1222.001
+/hmodule:T1218.013
+/i:http:T1218.010
+/injectrunning:T1218.013
+/lib/modules:T1547.006
+/lib/security:T1556.003
+/lib/udev/rules.d/:T1546.017
+/library/keychains:T1555.001
+/library/launchagents:T1543.001
+/library/launchdaemons:T1543.004
+/library/logs:T1070.007
+/library/preferences:T1037.002
+/library/privilegedhelpertools:T1559.003
 /library/startupitems:T1037.005
-/proc overlay:T1564.013
+/logfile=:T1218.004
+/private/var/db/emondclients:T1546.014
+/proc:T1003.007,T1057,T1564.013
+/proc/<pid>:T1564.013
+/proc/<pid>/cmdline:T1036.011
+/proc/<pid>/maps:T1003.007
+/proc/<pid>/mem:T1003.007
 /proc/[pid]/maps:T1055.009
-/proc/cmdline:T1036.011
-/proc/maps:T1003.007
-/proc/mem:T1003.007
-/s /c:T1218.012
-/tmp/krb5cc_:T1558.005
+/proc/[pid]/mem:T1055.009
+/proc/self/status:T1622
+/rest/api/content:T1213.001
+/run/shm:T1027.011
+/s /a:T1218.008
+/s /n /u /i::T1218.010
+/s /ns:T1218.003
+/sbin/emond:T1546.014
+/setnotifycmdline:T1197
+/system/library/startupitems:T1037.005
+/tmp:T1074,T1074.001
+/tmp/krb5cc:T1558.005
+/tmp/ssh-:T1563.001
+/transfer:T1197
+/u:T1218.004,T1218.009
+/usr/local/bin:T1543.004
 /var/db/sudo:T1548.003
+/var/lib/sss/db:T1003.005
 /var/log:T1070.007,T1685.006
-/var/spool/cron:T1053.003
-0-day:T1587.004
-0day:T1588.005
+/var/log/auth.log:T1021.004,T1685.006
+/var/log/messages:T1685.006
+/var/log/secure:T1685.006
+/var/log/shell.log:T1070.003
+/var/run/secrets/kubernetes.io:T1552.007
+/var/run/secrets/kubernetes.io/serviceaccount:T1528
+/var/spool/cron/crontabs:T1053.003
+/y:T1218.007
+/z:T1218.007
+0.0.0.0/0:T1686.001
 0x90:T1027.016
-169.254.169.254:T1552.005
+0xff 0xd8:T1036.008
+169.254.169.254:T1552.005,T1614
+1password:T1555.005
+2375:T1552.007
 2easy:T1589.001
-3-way handshake:T1499.001
+3cx:T1195,T1195.002
 3des:T1573.001
-4625:T1110.001
-5986:T1021.006
-7-zip:T1560.001
 7z:T1027.015
-802.11:T1669
+7z.exe:T1560.001
+7zip:T1027.015
 @rpath:T1574.004
-\\\\.\\c::T1006
+\*\template:T1221
+\\.\c::T1006
+\\.\physicaldrive:T1561.001
+\\.\physicaldrive0:T1006,T1561,T1561.002
+\\server\share:T1039
+\u202e:T1036.002
+__eventfilter:T1546.003
+__filtertoconsumerbinding:T1546.003
+_api/web:T1213.002
 _vba_project:T1564.007
-a record:T1071.004
-aadinternals:T1484.002
+a record:T1071.004,T1584.002
+a record rotation:T1568.001
+aadinternals:T1098.005,T1556.007,T1590.001
 abac policy:T1098.006
-access token:T1134,T1134.003,T1550.001
-account deletion:T1070.009
-account listing:T1087
+acceptance level:T1505.006
+access broker:T1650
+access control list:T1686.002
+access token:T1134,T1528,T1550,T1550.001
+accesschk:T1574.010
+accesstokenlifetime:T1606.002
+account created:T1136
+account creation:T1036.010
+account deletion:T1531
+account enumeration:T1087
+account lockout:T1110,T1110.001,T1531
+account modification:T1098
+account takeover:T1584.006,T1586
+account verification:T1496.003
 ack flood:T1499.001
-acl:T1222,T1222.002,T1686.002
+acl:T1222,T1686.002
+acl modification:T1599
 acronis:T1518.002
-active directory:T1037.003,T1136.002,T1558.001
-active directory account:T1078.002
+active directory:T1037.003,T1078.002,T1136.002
+active scanning:T1595
 active setup:T1547.014
+active setup\installed components:T1547.014
+activescripteventconsumer:T1546.003
+acunetix:T1595.002
+ad cloaking:T1583.008
 ad cs:T1649
-ad domain:T1480
 ad fs:T1484.002,T1556.007,T1606.002
-ad replication:T1207
-add-ins:T1137
+add member to role:T1098.003
+add user azure ad:T1136.003
+add-azadserviceprincipalcredential:T1098.001
+add-mailboxfolderpermission:T1098.002
 add-mailboxpermission:T1098.002
 add-metadata:T1098.004
+add-on:T1176
 add-trusted-cert:T1553.004
 addmonitor:T1547.010
 addprintprocessor:T1547.012
-address space:T1055
-addsecuritypackage:T1547.005
+address rewriting:T1599.001
+addressofcallbacks:T1055.005
+addressofentrypoint:T1055.001
+addsecuritypackage:T1003.001,T1547.005
+adduser:T1136.001
+adfind:T1069.002,T1087.002
+adfind trustdmp:T1482
+adjusttokenprivileges:T1134
 admin:T1036.010
-admin shares:T1021.002,T1570
-admin$:T1021.002
-administrator:T1078.001
-administrators:T1069.001,T1098.007
-adobe reader:T1203
-ads:T1553.005,T1564.004
+admin portal:T1552.008
+admin share:T1074.002
+admin shares:T1070.005
+admin$:T1021.002,T1570
+adobe reader exploit:T1203
+ads:T1564.004
+advanced ip scanner:T1046
+adversary-in-the-middle:T1557
+adversary-owned server:T1583.004
 aes:T1048.001,T1573.001
-agent:T1543
-ai reconnaissance:T1682
-ai translation:T1683.001
-ai-generated:T1588.007,T1683
-air-gap:T1052
-air-gapped:T1052.001,T1091
-air-gapped c2:T1092
-aitm:T1557,T1557.003
+agent socket:T1563.001
+ai-assisted reconnaissance:T1682
+ai-generated:T1683
+ai-generated phishing:T1588.007
+ai-generated profile photo:T1683.002
+air-gapped:T1052,T1052.001,T1091,T1092
+aitm:T1557
+akamai:T1596.004
+alertable state:T1055.004
+algorithmic c2:T1568
+allowed vm skus:T1578.005
 allowreversiblepasswordencryption:T1556.005
-alpine base image:T1612
-alternate channel:T1008,T1567
-alternate data streams:T1564.004
+alpine:T1612
+alter data:T1565
+altered display data:T1565.003
+alternate channel:T1008
+alternate data stream:T1553.005,T1564,T1564.004
+alternate exfiltration server:T1048
+alternate network interface:T1011
 altiris:T1072
 alwaysinstallelevated:T1218.007
+amazon cognito:T1496.003
+amazon machine image:T1525
+amazon rds:T1213.006
+amazon s3:T1530,T1567.002
 ami:T1204.003,T1525
 ammyyadmin:T1219.002
 amqp:T1071.005
-anonymous hosting:T1583.003
-antivirus:T1592.002,T1685
+anonymous sharing link:T1537
+anonymous vps rental:T1583.003
+anti-analysis:T1497
+anti-debug:T1622
+anti-forensics:T1070
+anti-vm:T1497
+antivirus exploit:T1687
+antivirusproduct:T1518.001
 anydesk:T1219.002
-apc queue:T1055.004
-api:T1123
+apc injection:T1055.004
+api call:T1059.009
 api hammering:T1678
 api hashing:T1027.007
+api hook:T1056.004
 api hooking:T1014
-api keys:T1552.008,T1593.003
-api token:T1550.001
-api unhooking:T1106
+api keys:T1552.008
+api.apple-cloudkit.com:T1553.001
 api.github.com:T1567.001
-app bundle:T1564.009
 app password:T1098.001
 app-v:T1216.002,T1218.013
+app.asar:T1218.015
 appcertdlls:T1546.009
+appcmd.exe:T1505.004
+appcompatflags\custom:T1546.011
+appcompatflags\installedsdb:T1546.011
+appdata\local\microsoft\credentials:T1555.004
 appdata\local\microsoft\outlook:T1114.001
+appdata\roaming:T1070.010
+appdata\roaming\microsoft\templates:T1137.001
+appdomain_manager_asm:T1574.014
+appdomain_manager_type:T1574.014
 appdomainmanager:T1574.014
+appdomainmanager injection:T1574.014
+appdomainmanagerassembly:T1574.014
+appended bytes:T1001.001,T1027.001
 appinit_dlls:T1546.010
+apple remote desktop:T1021
 apple.awt.uielement:T1564.003
 appleevents:T1059.002
-applescript:T1547.015
-application domain:T1574.014
-application dos:T1499.003
-application layer dos:T1499
+applescript:T1059.002
+applescript mail:T1070.008
+application control bypass:T1218
+application crash:T1499,T1499.004
+application exhaustion:T1499.003
+application virtualization injector:T1218.013
+applicationhost.config:T1505.004
 applicationimpersonation:T1548.005
-applocker bypass:T1216
-apppatch:T1546.011
-apps script:T1584.007,T1648
-architecture:T1592.004
-archived payload:T1027
-ard:T1021
-argv:T1036.011
-arp:T1016,T1557
-arp cache:T1018
-arp spoof:T1557.002
-artifact deletion:T1070
-as-rep:T1558.004
+applocker bypass:T1216,T1218.003
+apppatch\custom:T1546.011
+appref-ms:T1127.002
+apt38 swift:T1565.003
+architecture 32-bit 64-bit:T1592.004
+archive:T1560
+arecord:T1123
+argue:T1564.010
+argv[0]:T1036.011
+arin:T1590.005,T1596.002
+arp -a:T1016,T1018
+arp cache:T1557.002
+arp spoofing:T1557.002
+arpspoof:T1557.002
+artifact removal:T1070
+as-rep roasting:T1558.004
 as-req:T1558.004
-ascii:T1132,T1132.001
+ascii:T1132.001
 ash:T1059.004
 aslr bypass:T1055.009
 asn:T1590.005
-assembly injection:T1574.014
+asn lookup:T1590
+aspx:T1505.003
 assembly.load:T1620
 assoc:T1546.001
-assumerole:T1606
-asymmetric:T1048.002
-at:T1053.002
+assumerole:T1078.004,T1548.005,T1606
+at:T1053
+at command:T1053.002
 at.allow:T1053.002
 at.deny:T1053.002
+at.exe:T1053.002
+atbroker.exe:T1546.008
 atd:T1053.002
 atlassian:T1213.001
 atombombing:T1055.004
-attachment:T1036.007
+attachedtemplate:T1221
 attachuserpolicy:T1098.003
+attacker cloud account:T1585.003
+attacker nameserver:T1583.002
+attacker-registered email:T1585.002
 attrib:T1222.001
+attrib +h:T1564.001
 attrib.exe:T1564.001
+audio recording:T1123
 audit evasion:T1211
 audit.conf:T1685.004
-audit.rules:T1685.004
 auditctl:T1685.004
+auditctl -e 0:T1685.004
 auditd:T1685.004
-auditpol:T1685.001
-auth.log:T1685.006
+auditpol /clear:T1685.001
+auditpol /remove:T1685.001
+auditpol /set:T1685.001
+aut2exe:T1059.010
+authentication bypass:T1212,T1556
 authentication packages:T1547.002
-authenticode:T1553.002,T1587.002
+authenticode:T1036.001,T1553.002,T1587.002,T1588.003
+authoritative dns server:T1583.002
+authorization code grant:T1528
 authorization plugin:T1556
+authorization prompt:T1548.004
 authorizationexecutewithprivileges:T1548.004
 authorized_keys:T1021.004,T1098.004
+authorizesecuritygroupingress:T1686.001
+auto upload:T1020
 auto-elevate:T1548.002
-auto-forward:T1114.003
+autoadminlogon:T1552.002
 autodialdll:T1574.011
 autodiscover:T1589.002,T1590.001
-autofill:T1217
 autohotkey:T1036.003,T1059.010
+autohotkey.exe:T1059.010
 autoit:T1059.010
-autologger:T1685.001
-automated upload:T1020
-autorun:T1091
-autostart:T1547,T1547.013
-av enumeration:T1518.001
-av exclusions:T1564.012
-av vulnerability:T1687
+autoit3.exe:T1059.010
+automated collection:T1119
+automated exfiltration:T1020
+automator:T1059.002
+autoopen:T1059.005
+autoplay:T1091
+autorun.inf:T1091
+autoruns:T1547
+autostart:T1547
+av evasion:T1027.005
+av exclusion:T1564.012
 availability zone:T1614
-aws:T1585.003
+avaudiorecorder:T1123
+avcapturedevice:T1125
 aws cli:T1059.009
+aws iam:T1078.004
+aws iam list-roles:T1087.004
 aws iam list-users:T1087.004
-aws lambda:T1583.007
+aws lambda:T1583.007,T1584.007,T1648
+aws management console:T1538
 aws organizations:T1666
+aws rds:T1213
 aws region:T1535
-aws sns:T1496.003
-aws ssm:T1021.008
-aws systems manager:T1651
+aws root user:T1078.001
+aws s3 bucket:T1585.003
+aws s3 cp:T1530
+aws s3 ls:T1619
+aws secrets manager:T1555.006
+aws ses:T1496.004,T1586.003
+aws sns:T1496.003,T1586.003
+aws systems manager:T1021.008,T1072,T1651
 aws traffic mirroring:T1020.001,T1040
-axfr zone transfer:T1590.002
-az ad:T1069.003
+axfr:T1590.002,T1596.001
+az ad user get-member-groups:T1069.003
 az ad user list:T1087.004
-az key vault secret show:T1555.006
+az cli:T1059.009
+az disk list:T1680
+az keyvault secret show:T1555.006
+az login:T1021.007
+az powershell module:T1059.009
+az snapshot create:T1578.001
+az storage blob list:T1619
+az vm create:T1578.002
+az vm delete:T1578.003
 az vm list:T1580
+az vm run-command:T1651
+azure activity log:T1578
 azure ad:T1078.004
+azure ad connect:T1556.007
+azure app service:T1608.002
 azure arc:T1072
-azure blob:T1530,T1619
+azure automation runbook:T1651
+azure blob:T1619
+azure blob storage:T1530
+azure functions:T1648
 azure image:T1204.003
+azure images:T1525
+azure key vault:T1555.006
 azure management group:T1666
-azure powershell:T1059.009
-azure resource manager:T1526
+azure policy:T1578.005
+azure portal:T1021.007,T1538
+azure resource manager api:T1526
+azure runcommand:T1651
 azure serial console:T1021.008
-azure vtap:T1020.001
+azure sql database:T1213.006
+azure vm agent:T1518.001
+azure vtap:T1020.001,T1040
 azureadconnectauthenticationagentservice:T1556.007
-backdoor:T1556.003
-backdoor image:T1525
-backdoored container:T1204.003
-backdoors:T1587.001
-background intelligent transfer service:T1197
+backdoor:T1587.001
+backdoored image:T1204.003,T1525
+backdoored ssh:T1554
 backgrounditems.btm:T1547.015
+backlinks:T1608.006
 backswap:T1674
-backup c2:T1008
-bandwidth abuse:T1496
+backup c2 server:T1008
+backup exec:T1518.002
+backup software:T1518.002
+backup to another account:T1537
+badusb:T1674
 bandwidth exhaustion:T1498
-banner:T1595.002,T1596.005
-banner grab:T1595
-base64:T1027,T1027.010,T1027.013,T1048.003,T1132,T1132.001
-bash:T1059.004
-bastion:T1590.006
+banner grabbing:T1595,T1595.001
+base image:T1612
+base64:T1027,T1027.013,T1048.003,T1132,T1132.001
+base64 decode:T1140
+bash -c:T1059.004
+bash.exe:T1202
+bash_history:T1690
+bashfuscator:T1027.010
+bastion host:T1590.006
 batch file:T1059.003
+batch/v1:T1053.007
+bcache:T1070.007
 bcd:T1688
-bcdedit:T1490,T1688
-bcdedit testsigning:T1553.006
+bcdedit:T1688
+bcdedit -set testsigning on:T1553.006
+bcdedit /set safeboot:T1688
+bcdedit recoveryenabled no:T1490
+beacon schedule:T1029
+beacon upload:T1041
+bearer token:T1550.001
 bec:T1657,T1684.001
+bedrock:T1496.004
 beingdebugged:T1622
-benign:T1036
+below the operating system:T1542
+bespoke tooling:T1587
+bettercap:T1557.002
 bidirectional control:T1027.018
 bifrost:T1558.005
-binary infection:T1080
-binary modification:T1565.003
-binary overlay:T1027.009
-binary replacement:T1574.010
+binary padding:T1027.001
+binary replacement:T1574.005
+binary-to-text:T1132
 binaryedge:T1596.005
-bind mount:T1611
-bind9:T1499.004
+bind mount:T1564.013,T1611
+bind9 vulnerability:T1499.004
 binpath:T1574.011
-biometric:T1592.001
-bios:T1495,T1542,T1592.003
-bios flash:T1542.001
-bitb:T1598.003
-bitbucket:T1213.003,T1593.003
+biometric readers:T1592.001
+bios:T1542,T1542.001
+bios overwrite:T1495
+bios version:T1592.003
+bitblt:T1113
+bitbucket:T1213.003,T1567.001,T1593.003
 bits:T1197
 bitsadmin:T1105,T1197
-bitsadmin.exe:T1197
-blend location:T1070.010
-blockchain:T1090.003
-blog posts:T1681
+black basta:T1685.003
+blacklotus:T1542.003
+ble:T1011.001
+bloodhound:T1069
 blowfish:T1573.001
+bluekeep:T1210
 bluetooth:T1011.001
-bom:T1027.013
+bluetoothctl:T1011.001
+bmp:T1001.002
 bonjour:T1046
 bookmarks:T1217
-boot:T1547
-boot config:T1601.002
-boot loader:T1542.004
-boot manager:T1689
-boot sector:T1542.003
-booter:T1583.005
+bookmarks file:T1217
+boot driver:T1542
+boot firmware:T1542
+boot loader image:T1542.004
+boot manager downgrade:T1689
+boot persistence:T1547
+boot script:T1037
+boot system:T1059.008,T1601
+boot system flash:T1601.002
+boot system tftp:T1542.005
+booter:T1498.001,T1583.005
 bootexecute:T1547.001
-bootloader:T1542,T1542.005,T1601.001
-border device:T1599.001
-botnet:T1496.002,T1498,T1498.001,T1499
-botnet purchase:T1583
+bootkit:T1542.003,T1564.005
+bootkit wiper:T1561.002
+bootmgfw.efi:T1542.003
+bootstatuspolicy ignoreallfailures:T1490
+border device:T1599
+bot herding:T1584.005
+botnet:T1498,T1498.001,T1583.005,T1584.005
+botnet ddos:T1496.002
+botnet proxy:T1568.001
+botnet rental:T1583
 botnet takeover:T1584.005
-bpf:T1205.002
-bpfdoor:T1036.011
+boto3:T1059.009
+bpf filter:T1205.002
+bpfdoor:T1036.009,T1036.011,T1205.002
 bpl:T1574.001
-brand spoofing:T1583.008
-breach dumps:T1110.004,T1586,T1589.001
-bricking:T1495
-broker:T1588
-browser cookies:T1539
+brand impersonation:T1583.008
+breach data:T1589
+breach dump:T1110.004,T1586,T1589.001
+bricked device:T1495
+browser cookie theft:T1539
+browser download:T1204.001
 browser exploit:T1189,T1203
+browser fingerprint:T1036.012
 browser history:T1497.002
+browser injection:T1185
 browser pivot:T1185
-browser profiling:T1608.004
+browser profiling:T1592,T1608.004
+browser-in-the-browser:T1598.003
+browsing history:T1217
+brute force:T1110
+brute ratel:T1588.002
 bsod:T1529
-bt pairing:T1011.001
-bucket:T1530
-bucket enum:T1595.003
-bucket expiration:T1485.001
+bucket enumeration:T1595.003
+build compromise:T1195.002
 build utility:T1127.003
-business cycle:T1591.003
-business process:T1565.003
-business process tampering:T1565
+built-in administrator:T1078.001
+bulk prt token:T1098.005
+bulletproof hosting:T1583
+bundlore:T1564.009
+burner email:T1585.002
+business days:T1591.003
+business email compromise:T1586.002,T1657,T1684.001
+business operations:T1591
+business relationships:T1591.002
+business tempo:T1591.003
 busybox:T1059.004
-byhost:T1547.007
-byovd:T1068,T1543.003
-bypass firewall:T1578.002
+byovd:T1068,T1543.003,T1685
+bypass protections:T1687
+byte order mark:T1027.013
 bzip2:T1560.002
-c$:T1021.002
-c2 channel:T1001.002
-c2 exfil:T1041
-c2 hiding:T1001
+c$:T1021.002,T1074.002,T1570
+c2 channel:T1041
+c2 domain rotation:T1568
+c2 encryption:T1573,T1587.003
+c2 obfuscation:T1001
+c2 over application protocol:T1071
 c2 protocol:T1587.001
-c2 redirection:T1584.005
-c2 traffic:T1001.001
-ca:T1596.003
-ca fraud:T1588.003
-cached credentials:T1550
+c2 server:T1583.004
+c:\program.exe:T1574.009
+c:\programdata:T1074,T1074.001
+cache.ldb:T1003.005
 cacls:T1222.001
-callback:T1566,T1598
-callback phishing:T1566.004,T1598.004
-caller id spoof:T1598.004
-camera:T1120
-camera api:T1125
+call center:T1598.004
+callback phishing:T1566,T1566.004,T1598,T1598.004
+camera snapshot:T1125
+capcreatecapturewindow:T1125
 captive portal:T1557.004
-ccleaner:T1195.002
+caret escaping:T1027.010
+cat /etc/shadow:T1003.008
+ccache:T1550.003,T1558.005
+ccleaner:T1195,T1195.002
+ccmexec.exe:T1072
+cd-rom:T1025
 cd00r:T1205,T1205.001
-cdn:T1596,T1596.004
-cdn proxy:T1090
-cdn routing:T1090.004
-cellular:T1011
-censys:T1596.005
-central staging host:T1074.002
-centralized files:T1074
-certificate:T1036.001,T1553,T1588.004
-certificate lookup:T1596
-certificate transparency:T1596.003
-certified pre-owned:T1649
+cdb.exe:T1127
+cdn:T1090.004,T1596.004
+cdn lookup:T1596.004
+cdn misconfiguration:T1596.004
+cdn routing:T1090
+cellular modem:T1011
+censys:T1596,T1596.005,T1597.002
+censys certificates:T1596.003
+ceo fraud:T1684.001
+cert:\localmachine\root:T1553.004
+certificate authority:T1588.003
+certificate authority compromise:T1588.004
+certificate export:T1552.004
+certificate issuer:T1587.003
+certificate template:T1649
+certificate transparency:T1596,T1596.003
 certify:T1649
+certipy:T1649
 certstealer:T1649
-certutil:T1105,T1560.001
-certutil decode:T1140
-chage:T1201
-chat logs:T1213.005
+certutil -addstore:T1553.004
+certutil -decode:T1140
+certutil -encode:T1560.001
+certutil -urlcache:T1105
+chage -l:T1201
+chainbreaker:T1555.001
+chat messages:T1213.005,T1552.008
 chatgpt:T1588.007,T1682
 chattr:T1222.002
+checkremotedebuggerpresent:T1622
+chernobyl virus:T1495
+chflags hidden:T1564.001,T1564.002
 china chopper:T1505.003
+chipsec:T1542.001
+chisel:T1572
 chmod:T1222,T1222.002
+chmod +x:T1222.002
 chmod 4777:T1548.001
+chmod 777:T1222.002
+chmod g+s:T1548.001
 chmod u+s:T1548.001
-chown:T1222.002
-chrome appdata:T1217
+chown:T1222,T1222.002
+chrome:T1217
 chrome extension:T1176.001
-chrome sqlite:T1555.003
+chrome remote desktop:T1219,T1219.002
+chrome user data:T1555.003
+chrome web store:T1176.001
 chrome.exe:T1218.015
-chromium:T1218.015
 chunked exfiltration:T1030
-ci/cd:T1195.001,T1677
-cidr blocks:T1590.005
-cipher:T1600
-cipher strength:T1600.001
-cisco ios:T1542.004
+ci/cd pipeline:T1195.001,T1677
+ci/cd token:T1528
+cih:T1495
+cipher strength:T1600,T1600.001
+circl passive dns:T1596.001
+cis language check:T1614.001
+cisco:T1542.004
+cisco ios:T1059.008,T1542.005
+cisco ios implant:T1556.004
+cisco-config-copy-mib:T1602.002
 citrix:T1133
-clear logging:T1070.003
+claim issuance rules:T1484.002
+cldap:T1498.002
+cleanup:T1070
+clear history:T1070.003
+clear-eventlog:T1685.005
 clear-history:T1070.003
-cleartext:T1048.003
-cli:T1600.001
-clickfix:T1204,T1204.004
-client-side rule:T1137.005
+cleartext passwords:T1003
+clickfix:T1204.004
+clickonce:T1127.002
+client configuration:T1592.004
 clip.exe:T1115
-clipboard hijack:T1115
-cloaking:T1583.008,T1608.006
+clipboard:T1115,T1204.004
+cloaking:T1608.006,T1665
 cloned login page:T1608.005
-close access:T1669
+cloned login portal:T1598.003
+close access operation:T1669
 close the door:T1668
 closed ports:T1205.001
-cloud api:T1119
-cloud compute:T1578
-cloud control plane:T1686.001
-cloud credential files:T1552.001
-cloud identity:T1069.003,T1136.003
-cloud instance staging:T1074.002
-cloud proxy:T1090.002
+closed sources:T1597
+cloud account:T1078.004
+cloud api bulk collection:T1119
+cloud compute modification:T1578
+cloud console:T1021.007,T1538
+cloud free trial:T1583.004,T1585.003
+cloud function trigger:T1546
+cloud functions:T1648
+cloud hosting provider:T1583.003
+cloud instance staging:T1074,T1074.002
+cloud redirector:T1090.002
+cloud region:T1535
+cloud sdk:T1059.009
+cloud service c2:T1102
 cloud shell:T1059.009
-cloud sync:T1567.002
-cloud vm console:T1021.008
-cloud vm rental:T1583.003
-cloud-to-cloud:T1537
+cloud storage upload:T1567.002
+cloud vm:T1584.003
+cloudflare:T1596.004
 cloudflare workers:T1583.007,T1584.007
-cloudtrail:T1526,T1685.002
+cloudfront:T1090.004,T1596.004
+cloudidentity.googleapis.com:T1069.003
+cloudtrail:T1485.001,T1526,T1578,T1685.002
 cloudtrail bypass:T1211
-cloudwatch:T1518.001,T1648,T1685.002
-clr assembly:T1505.001
+cloudtrail consolelogin:T1078.004
+cloudwatch:T1685.002
+cloudwatch agent:T1518.001
+cloudwatch events:T1648
+clr integration:T1505.001
+clr profiler dll:T1574.012
 clsid:T1218.012,T1218.014,T1546.015,T1559.001
-cluster:T1053.007,T1613
-cluster secrets:T1552.007
+clusterrole:T1098.006
 clusterrolebinding:T1098.006
-cmd:T1005,T1025
-cmd.exe:T1059.003,T1574.008
+cmd /c:T1059.003
+cmd /c del:T1070.004
+cmd /k:T1059.003
+cmd.exe:T1059.003
+cmmgr32.exe:T1218.003
+cmstp:T1218.003
 cmstp.exe:T1218.003
+cmstplua:T1218.003
+cname:T1584.001
 cobalt strike:T1588.002
-code injection:T1055
-code point:T1027.018
-code signing:T1553
+cobalt strike argue:T1564.010
+cobalt strike browserpivot:T1185
+cocreateinstance:T1559.001
+code bloat:T1027.016
+code repository:T1080
+code repository exfiltration:T1567.001
+code signing:T1587.002
+code signing certificate:T1553,T1553.002
 code tunnel:T1219.001
-cognito:T1496.003
-coinminer:T1496.001
+code.exe:T1219.001
+codesign:T1553.002
+codetaskfactory:T1127.001
 collectguestlogs.exe:T1654
-com:T1021.003,T1197,T1218.012,T1559,T1559.001
+com:T1559
 com add-in:T1137.006
-com elevation:T1548.002
-com hijack:T1559.001
 com hijacking:T1546.015
-com registration:T1688
-com scriptlet:T1218.003,T1218.010
+com object:T1559.001
+com scriptlet:T1218.010,T1218.012
+com.apple:T1564.014
+com.apple.backgroundtaskmanagementagent:T1547.015
 com.apple.dock.plist:T1647
 com.apple.emond.plist:T1546.014
-com.apple.loginwindow.plist:T1037.002,T1547.007
-com.apple.quarantine:T1553.001,T1564.014
+com.apple.loginwindow:T1547.007,T1564.002
+com.apple.loginwindow.plist:T1037.002
+com.apple.quarantine:T1553.001
+com.apple.resourcefork:T1564.009
 com.apple.tcc:T1548.006
-combo lists:T1110.004
+combo list:T1110.004
+command and control traffic:T1071
+command interpreter:T1059
+command prompt:T1059.003
+command relay:T1092
+command-line execution:T1059
 command-line spoofing:T1564.010
-common-password:T1201
+commandline:T1564.010
+commandlineeventconsumer:T1546.003
+commando cat:T1564.013
+common password list:T1110.001
+community ami:T1608.001
 community string:T1602.001
-compressed executable:T1027.002
-compression:T1560
-compromised account:T1534
+company reconnaissance:T1591
+compile on host:T1027.004
+compiled html help:T1218.001
+component firmware:T1542.002
+component object model:T1559.001
+compress:T1560
+compressed shellcode:T1027.015
+compression library:T1560.002
+compromised cloud account:T1586.003
 compromised credentials:T1078
+compromised email server:T1584.004
+compromised infrastructure:T1584
+compromised linkedin account:T1586.001
+compromised login portal:T1056.003
+compromised mailbox:T1534,T1586.002
+compromised routers:T1090.003
+compromised server c2:T1584.004
+compromised server relay:T1090.002
+compromised third-party:T1584
+compromised twitter account:T1584.006
 compromised vps:T1584.003
 compromised web server:T1584.004
+compromised website:T1608.004
+compute instance:T1578
+compute.instances.delete:T1578.003
+compute.instances.insert:T1578.002
+computer account hash:T1558.002
+comrat:T1564.005
 comregisterfunction:T1218.009
 comsvcs.dll minidump:T1003.001
 comunregisterfunction:T1218.009
-concatenated archive:T1027.015
-concealment:T1564
-concurrent rdp:T1505.005
-conditional access:T1556.009
+concatenated zip:T1027.015
+concurrent rdp sessions:T1505.005
+conditional access bypass:T1098.005
 conditional access exclusion:T1556.006
-conditional response:T1583.002
+conditional access policy:T1556.009
+conditional dns response:T1583.002
 config files:T1552.001
-config repository:T1602
-configuration:T1592
+configuration files:T1005
 configuration partition:T1207
+configuration repository:T1602
+configure terminal:T1059.008
 confluence:T1213.001
+confluence search:T1213.001
 connect-azaccount:T1021.007
 connect-mggraph:T1021.007
-connection history:T1070.007
-connection manager:T1218.003
+connection manager profile:T1218.003
 connectivity check:T1016.001
+consent grant:T1671
+consent phishing:T1528,T1566.002
+consentpromptbehavioradmin:T1548.002
 consolehost_history.txt:T1070.003,T1552.003,T1690
-consumer binding:T1546.003
-container escape:T1068
-container files:T1553.005
-container image:T1525
-content delivery:T1596.004
-content filter:T1590.006
-content integrity:T1491
-contractor:T1199,T1587
-contractors:T1590.003,T1591.002
-contracts:T1593
+consolelogin:T1538
+contact info:T1594
+container entrypoint:T1609
+container escape:T1068,T1611
+container file:T1553.005
+container image:T1204.003,T1525
+container orchestration:T1053.007
+container registry:T1525
+containers/create:T1610
+content delivery network:T1596.004
+contract postings:T1593
+contractor:T1587
+contractor access:T1590.003
+contractor vpn:T1199
+control panel\cpls:T1218.002
+control panel\desktop:T1491.001
 control.exe:T1218.002
+control\print\monitors:T1547.010
 control_rundll:T1218.011
+controlmaster:T1563,T1563.001
+cookie header:T1071.001
+cookie hijack:T1185
 cookie import:T1550.004
-cookie theft:T1185
-copied:T1036.001,T1036.003
+cookie secret:T1606.001
+cookies sqlite:T1539
+copied certificate:T1036.001
+copied system binary:T1036.003
 copy /b:T1140
+copy \\:T1570
+copy collected files:T1074
+copy command:T1048.003
+copy payload:T1070.010
+copy tftp flash:T1601.001,T1601.002
+copy-item:T1039
 copyfromscreen:T1113
+cor_enable_profiling:T1574.012
 cor_profiler:T1574.012
 cor_profiler_path:T1574.012
-counterfeit:T1195
+counterfeit hardware:T1195
 cpassword:T1552.006
 cplapplet:T1218.002
-cpu cores:T1497.001
-cracked:T1588.002
-crash:T1499
+cpu core count:T1497.001
+cpuid:T1497.001
+crack.password.db:T1003.008
+cracked license:T1588.002
+crash exploit:T1499.004
+create assembly:T1505.001
+create_suspended:T1055.012,T1564.010
 createaccesskey:T1098.001
 createaccount:T1666
+createdbsnapshot:T1578.001
 createdesktop:T1564.003
+createfile:T1006
+createfiletransacted:T1055.013
+createinstance:T1578.002
 createkeypair:T1098.001
-createloginprofile:T1098.001
+createloginprofile:T1098.001,T1136.003
+createmutex:T1480.002
+createobjecturl:T1027.006
 createpolicyversion:T1098.003
-createprocess:T1106,T1134.004,T1546.009
-createprocess suspended:T1055.012
+createprocess:T1106,T1134.004,T1546.009,T1574.008
+createprocessasuser:T1546.009
 createprocessasuserw:T1134.002
 createprocesswithtokenw:T1134.002
-createremotethread:T1055.001,T1055.002
+createremotethread:T1055,T1055.001,T1055.002
+createreplacerootvolumetask:T1578.004
+createsamlprovider:T1484.002
+createsecuritygroup:T1686.001
 createservicew:T1543.003
+createsnapshot:T1537,T1578.001
 createtoolhelp32snapshot:T1057
+createtransaction:T1055.013
+createuser:T1136.003
+creation timestamp:T1070.010
 creddump7:T1003.002
-credential dialog:T1056.002
-credential dump:T1586.002
-credential dumps:T1589.001
-credential files:T1552.001
-credential harvest:T1003
-credential harvesting:T1598
-credential harvesting site:T1608.003
+credential attack:T1110
+credential capture:T1056
+credential dumping:T1003
+credential harvesting:T1056,T1598
+credential harvesting page:T1534,T1566.002
+credential harvesting site:T1608.005
+credential interception:T1556
+credential leak:T1589.001
 credential locker:T1555.004
-credential logging:T1056.003
-credential manager:T1556.008
-credential modification:T1098
-credential prompt:T1056
-credential reuse:T1078,T1586
+credential logging webshell:T1056.003
+credential phishing link:T1598.003
 credential search:T1552
-credential stuffing:T1110
-credential vault:T1555
-credentials marketplace:T1597.002
-credenumerate:T1555.004
-criminal marketplace:T1588.001
-crm:T1213,T1213.004
+credential store:T1555
+credential stuffing:T1110.004,T1586,T1586.001
+credentials.xml:T1552.001
+credenumeratea:T1555.004
+creduipromptforcredentials:T1056.002
+credunpackauthenticationbuffer:T1056.004
+criminal marketplace:T1588
+crm:T1213.004
+crm database:T1213
 cron:T1053,T1053.003
-cronjob:T1053.007
-crontab:T1007,T1053.003
-cross-tenant:T1484.002
-cross-tenant role:T1098.003
-crt.sh:T1596.003
-crypto hardware:T1600
+cron.daily:T1053.003
+cronjob:T1053
+crontab:T1053.003
+crontab -e:T1053.003
+crontab -l:T1007
+cross-account transfer:T1537
+cross-site scripting:T1189
+crt.sh:T1596,T1596.003
+crypt32:T1649
+crypter:T1588.001
+crypto engine:T1600,T1600.002
+crypto key generate:T1600.001
 crypto pki export:T1552.004
-cryptographic key:T1480.001
-cryptography\\oid:T1553.003
-cryptojacking:T1496.001
-cryptomining:T1204.003,T1496,T1535,T1686.001
+cryptocurrency theft:T1657
+cryptography\providers\trust:T1553.003
+cryptojacking:T1496,T1496.001
+cryptominer:T1496.001
+cryptominer container:T1204.003
 cryptsipdllgetsigneddatamsg:T1553.003
 cryptsipdllverifyindirectdata:T1553.003
 cryptunprotectdata:T1555.003
 csc.exe:T1027.004
-cscript:T1216.001
+cscript pubprn:T1216.001
+cscript.exe:T1059.005,T1216
 csrutil disable:T1553.006
-csv:T1559.002
-cti feeds:T1597.001
-ctrl+c:T1546.005
-curl:T1048,T1105,T1570
+csv injection:T1559.002
+cti portal:T1597.001
+curl:T1105
+curl upload:T1048
+currentversion\run:T1547.001
+currentversion\winlogon:T1547.004
+custom alphabet:T1132.002
+custom archive format:T1560.003
 custom compression:T1560.003
 custom encoding:T1132.002
 custom encryption:T1573
+custom malware:T1587,T1587.001
 custom outlook form:T1137.003
-custom tooling:T1587
-cve:T1190,T1203,T1210,T1588.006,T1592.002,T1595.002
+custom tcp protocol:T1095
+customaction:T1546.016
+customer pii:T1213.004
+cve:T1068,T1190,T1203,T1212,T1588.006
+cve-2017-8625:T1218.001
+cve-2019-0708:T1210
 cve-2024-55591:T1686.002
-cybercrime markets:T1597
-dacl:T1222,T1222.001
-daemon:T1036.009,T1543,T1559.003
-daemons:T1569
+cybercrime marketplace:T1597
+dacl:T1222.001
+daemon:T1543,T1569
+daemon():T1036.009
+daemon-reload:T1543.002
 daemonset:T1543.005,T1610
 dangling dns:T1584.001
-dark web:T1597,T1597.002
+dap:T1199
+dark web:T1597
+dark web forum:T1588,T1650
+dark web market:T1597.002
 darkgate:T1059.010
-data aggregators:T1597.002
-data at rest:T1565.001
+dashboard gui:T1538
+data aggregation service:T1597.002
+data broker:T1597
+data center location:T1591.001
+data compression:T1560
 data integrity:T1565
-data integrity transit:T1565.002
+data manipulation:T1565
+data tampering:T1565
 data url:T1027.006
-database tampering:T1565.001
-datacenter:T1591.001
+database dump:T1213.006
+database modification:T1565.001
 dcc2:T1003.005
-dcom:T1021.003,T1047,T1559.001
-dcshadow:T1134.005,T1207
+dcom:T1021.003
+dcomlaunch:T1021.003
+dcshadow:T1207
+dcsync:T1003.003,T1003.006
 dd:T1055.009
 dde:T1559,T1559.002
-ddos:T1498,T1584.005
+dde formula:T1559.002
+ddeauto:T1559.002
+ddos:T1498,T1498.001,T1499,T1584.005
 ddos-for-hire:T1583.005
 dead code:T1027.016
-debug commands:T1601.001
+dead drop resolver:T1102.001
+deauthentication:T1557.004
+debug memory write:T1601.001
 debugger:T1546.012
 decoy document:T1683.001
-decryption key:T1486
+decryption key derived:T1480.001
+dedicated server:T1583.004
 deepfake:T1588.007,T1683.002
-default user:T1098.002
+defaced:T1491
+defaced homepage:T1491.002
+defacement:T1491
+default credentials:T1078.001
 default.rdp:T1070.007
-defaults:T1037.002
-defender icon:T1685.003
+defaults !tty_tickets:T1548.003
+defaults write:T1037.002,T1647
+defender exclusion path:T1564.012
+defender for cloud:T1526
+defense evasion exploit:T1211
 del:T1070.004
+delayed execution:T1678
 delegated administrator:T1199
+delete account:T1070.009
+delete email:T1564.008
+delete snapshots:T1490
+delete virtual machine:T1578.003
+deletebucket:T1485
+deletedbinstance:T1485
+deleteinstance:T1578.003
+deletetrail:T1685.002
+demiguise:T1480.001
+deobfuscate:T1140
 departments:T1591
-dependency:T1195
 dependency confusion:T1195.001
+derived c2 port:T1568.003
 des:T1573.001
-describe-volume:T1680
-describeinstances:T1580
-description:T1036.004
+describedbinstances:T1580
+describeinstances:T1082,T1580
+describesnapshots:T1580
+desktop wallpaper change:T1491.001
 developer id:T1553.002
 device code phishing:T1566.002
-device controller:T1542.002
-device join:T1098.005
-device key:T1552.004
-devicecredentialdeployment:T1564.003
+device configuration collection:T1602
+devicecredentialdeployment.exe:T1564.003
+devtunnels:T1219.001
+df:T1680
 dfshim.dll:T1127.002
 dfsvc.exe:T1127.002
 dga:T1568.002
+dhcp exhaustion:T1557.003
+dhcp offer:T1557.003
+dhcp spoofing:T1557.003
 dhcpv6:T1557.003
+diamorphine:T1547.006
 diantz:T1560.001
-digital signature:T1587.002
-dir:T1083
+dictionary dga:T1568.002
+dig:T1590.002,T1596.001
+diginotar:T1588.004
+digitalocean:T1583.003
 dir /a:T1564.001
+dir /r:T1564.004
+dir /s:T1005,T1039,T1083
 dirb:T1595.003
 dirbuster:T1595.003
 direct send:T1684.002
-direct syscall:T1106
-disable service:T1668
-disableapiserviceaccess:T1489
-disclosure:T1588.006
-discord:T1567.004
-discover:T1557.003
-diskshadow:T1490
+direct syscalls:T1106
+directory brute force:T1595.003
+directory share pivot:T1080
+directory traversal path:T1027.010
+directshow:T1125
+disable crypto hardware:T1600.002
+disable edr:T1685
+disable vulnerable service:T1668
+disableawsserviceaccess:T1489
+disconnected network:T1092
+disconnected session:T1563.002
+discord webhook:T1567,T1567.004
+discord.com/api/webhooks:T1567.004
+discover flood:T1557.003
+disk firmware:T1542.002
+disk wipe:T1561
+diskshadow delete shadows:T1490
 diskutil:T1680
-display name:T1036.004
-display tampering:T1565.003
+disown:T1564.011
+displayswitch.exe:T1546.008
 disposable email:T1585.002
 dist-packages:T1546.018
-distribution:T1195
 dkim:T1684.002
-dll:T1218.007,T1547.008
-dll export:T1218.011
+dkom:T1014
+dlfcn.h:T1129
 dll hollowing:T1055.001
-dll injection:T1218.013
-dll load:T1137.002
+dll injection:T1055.001,T1218.013
+dll load office startup:T1137.002
+dll ordinal #1:T1218.011
 dll redirection:T1574.001
-dll sideloading:T1574.001
+dll search order hijacking:T1574.001
+dll side-loading:T1574.001
 dllentrypoint:T1218.002
 dllname:T1547.003
+dllregisterserver:T1218.010
 dlopen:T1129
 dlsym:T1129
-dma:T1200
-dmarc:T1684.002
+dma attack:T1200
+dmarc p=none:T1684.002
 dns amplification:T1498.002
 dns beacon:T1071.004
 dns c2:T1583.002
 dns calculation:T1568.003
-dns dumpster:T1590.004,T1596.001
-dns exfil:T1048
+dns exfiltration:T1048
 dns flood:T1499.002
-dns hijack:T1557,T1584,T1584.002
+dns hijacking:T1557,T1584.002
 dns over https:T1572
-dns record alteration:T1584.002
-dns records:T1590.002
+dns record modification:T1584.002
+dns response arithmetic:T1568.003
+dns server compromise:T1584.002
 dns tunneling:T1048.003,T1071.004
-dns-sd:T1046
+dns tunneling server:T1583.002
+dns-sd -b:T1046
+dnscat2:T1071.004
+dnsdumpster:T1590,T1590.002,T1596,T1596.001
 dnspionage:T1584.002
-docker:T1059.013,T1525
-docker api:T1133,T1552.007
+dnx.exe:T1127
+docker api:T1552.007,T1612,T1613
 docker build:T1612
 docker create:T1610
 docker daemon:T1609
-docker exec:T1609
-docker hub:T1608.001
-docker image:T1204.003
+docker exec:T1059.013,T1609
+docker hub:T1204.003,T1608.001
+docker hub account:T1585
+docker image:T1525
+docker images:T1613
 docker inspect:T1059.013
+docker logs:T1552.007,T1613
 docker ps:T1059.013,T1613
-docker run:T1543.005
-docker.sock:T1611
-dockerd:T1059.013
+docker pull:T1204.003
+docker run:T1059.013,T1543.005,T1610
+docker-compose:T1059.013
+docker.sock:T1059.013,T1611
+dockerd:T1059.013,T1543.005
 dockerfile:T1612
 document close:T1497.002
 document library:T1213.002
-documentation:T1213
-doh:T1572
+document.cookie:T1539
+document_open:T1059.005
+domain account:T1078.002,T1136.002
 domain admin:T1078.002
-domain admins:T1069.002
+domain admins:T1069.002,T1087.002
+domain check:T1480
 domain controller:T1556.001
+domain enumeration:T1590.001
+domain fronting:T1090.004
+domain generation algorithm:T1568.002
 domain hijacking:T1584.001
-domain registration:T1596.002
+domain registrant:T1596.002
+domain registration email:T1585.002
 domain shadowing:T1584.001,T1584.002
-domain validation:T1588.004
+domain takedown:T1681
+domain trust:T1484,T1590.003
+domain validation certificate:T1588.004
 domain-wide delegation:T1548.005
 domainless fronting:T1090.004
+domainpasswordspray:T1110.003
+dont_req_preauth:T1558.004
 donut:T1620
-dotfile:T1564.001
+dormant account:T1078
+dot file:T1564.001
+double click:T1497.002
+double extension:T1036.007,T1204.002,T1566.001
+double fork:T1036.009
 double timestomping:T1070.006
-double-click:T1497.002
 double-flux:T1568.001
-double-fork:T1036.009
-download:T1588
-download attribute:T1027.006
-dridex:T1584.005
-driver:T1014,T1056.001,T1547.010
+downgrade system image:T1601.002
+downloadstring:T1059.001
+dpkg -l:T1518
+drive_removable:T1025
+driver signature enforcement:T1553.006
+driver value:T1547.010
 driverquery.exe:T1652
-dropbox:T1518.002,T1567.002,T1583.006,T1584.006,T1585.003,T1586.003
-droppers:T1587.001
-drsuapi:T1003.006
-dscacheutil:T1069.002,T1087.002
-dscl:T1033,T1069.001,T1087.001
+drivers\etc\hosts:T1018
+dropbox:T1102,T1567.002,T1583.006,T1584.006,T1585.003,T1586.003
+dropbox api:T1102.002
+dropper:T1027.009,T1587.001
+drsuapi:T1003.006,T1207
+ds-replication-get-changes:T1003.006
+dsadd user:T1136.002
+dsaddsidhistory:T1134.005
+dscacheutil -q group:T1069.002,T1087.002
 dscl -create:T1136.001
+dscl . -list /groups:T1069.001
+dscl . list /users:T1033,T1087.001
 dscl ishidden:T1564.002
-dse:T1553.006
 dsenumeratedomaintrusts:T1482
-dual-homed pivot:T1669
-dual-use tools:T1608.002
-duo:T1098.005
+dsquery:T1482
+dual-homed:T1669
+dual-use tool:T1588.002,T1608.002
+duo:T1098.005,T1556.006
 duo push:T1621
 duplicatetoken:T1134.001
 duplicatetokenex:T1134.001
 duqu:T1027.003
+dyld:T1574.004
 dyld_insert_libraries:T1056.004,T1574.006
-dylib:T1546.006,T1574.004
+dylib:T1546.006
+dylib hijacking:T1574.004
+dynamic api resolution:T1027.007
+dynamic data exchange:T1559.002
+dynamic dns:T1568
 dynamic resolution:T1568
 dynamics 365:T1213.004
-e5 downgrade:T1685.002
-early bird:T1055.004
-ebury:T1574.006
+early bird injection:T1055.004
+ebs snapshot:T1578.001
+ec2:T1578
+ec2 cryptomining:T1535
 ec2 instance connect:T1021.008
-eclipse:T1176.002
-edge appliance:T1190
-edge device:T1584.008
-edr:T1685
-edr exploit:T1687
-efi implant:T1542.001
-efi partition:T1542.003
+eclipse plugin:T1176.002
+ecr:T1525
+edge device:T1190,T1584.008
+editthiscookie:T1550.004
+edr enumeration:T1518.001
+edr live response:T1219
+edr testing:T1588.002
+edr vulnerability:T1687
+efi:T1542.001
+efi system partition:T1542.003
 efsrpcopenfileraw:T1187
-egress bypass:T1568.003
+egress filtering bypass:T1568.003
 eku:T1649
 elasticsearch:T1213
+eldos rawdisk driver:T1561.001
 electron:T1218.015
-elevation:T1548
-elf strip:T1027.008
+elevation control:T1548
 elgamal:T1573.002
-email:T1552.008
-email headers:T1071.003
-email pipeline:T1505.002
-email spoofing:T1566,T1598
-email template:T1137.003
-email trigger:T1137.005
-embedded commands:T1071
-embedded executable:T1027.009
-embedded images:T1001.002
+elicitation:T1598
+email addresses:T1087
+email bombing:T1667
+email c2:T1071.003
+email collection:T1114
+email enumeration:T1589.002
+email forwarding:T1114
+email harvesting:T1589.002
+email header forgery:T1684.002
+email spoofing:T1566,T1598,T1684.002
+embedded javascript:T1027.017
+embedded module:T1027.009
+embedded payload:T1027.009
+embedded payload in picture:T1001.002
 emond:T1546.014
-emondclients:T1546.014
 empire:T1059.001
 employee data:T1589
-employee directory:T1594
-employee roles:T1593.001
-employees:T1591
+employee names:T1589.003
+employee profiling:T1593.001
+employee titles:T1591.004
 enable mode:T1059.008
+enable region:T1578.005
+enable-transportagent:T1505.002
+enablefirewall:T1686.003
 encapsulation:T1572
-encoded data:T1041
-encoded domain:T1102.001
-encoded keys:T1573
-encoding:T1027,T1027.013
-encrypted exfil:T1048.001
-encrypted payload:T1480.001
-encrypted tunnel:T1563.001
-encryption:T1027,T1560
-encryption bypass:T1600
-encryption card:T1592.001
+encoded c2:T1132
+encoded c2 address:T1102.001
+encoded data in c2 traffic:T1041
+encoded payload:T1027.013
+encrypt before exfiltration:T1560
+encrypted c2:T1573
+encrypted channel:T1573
+encrypted config:T1027.013
+encrypted file extension:T1486
+encrypted ftp:T1048.001
+encrypted http exfiltration:T1048.001
+encrypted payload:T1027,T1480.001
+encrypted vfs:T1564.005
 encryption parameters:T1600.001
+endpoint dos:T1499
 enter-pssession:T1021.006
-enterprise admins:T1134.005
-entra id:T1098.005,T1556.007,T1556.009,T1671
+enterprise admins sid:T1134.005
+entra id:T1078.004,T1606.002
+entra id app registration:T1671
+entra id device registration:T1098.005
 entry point patching:T1554
-entrypoint:T1609
 enumdevicedrivers:T1652
+enumprocesses:T1057
 enumwindows:T1010
-environment check:T1480
+environment awareness:T1497
+environment registry key:T1574.012
+environment variable substring:T1027.010
+environmental keying:T1480.001
+eol edge devices:T1583.005
 ephemeral storage:T1578.004
+eqnedt32.exe:T1203
+equation group:T1542.002
 erase:T1561
-escape characters:T1027.010
 esentutl:T1006
 esp:T1542.003
-esxcli:T1057,T1059.012,T1082,T1505.006,T1680
-esxcli network:T1016
+esxcli:T1059.012
 esxcli network diag ping:T1018
-esxcli network firewall:T1686
-esxcli system account:T1087.001,T1531
+esxcli network firewall:T1059.012
+esxcli network firewall set:T1686
+esxcli network ip connection list:T1049
+esxcli network nic list:T1016
+esxcli software vib install --force:T1505.006
+esxcli storage:T1680
 esxcli system account add:T1136.001
-esxcli system clock:T1124
+esxcli system account list:T1087.001
+esxcli system account remove:T1531
+esxcli system clock get:T1124
+esxcli system process list:T1057
+esxcli system version get:T1082
+esxcli vm process kill:T1059.012,T1489
 esxcli vm process list:T1673
-esxi:T1053.003,T1059.012,T1210,T1505.006,T1611
-esxi backdoor:T1095
-esxi encryption:T1486
-esxi enumeration:T1673
-esxi network ip connection list:T1049
-esxi persistence:T1037.004
+esxi:T1037.004,T1095,T1505.006,T1673
+esxi motd:T1491.001
+esxi root:T1078.001
+esxi shell:T1059.012
+esxi ssh:T1021.004
+esxi vm encryption:T1486
 eternalblue:T1210
-etl:T1119
+etherhiding:T1608.001
+etl pipeline:T1119
 ettercap:T1557.002
-etw:T1685
-etype 23:T1558.003
-event filter:T1546.003
-event log:T1027.011,T1654
+etw tampering:T1685
+eval:T1505.003
+eval():T1027.018
+event 4624 logon type 9:T1550.002
+event id 104:T1685.005
+event id 1102:T1685.005
+event id 4624:T1078,T1078.003
+event id 4624 logontype 10:T1021.001
+event id 4625:T1110,T1110.001,T1110.003
+event id 4657:T1112
+event id 4662:T1003.006
+event id 4670:T1222.001
+event id 4698:T1053.005
+event id 4720:T1136,T1136.001,T1136.002
+event id 4728:T1098,T1098.007
+event id 4732:T1098.007
+event id 4738:T1098
+event id 4768:T1078.002,T1558.004
+event id 4769:T1558.001,T1558.003
+event id 4771:T1110.003
+event id 5136:T1484.001
+event id 5140:T1021.002
+event id 7045:T1543.003,T1569.002
+event log export:T1654
+event log payload:T1027.011
+event monitor daemon:T1546.014
 event subscription:T1546
-eventlog service:T1685.001
+event trigger:T1546
 eventvwr.exe:T1548.002
 evidence removal:T1070
-evil clippy:T1564.007
-evilbunny:T1059.011
+evil twin:T1557.004
+evil-winrm:T1021.006
+evil.txt:T1036.006
+evilclippy:T1564.007
 evilginx2:T1539,T1598.003
 evilproxy:T1598.003
-ewm:T1055.011
-exchange:T1114,T1114.002
-exchange address list:T1087.003
+evtx deletion:T1685.005
+ewm injection:T1055.011
+ews:T1114.002
+excel add-in:T1137.006
+excel.application:T1021.003
+excel.exe child process:T1559.002
+exchange:T1098.002,T1114,T1564.008
+exchange online:T1087.003
 exchange transport agent:T1505.002
+exchange web services:T1114.002
 exchangepowershell:T1070.008
-exec:T1547.013
+excluded extensions:T1679
+excluded folder:T1564.012
+exclusionpath:T1564.012
+exec=:T1547.013
 execstart:T1543.002
-executive:T1684.001
+execstartpre:T1543.002
+execution hijack:T1574
+executive impersonation:T1684,T1684.001
+executives:T1591.004
 execve hook:T1574.006
+exfil loop:T1020
+exfiltration interval:T1029
+exfiltration over c2:T1041
+exfiltration over web service:T1567
+exiftool:T1592.002
+exit:T1546.005
+exitwindowsex:T1529
+expiration:T1485.001
 expired domain:T1583.001
-exploit broker:T1588.005
+exploit broker:T1588,T1588.005
 exploit database:T1588.005
-exploit dos:T1499.004
-exploit kits:T1588.005
-explorer:T1036.007
-explorer.exe:T1134.004
-extended attributes:T1564.004,T1564.009
-extensibility:T1505
-extension:T1036.002,T1036.006,T1036.008
+exploit development:T1587,T1587.004
+exploit kit:T1189,T1588.005
+exploit vendor:T1588.005
+exploit-db:T1588.005
+explorer.exe child process:T1204.002
+explorer.exe parent:T1134.004
+exposed database:T1213
+exposed docker api:T1133,T1496.001
+extended attributes:T1564.014
+extension clsid verification host:T1218.012
 extension marketplace:T1176
-extension spoofing:T1566.001
-external hdd:T1052
-facebook:T1585.001,T1586.001,T1593.001
-factory credentials:T1078.001
+external drive:T1025
+external hard drive:T1052
+external proxy:T1090.002
+external sharing:T1213
+extortion:T1657
+extra window memory:T1055.011
+fabricated resume:T1683.001
+facebook:T1593.001
+facebook account takeover:T1586.001
+facility:T1591.001
+factory password:T1078.001
 fail open:T1556.006
+failed logon:T1110
+failover:T1008
 failurecommand:T1574.011
+fake antivirus status:T1685.003
 fake captcha:T1204.004
-fake error:T1204.004
-fake id photo:T1683.002
+fake credential prompt:T1056.002
+fake extension:T1036.008
+fake facebook profile:T1585.001
+fake file name:T1036
+fake identity document:T1683.002
+fake job offer:T1566.003
 fake job posting:T1683.001
-fake login portal:T1598.003
+fake linkedin profile:T1585,T1585.001
+fake login form:T1598.002
+fake login page:T1598
+fake login prompt:T1056
+fake persona:T1585
 fake profiles:T1593.001
-fake prompt:T1056.002
-fake recruiter:T1566.003,T1598.001
+fake recruiter:T1566.003,T1598.001,T1684
+fake registry key:T1036.005
+fake service name:T1036.004
+fake ssl certificate:T1001.003
 fake tls handshake:T1001.003
-fake ui:T1685.003
-fallback channel:T1568
+fake uac prompt:T1056.002
+fake update:T1204
+fake update injection:T1659
+fake windows security ui:T1685.003
+fallback c2:T1008,T1568
 false flag:T1587.001
-fan:T1497.001
+falsify records:T1565
 fast flux:T1568.001
+fdenytsconnections:T1021.001,T1571
+fdisk:T1680
+federated account:T1078.004
 federated domain:T1484.002
-federated identity:T1021.007,T1078.004
-federated trust:T1590.003
+federated identity:T1021.007
 federation:T1484
-fgpp:T1556.005
-fictitious identity:T1585
-file bloat:T1027.001
+federation trust:T1606.002
+ffuf:T1595.003
+fictitious recruiter:T1585.001
+file association:T1546.001
+file association change:T1565.003
+file collection script:T1020
+file deletion:T1070.004
 file encryption:T1486
-file exclusion path:T1070.010
-file handler:T1036.006
-file harvesting:T1119
-file metadata:T1592.002
-file modification:T1565.001
-file overwrite:T1485
-file permissions:T1222.002
+file extension search:T1119
+file header:T1036.008
+file infector:T1080
+file metadata:T1036,T1592.002
 file server:T1039
-file system:T1005
-file transfer:T1071.002
-file.txt.exe:T1036.007
+file signature mismatch:T1036.008
+file size inflation:T1027.001
+file.txt:stream:T1564.004
+file/path exclusions:T1070.010
+file://:T1187
+file_attribute_hidden:T1564.001
+fileaccessed:T1213.002
 fileless:T1620
-filename:T1036
-filetype:T1593.002
-fillable form:T1598.002
+fileless storage:T1027.011
+filetype::T1593.002
+fillable document:T1598.002
 finalpolicy:T1553.003
 find:T1083
-find -perm +4000:T1548.001
-finder:T1548.006
-findwindow:T1055.015
+find / -perm -4000:T1548.001
+findfirstfile:T1083
+findstr:T1005,T1119
+findstr /si password:T1552.001
+findstr password:T1552
+findwindow:T1010,T1055.015
+fine-grained password policy:T1556.005
 firebase:T1213.006
-firewall:T1590.006
 firewall compromise:T1599
-firewall rule:T1686
-firmware:T1542,T1584.008
-firmware backdoor:T1195.003
+firewall detection:T1590.006
+firewall implant:T1505
+firewall policy:T1686.002
+firewall rule:T1686.003
+firewall-rules create:T1686.001
+firewallpolicy:T1686.003
+firmware corruption:T1495
+firmware implant:T1195.003,T1542.001
+firmware modification:T1601
+firmware reconnaissance:T1592.003
 firmware version:T1592.003
-first-stage:T1104
-flash:T1203
-flash memory:T1495
+first-stage c2:T1104
+fixed size chunks:T1030
+flash exploit:T1203
+flock:T1480.002
 fncopydata:T1574.013
-folder customization:T1137.004
-folder permissions:T1098.002
-foothold:T1650
-forensic removal:T1578.003
-forest:T1482
-forfiles:T1202
-forged cookies:T1606.001
-fork:T1036.009,T1106
-form trigger:T1137.003
+foca:T1592.002
+fodhelper.exe:T1548.002
+fofa:T1596.005
+folder home page:T1137.004
+forest trust:T1590.003
+forfiles.exe:T1202
+forgecert:T1649
+forged cookie:T1606.001
+forged kerberos ticket:T1212
+forged tgs:T1558.002
+forged tgt:T1558.001
+forged token:T1606
+fork:T1106
+fork():T1036.009
 format:T1561.002
-forms:T1137
-fortinet:T1584.008
-forum post:T1102.002
-forwarding rule:T1114
-free trial:T1583
+fortinet:T1190,T1584.008
+fortios:T1686.002
+forwardingsmtpaddress:T1114.003
+fraudulent invoice:T1683.001
+free trial abuse:T1583,T1585
 from header:T1684.002
-front company:T1588.003
+frombase64string:T1140
+front organization:T1588.003
 fruitfly:T1125
-ftp:T1048,T1048.003,T1071.002
+fsutil behavior set symlinkevaluation:T1222
+fsutil fsinfo drives:T1120
+ftp:T1048.003,T1071.002
+ftp c2:T1071.002
+ftp exfiltration:T1048
 ftps:T1071.002
 ftype:T1546.001
 full disk access:T1548.006
+fullaccess:T1098.002
 fuzzing:T1587.004
+g$msradiuschapkey:T1556.005
 g$radiuschap:T1556.005
 g_cioptions:T1553.006
-gadgets:T1055.009
 gal:T1087.003
+gapz:T1055.011
+gatekeeper:T1553.001
 gateways:T1590.004
 gauss:T1480.001
 gcc:T1027.004
 gcloud:T1059.009
 gcloud auth login:T1021.007
-gcloud compute:T1580
-gcloud iam service-accounts:T1087.004
+gcloud compute disks list:T1680
+gcloud compute disks snapshot:T1578.001
+gcloud compute instances list:T1580
+gcloud compute ssh:T1021.008
+gcloud iam service-accounts create:T1136.003
+gcloud iam service-accounts keys create:T1098.001
+gcloud iam service-accounts list:T1087.004
+gcloud projects get-iam-policy:T1087.004
 gcloud secrets:T1555.006
-gcp command center:T1538
+gcp deployment manager:T1072
 gcp image:T1204.003
-gcp packet mirroring:T1020.001
+gcp images:T1525
+gcp packet mirroring:T1020.001,T1040
+gcp security command center:T1538
 gcpbucketbrute:T1595.003
-gcs:T1530
-gdi:T1113
-genai:T1588.007
+gdap:T1199
+gemini:T1588.007,T1682
+generateaccesstoken:T1550.001
+generated content:T1683
+generative ai:T1588.007,T1683
 geofencing:T1665
-geographic evasion:T1535
-geolocation:T1614
-get request:T1016.001
+geolocation:T1591.001,T1614
+get request beacon:T1071.001
+get request google.com:T1016.001
 get-addefaultdomainpasswordpolicy:T1201
-get-adgroupmember:T1087.002
+get-adgroupmember:T1069.002,T1087.002
 get-aduser:T1087.002
 get-clipboard:T1115
+get-credential:T1056.002
 get-domaingpo:T1615
 get-domaingpolocalgroup:T1615
+get-domaintrust:T1482
+get-eventlog:T1654
+get-foresttrust:T1482
 get-globaladdresslist:T1087.003
+get-gpo:T1615
 get-gpppassword:T1552.006
 get-history:T1552.003
+get-item -stream:T1564.004
+get-itemproperty:T1012
+get-localgroupmember:T1069.001
+get-mpcomputerstatus:T1518.001
+get-mppreference:T1564.012
 get-msolrole:T1069.003
 get-msolrolemember:T1087.004
-get-process:T1057
+get-nettcpconnection:T1049
+get-pnpdevice:T1120
+get-process:T1010,T1057
 get-psdrive:T1680
 get-secret-value:T1555.006
+get-service:T1007
+get-smbshare:T1135
+get-winevent:T1654
+get-wmiobject:T1047
 getaccountpasswordpolicy:T1201
+getasynckeystate:T1056.001
 getbucketacl:T1069.003
+getclipboarddata:T1115
 getcredentialtype:T1589.002
-getdrivetype:T1680
-getfattr:T1564.014
-getfederationtoken:T1098.001,T1550.001,T1606
+getcursorpos:T1497.002
+getdc:T1113
+getdrivetype:T1025,T1680
+getextensionversion:T1505.004
+getfattr --only-values:T1564.014
+getfederationtoken:T1098.001,T1606
 getforegroundwindow:T1010
 getkeyboardlayoutlist:T1614.001
+getkeystate:T1056.001
 getlocaleinfow:T1614
+getlogicaldrives:T1120
+getncchanges:T1003.006,T1207
+getnpusers.py:T1558.004
+getobject:T1530
+getobject("script::T1218.005
 getprintprocessordirectory:T1547.012
 getprocaddress:T1027.007
+getpublicaccessblock:T1580
+getsecretvalue:T1555.006
+getsystemdefaultuilanguage:T1614.001
+getsystemtime:T1124
 getsystemtimeasfiletime:T1497.003
+getthreadcontext:T1055.003
 gettickcount:T1124,T1497.003
+gettimezoneinformation:T1614
+gettypefromprogid:T1021.003
 getuserdefaultlangid:T1614.001
 getuserdefaultuilanguage:T1614.001
 getuserrealm:T1590.001
+getuserspns.py:T1558.003
 getwindowlong:T1055.011
-gflags:T1546.012
+getwindowtext:T1010
+gflags.exe:T1546.012
+ghdb:T1593.002
+ghostbin:T1567.003
 ghosttoken:T1211
-git:T1213.003,T1593.003
-github:T1213.003,T1583.006,T1584.006,T1593.003,T1608
+git clone:T1213.003
+git push:T1567.001
+github:T1102,T1213.003,T1567.001,T1583.006,T1593.003,T1608
 github actions:T1195.001,T1677
-github api:T1567.001
-github auth:T1219.001
-github package:T1204.005
+github authentication:T1219.001
+github issues:T1102.002
+github profile:T1102.001
 github repo:T1608.002
-gitlab:T1213.003,T1593.003
+github repository:T1204.005
+github search manipulation:T1608.006
+gitlab:T1213.003,T1567.001,T1593.003
 gitlab-ci.yml:T1677
+gitleaks:T1593.003
+gitrob:T1589.001
+global address list:T1087.003
 global administrator:T1098.003
 global offset table:T1055.014
+global\:T1480.002
+globaladdatom:T1055.004
 globaldotname:T1137.001
+globalflag:T1546.012
+gmail:T1585.002
 gmail delegation:T1098.002
-gmail mimicry:T1001.003
 gobuster:T1595.003
 golden certificate:T1649
-golden saml:T1606.002
-golden ticket:T1550.003
-google:T1102,T1583.006
-google apps script:T1583.007
+golden saml:T1606,T1606.002
+golden ticket:T1558.001
+google ads:T1583.008
+google apps script:T1583.007,T1584.007,T1648
 google chat:T1213.005
+google cloud storage:T1530
 google dorking:T1593,T1593.002
-google drive:T1567.002
+google drive:T1102,T1530,T1567.002,T1583.006,T1584.006
+google drive impersonation:T1001.003
+google hacking:T1593.002
+google sheets c2:T1102.002
 google workspace:T1114.002
+google workspace directory:T1087.003
+google workspace integration:T1671
 gootloader:T1608.006
-got:T1055.014
+got patching:T1055.014
+gpcfilesyspath:T1484.001
 gpedit.msc:T1218.014
-gpo:T1484,T1484.001,T1615
-gpo logon script:T1037.003
-gpp:T1552.006
+gpo:T1037.003,T1484,T1615
+gpprefdecrypt.py:T1552.006
 gpresult:T1615
 gpttmpl.inf:T1484.001
+graph api:T1550.001
+graph api mail.read:T1114.002
 gratuitous arp:T1557.002
-grep:T1003.007
+great cannon:T1499
+grep -e:T1003.007
+grep -r password:T1552.001
+greynoise:T1596.005
 group enumeration:T1069
+group membership:T1069
+group policy:T1037.003,T1484
+group policy preferences:T1552.006
 groups:T1069.001,T1087.001
 groups.xml:T1552.006
 gsecdump:T1003.002
-gsettings:T1564.002
+gsettings disable-user-list:T1564.002
+gsutil ls:T1619
+gtfobins:T1218,T1548.001
+gtfobins at:T1053.002
 guardduty:T1526
-guest:T1078.001
+guardduty unsupported region:T1535
+guardrails:T1480
+guest account:T1078.001
 guest operations:T1675
-gui enumeration:T1538
 gwsmo:T1087.003
 gzip:T1027.015,T1132,T1132.001
-hacktivism:T1491.002
-handler:T1546
+hacked website:T1584.004
+hacktivist:T1491,T1491.002
+half-open connections:T1499.001
 hangup:T1564.011
 hard drive firmware:T1542.002
-hardcoded credentials:T1213.003
+hardcoded backup ip:T1008
+hardcoded key:T1573
 hardcoded password:T1556.004
-hardware:T1592.001
-hardware buffer:T1056.001
-hardware encryption:T1600.002
-hardware implant:T1195.003
-hardware kvm:T1219.003
-hash authentication:T1550.002
-hash cracking:T1110
-hash dumping:T1003
-hash evasion:T1027.001
-hashcat:T1110.002
-hashjacking:T1187
+hardcoded secrets:T1213.003
+hardware backdoor:T1195.003
+hardware breakpoints:T1622
+hardware encryption accelerator:T1600.002
+hardware inventory:T1592.001
+hardware reconnaissance:T1592.001
+hardware supply chain:T1195.003
+hardware token:T1111
+hash change:T1027.001
+hash dump:T1003
+hashcat:T1110,T1110.002
+hashcat 13100:T1558.003
+hashcat 18200:T1558.004
+hashicorp vault:T1555.006
+hastebin:T1567.003
 hbss:T1072
+hcitool:T1011.001
 headbucket:T1580
-header:T1036.008
-headers:T1071.001
-healthy status:T1685.003
-help:T1036.010
-help desk impersonation:T1684
+help desk impersonation:T1566.004,T1598.004,T1684
 helper dll:T1546.007
-heroku:T1608.002
-hex:T1132.001
+heroku:T1608,T1608.002
+hexadecimal:T1132.001
+hfs+:T1564.009
 hh.exe:T1218.001
-hibernate:T1653
-hid:T1674
+hibernate-timeout:T1653
+hid emulation:T1674
+hidden c2 traffic:T1001
+hidden data in image:T1001.002
 hidden directories:T1594
-hidden extension:T1036.007
+hidden file extension:T1036.007
+hidden file system:T1564.005
 hidden files:T1564
-hidden image:T1027.003
-hidden payloads:T1001.002
-hidden rule:T1114.003
+hidden user account:T1564.002
+hidden users:T1564
+hidden window:T1564
+hide artifacts:T1564
+hide process:T1014
 hide500users:T1564.002
-hijacked accounts:T1584.006
-hijacked cloud vm:T1584.003
-hijacked mail server:T1584.004
+hidefileext:T1036.007
+high cpu usage:T1496,T1496.001
+high entropy domain:T1568.002
+high entropy section:T1027.002
+hijack execution flow:T1574
+hijacked github account:T1584.006
+hijacked hosting:T1584.003
 hijacked persona:T1586
-hijacked profile:T1586.001
 hijacked servers:T1584
-hildegard:T1496.001
+hijacked twitter account:T1586.001
+hiring postings:T1593
 histcontrol:T1690
-histfile:T1070.003,T1690
+histfile:T1070.003
+histfilesize=0:T1690
 history:T1217
-hkcu:T1012,T1112,T1552.002
-hkcu environment:T1037.001
+history -c:T1070.003,T1685.006
+history command:T1552.003
+historysavestyle savenothing:T1690
+hkcu:T1112
+hkcu\control panel\desktop:T1546.002
+hkcu\environment:T1037.001
+hkcu\software\classes\clsid:T1546.015
+hkcu\software\microsoft\office test:T1137.002
 hkey_classes_root:T1546.001
-hklm:T1012,T1112,T1552.002
+hklm:T1112
 hklm\security\policy\secrets:T1003.004
+hklm\software:T1012
+hklm\software\microsoft\active setup:T1547.014
+hklm\software\microsoft\cryptography\oid:T1553.003
 hklm\software\microsoft\netsh:T1546.007
-hklm\system\currentcontrolset\control\lsa:T1547.002
-hklm\system\currentcontrolset\services:T1574.011
-hmodule:T1218.013
-home page:T1137
-home page url:T1137.004
+hklm\software\microsoft\office test:T1137.002
+hklm\system\currentcontrolset\control\lsa:T1547.002,T1556.002
+hklm\system\currentcontrolset\control\session manager:T1546.009
+hklm\system\currentcontrolset\services:T1543.003,T1556.008,T1574.011,T1652
+hklm\system\currentcontrolset\services\termservice\parameters:T1505.005
+hklm\system\currentcontrolset\services\w32time:T1547.003
 homoglyph:T1583.001
-hook:T1056,T1056.001
-hop:T1052.001
-host discovery:T1595.001
-hostname:T1082,T1592
-hosts file:T1018,T1556.006
-hq address:T1591.001
-hta:T1059.005,T1059.007
+honeygain:T1496.002
+hooks.slack.com:T1567.004
+host header:T1090.004
+host reconnaissance:T1592
+hosting provider:T1590.005
+hostname:T1082
+hostname check:T1480
+hostname hash:T1480.001
+hostpath:T1611
+hosts file redirect:T1556.006
+hotfix:T1082
+html:T1137.004
 html application:T1218.005
+html attachment:T1598.002
 html help:T1218.001
-html smuggling:T1598.002
-html5:T1027.006
+html smuggling:T1027.006,T1598.002
+html5 download attribute:T1027.006
 htran:T1090,T1090.001,T1090.002
-http:T1071.001
-http exfil:T1048.003
+http body encoding:T1132.002
+http c2:T1071.001
+http exfiltration:T1048.003
 http flood:T1499,T1499.002
-http header:T1036.012
 http header spoofing:T1001.003
-httpextensionproc:T1505.004
-https:T1071.001,T1567.001
+http post:T1071.001,T1567.004
+http response injection:T1659
+httpd:T1505.003
+httpfilterproc:T1505.004
+https:T1090.004
+https beacon:T1071.001
 https c2:T1608.003
-https exfil:T1048.002
-https non-443:T1571
-https post:T1567.004
+https exfiltration:T1048.002
+https over 8088:T1571
 https to http:T1689
+https upload:T1567
 hubspot:T1213.004
+hunter.io:T1589.002
 hvnc:T1564.003
+hydra:T1110,T1110.001
 hyper-v:T1564.006
-hyperlink:T1204.001
-hypervisor:T1014,T1611
-i/o port:T1497.001
-iaas evasion:T1578.002
-iab:T1650
+hypervisor:T1673
 iam condition:T1556.009
-iam list:T1087
+iam create-user:T1136.003
 iam policy:T1098.003
-iam user:T1078.004,T1136.003
+iam.serviceaccounts.actas:T1648
 iam.serviceaccounttokencreator:T1548.005
 iam.serviceaccountuser:T1548.005
+iam/security-credentials:T1552.005
 iam:passrole:T1648
-iat evasion:T1027.007
-iat hook:T1056.004
-iat hooking:T1554
-icacls:T1222,T1222.001
-icmp:T1095,T1595,T1595.001
+iat:T1027.007
+iat hooking:T1056.004,T1554
+icacls:T1222,T1222.001,T1574.005,T1574.010
+icmluautil:T1548.002
+icmp:T1095
+icmp echo:T1595.001
 icmp flood:T1498.001
-icon location:T1027.012
+icmp sweep:T1595
+icmp tunnel:T1095
+icon smuggling:T1027.012
 iconenvironmentdatablock:T1027.012
+iconlocation:T1027.012
 id:T1087.001
-id_rsa:T1552.004
-identity:T1589
+id_rsa:T1021.004,T1552.004
+identify roles:T1591.004
 identity provider:T1484,T1484.002
-idispatch:T1559.001
-idn:T1583.001
-idn homograph:T1566.002
+identity reconnaissance:T1589
+idn homograph:T1566.002,T1583.001
+ids fingerprinting:T1590.006
 ieframe.dll:T1218.011
-iex downloadstring:T1105
+iex:T1059.001
 ifconfig:T1016
 ifeo:T1546.012
+ifm:T1003.003
 iframe:T1189
+ignorespace:T1690
 iis module:T1505.004
 ilasm.exe:T1027.004
-illicit consent:T1528
+image c2:T1001.002
 image file execution options:T1546.012
-imagepath:T1574.009,T1574.011
-imap:T1071.003,T1114
+image/svg+xml:T1027.017
+imagepath:T1036.004,T1543.003,T1574.009,T1574.011
+imap:T1071.003
 imds:T1528,T1552.005
-impersonateloggedonuser:T1134.001
-impersonation:T1534
-implant:T1200
+impersonateloggedonuser:T1134.001,T1134.003
+impersonation:T1683,T1684.001
+import -window root:T1113
+import address table:T1027.007
+importkeypair:T1098.001
 in-house development:T1587
-in-memory:T1620
-in-site search:T1608.006
-in-transit tampering:T1565.002
-inactive accounts:T1078
-inbox flood:T1667
-inbox rule:T1114.003
-inbox rules:T1564.008
-inf:T1218.003
+in-memory execution:T1620
+in-transit modification:T1565.002
+inbox overload:T1667
+inbox rule:T1114.003,T1137.005,T1564.008
+incident response channel:T1213.005
+index.html replaced:T1491.002
+indicator removal from tool:T1027.005
+inf file:T1218.003
+infected usb:T1587.001
+influence operation:T1683
 info.plist:T1647
+information repository:T1213
 information-request:T1557.003
 infostealer logs:T1589.001
-ingress rules:T1686.001
-init:T1036.009,T1543
-init script:T1037
-initial access broker:T1650
+ingress rule:T1686.001
+init pid 1:T1036.009
+inithelperdll:T1546.007
+initial access broker:T1597.002,T1650
+initialization script:T1037
 initializechangenotify:T1556.002
 initializesystemshutdownexw:T1529
-initiating directory:T1574.008
+initiatefiletransferfromguest:T1675
+initiating program directory:T1574.008
 injectdll:T1546.011
 injected javascript:T1608.004
-injectrunning:T1218.013
-inline hook:T1056.004
+inline hooking:T1056.004
 inline task:T1127.001
 inprocserver32:T1546.015
-input intercept:T1056
-insert delete modify:T1565
-insider access:T1586
-insmod:T1547.006
-installed components:T1547.014
-installed software:T1518,T1592.002
-installer dll:T1574.005
-installer prompt:T1548.004
+input capture:T1056
+insert_dylib:T1546.006
+insider credential purchase:T1586
+insmod:T1014,T1547.006
+install certificate:T1608.003
+install-transportagent:T1505.002
+installed antivirus:T1592.002
+installed software:T1518
+installer permissions:T1574.005
 installutil.exe:T1218.004
-instance creation:T1578
-instance metadata:T1614
-instance termination:T1578.003
-integrity:T1565.003
+instance metadata:T1552.005,T1614
+instance store:T1578.004
+integrity level:T1548
 intellij plugin:T1176.002
-interdiction:T1195
-internal phish:T1534
-internal pivot:T1090.001
-internal transfer:T1537
+inter-process communication:T1559
+interactive shell:T1059
+intercept and modify:T1565.002
+interdiction:T1195.003
+internal email:T1534
+internal proxy:T1090.001
+internal spearphishing:T1534
 internal website:T1491.001
-internet scanning:T1496.002
-interpreter:T1059
-interrupt signal:T1546.005
-interval:T1029
-intimidation:T1491
-intune:T1072,T1098.005
-inventory:T1518
-invoke-cimmethod:T1053.005
+internet connectivity:T1016.001
+internet scan results:T1596.005
+internet-wide scanning:T1496.002
+intune:T1098.005
+inurl::T1593.002
+invalid signature:T1036.001
+inveigh:T1557.001
+invisible unicode:T1027.018
+invisimole:T1055.015
+invoice fraud:T1657
+invoke-cimmethod:T1047
+invoke-cimmethod ps_scheduledtask:T1053.005
 invoke-command:T1021.006,T1059.001
 invoke-dosfuscation:T1027.010
+invoke-expression:T1059.001
+invoke-globalmailsearch:T1114.002
 invoke-kerberoast:T1558.003
-invoke-ninjacopy:T1003.003
-invoke-obfuscation:T1027.010
+invoke-ninjacopy:T1003.003,T1006
+invoke-obfuscation:T1027,T1027.010
 invoke-psimage:T1027.003
+invoke-sharefinder:T1135
+invoke-thehash:T1550.002
 invoke-webrequest:T1105
-ioc monitoring:T1681
-ios:T1059.008
-ios patch:T1601.001
-iot:T1583.005
-ip:T1592
-ip block:T1595.001
-ip check:T1480
-ip header:T1599.001
-ip ranges:T1590,T1590.005
+invoke-wmimethod:T1047
+invokemodel:T1496.004
+ioc rotation:T1681
+iodine:T1071.004
+ioreg:T1120
+ios image:T1601
+ios rootkit:T1601.001
+iot compromise:T1584.005
+iot devices:T1583.005
+ip addr:T1016
+ip address range:T1590.005
+ip block:T1590.005
+ip block scan:T1595.001
+ip filtering:T1665
+ip geofencing:T1480
+ip kvm:T1219.003
+ip nat inside:T1599.001
+ip octet port calculation:T1568.003
+ip ranges:T1590
 ip spoofing:T1498
 ip ssh pubkey-chain:T1098.004
-ipc:T1055,T1559,T1559.002,T1559.003
+ip-api.com:T1614
+ipc:T1559
+ipc abuse:T1559
 ipc$:T1021.002
-ipconfig:T1016
-ipfs:T1608.001,T1608.005
-irrecoverable:T1485
+ipconfig /all:T1016
+ipfs:T1608.001
+ipfs phishing:T1608.005
+ipm.note:T1137.003
+iproyal:T1496.002
+iptables:T1205.001
+iptables -f:T1686
+ironpython:T1036.003
 isapi extension:T1505.004
 isapi filter:T1505.004
 isdebuggerpresent:T1622
 iso:T1553.005
-isp interception:T1659
+iso attachment:T1566.001
+iso in html:T1027.006
+isp traffic injection:T1659
+itaskservice:T1559.001
+itss.dll:T1218.001
+ja3s:T1587.003
+jam.exe:T1127.003
 jamplus:T1127.003
-javascript:T1027.017
 javascript blob:T1027.006
-jetbrains:T1219.001
-jira:T1552.008
-job:T1053.007
-job titles:T1591.004
-john:T1110.002
-john the ripper:T1003.008
-jscript:T1059.007,T1218.001,T1218.005,T1220
-jump server:T1074.002
+javascript::T1218.005,T1218.011
+jetbrains gateway:T1219.001
+jira:T1213.001,T1552.008
+job offer lure:T1598.001
+job postings:T1592.001
+job roles:T1591.004
+john the ripper:T1003.008,T1110.002
+jscript:T1059.007,T1220
+jsp:T1505.003
 jumpcloud:T1556.009
-junk bytes:T1001.001
-junk data:T1001
-junk data append:T1027.001
+junk characters:T1001.001
+junk code:T1027.016
+junk data:T1001,T1001.001,T1027.001
+junos:T1059.008
 jurisdiction:T1591.001
-just-in-time:T1548.005
+just-in-time access:T1548.005
+jwt:T1606
 jxa:T1059.007
-kdc:T1558,T1558.001
+kdc:T1558
+keefarce:T1555.005
 keepalive:T1543.001
 keepass:T1555.005
 keethief:T1555.005
 kekeo:T1558.005
-kerberos:T1110.001,T1110.003,T1550.003,T1558
-kerberos forge:T1212
-kern.log:T1685.006
-kernel:T1547
+kerberoasting:T1558.003
+kerberos logon:T1078.002
+kerberos pre-auth failure:T1110.003
+kerberos ticket:T1550,T1558
+kerberos::golden:T1558.001
+kerberos::golden /service:T1558.002
+kerberos::ptt:T1550.003
 kernel exploit:T1068
-kernel hook:T1014
+kernel module:T1014,T1611
+kernel32.dll:T1106
 kernelcallbacktable:T1574.013
 kext:T1547.006
 kextload:T1547.006
+kextstat:T1652
 kextunload:T1547.006
+key employees:T1591
+key exchange:T1573.002
 key personnel:T1591.004
 key size:T1600.001
-key space:T1600
+key4.db:T1555.003
 key=clear:T1016.002
+keybd_event:T1674
+keyboard filter driver:T1056.001
 keyboard layout:T1614
+keyboard layout check:T1480
+keyboard shortcut:T1674
 keychain access:T1555.001
+keychaindump:T1555.002
 keyctl:T1611
-keylog:T1056,T1056.001
-keylogger:T1111
-keymgr.dll:T1555.004
-keypair:T1573.002
-keystroke:T1056.001
+keydnap:T1555.002
+keyed payload:T1480.001
+keylogger:T1056.001,T1111
+keymgr.dll krshowkeymgr:T1555.004
 keystroke injection:T1200
+keystroke interception:T1056
+keystroke log:T1056.001
 keyword stuffing:T1608.006
+kickstart:T1021
+kill antivirus process:T1685
+kill competing miners:T1496.001
+kill competitor miners:T1668
+kind: cronjob:T1053.007
+kind: job:T1053.007
 kinit:T1558.005
-klist:T1558,T1558.005
+kirbi:T1550.003
+klist:T1550.003,T1558
 knock sequence:T1205.001
+knockd:T1205.001
 knockknock:T1518.001
-krb5cc:T1558.005
+knowndlls:T1574.001
+krb5cc_:T1558.005
 krb5ccname:T1558.005
-krbtgt:T1003.006,T1207,T1550.003,T1558.001
-kubectl:T1059.013,T1136.001,T1613
+krbtgt:T1003.006,T1558.001
+kube-apiserver:T1552.007
+kube-system namespace:T1036.005
+kubeconfig:T1552.001
+kubectl:T1053.007,T1059.013
+kubectl create clusterrolebinding:T1098.006
+kubectl create serviceaccount:T1136.001
 kubectl exec:T1609
+kubectl get nodes:T1613
+kubectl get pods:T1613
+kubectl get secrets:T1552.007
+kubectl run:T1610
 kubeflow:T1610
 kubelet:T1133,T1543.005,T1609
-kubernetes:T1053.007,T1133,T1610
-kubernetes api:T1059.013,T1552.007,T1609
-kubernetes dashboard:T1613
+kubernetes api:T1552.007,T1613
+kubernetes api server:T1059.013,T1609
+kubernetes cronjob:T1053.007
+kubernetes dashboard:T1133,T1610,T1613
 kubernetes default service account:T1078.001
 kubernetes rbac:T1098.006
-kvm:T1219
-kvm-over-ip:T1219.003
-lambda:T1584.007,T1648
-language:T1592.004
-launch services:T1553.001
-launchagent:T1569.001
-launchagents:T1543.001
-launchctl:T1569.001,T1574.007
-launchctl load:T1569.001
-launchd:T1543.001,T1543.004,T1547.015,T1569.001
-launchdaemon:T1569.001
-launchdaemons:T1543.004
+kvm over ip:T1219,T1219.003
+lambda-url:T1583.007,T1584.007
+lan turtle:T1200
+large language model:T1588.007
+lastpass:T1555.005
+lateral movement:T1021
+lateral movement exploit:T1210
+lateral phishing:T1534
+lateral tool transfer:T1570
+latest/meta-data:T1552.005
+launchctl:T1543.004,T1569,T1569.001
+launchctl list:T1007
+launchctl load:T1543.001,T1569.001
+launchctl setenv:T1548.006,T1574.007
+launchctl start:T1569.001
+launchctl unload:T1070.009
+launchd:T1543,T1543.004,T1559.003,T1569.001
+launchdaemons:T1569.001
 launchservices:T1547.015
-lawful intercept:T1659
+lawful interception:T1659
+layer 7 dos:T1499.003
+lazagne:T1552,T1555
 lc_code_signature:T1546.006
 lc_load_dylib:T1546.006
 lc_load_weak_dylib:T1574.004
-ld_preload:T1056.004,T1574.006
-ldap:T1110.001,T1110.003,T1216.001,T1482
-ldap filter:T1558.004
+lc_rpath:T1574.004
+ld.so:T1574.006
+ld_preload:T1014,T1056.004,T1574.006
 ldapsearch:T1069.002,T1087.002
 leak site:T1657
-leaked credentials:T1593.002
+leaked api keys:T1593.003
+leaked credentials:T1110.004
+leaked credentials purchase:T1597.002
+leased servers:T1583
 leaveorganization:T1666
-legitimate:T1036
-legitimate web service:T1102,T1567
-let's encrypt:T1588.004
-libc hooking:T1574.006
+legacy firmware:T1601.002
+legitimate account:T1078
+legitimate service name:T1036
+legitimate web service upload:T1567
+let's encrypt:T1588.004,T1608.003
+libaudit hooking:T1685.004
+libc read hook:T1056.004
 libpcap:T1205,T1205.001,T1205.002
-library hijack:T1574
+library loading:T1574
+library/launchagents:T1569.001
 libzip:T1560.002
 lightneuron:T1505.002
 linikatz:T1003.005
-link layer:T1557.002
 link shortener:T1608.005
-linkedin:T1566.003,T1585.001,T1586.001,T1589.003,T1591.004,T1593.001
-linkedin lure:T1598.001
-linux auth:T1556.003
+link to web address:T1218.014
+linkedin:T1566.003,T1591.004,T1593.001,T1598.001
+linkedin scraping:T1589.003
+linode:T1583.003
+linux service:T1569.003
+linux-inject:T1055.008
+linux-vdso.so:T1055.014
 list blobs:T1619
+list users:T1087
+list virtual machines:T1673
+list-timers:T1053.006
+listattachedrolepolicies:T1069.003
+listbucket:T1619
 listbuckets:T1580
 listobjectsv2:T1619
+listplanting:T1055.015
+listprocessesinguest:T1675
 listrolepolicies:T1069.003
+listservices:T1526
+listview_sortitems:T1055.015
 littlesnitch:T1518.001
 lkm:T1547.006
 llm:T1588.007,T1682
+llm translation:T1683.001
 llmjacking:T1496.004
 llmnr:T1557.001
-lnk:T1547.009
-load:T1650
-loader:T1588.001
-loadlibrary:T1027.007,T1055.001,T1129
-loadlibrarya:T1055.004
-local admin:T1078.003
+lnk:T1027.012,T1091
+lnk attachment:T1566.001
+loadappinit_dlls:T1546.010
+loader:T1104
+loadlibrary:T1027.007,T1055.001,T1129,T1574.001
+local account:T1078.003
+local administrator:T1078.003
 local databases:T1005
+local file collection:T1005
+local logon:T1078.003
+local security authority:T1547.008
 local staging:T1074.001
+local state:T1555.003
 localcommand:T1202
+locale:T1614.001
+localserver32:T1546.015
 locate:T1083
 lock file:T1480.002
-lock timeout:T1653
+lock screen timeout:T1653
 log tampering:T1070
 logging bypass:T1211
-login banner:T1491.001
-login data:T1555.003
-login failure 4625:T1110
-login page:T1056.003
+login data:T1217,T1555.003
+login items:T1547.015
+login message:T1491.001
 login.keychain-db:T1555.001
-loginhook:T1037.002
-loginwindow:T1547.007
+loginhook:T1037,T1037.002
+logins.json:T1555.003
+loginwindow plist:T1547.007
 logmein:T1219.002
-logon:T1547
-logon keychain:T1555.002
-logon script:T1037,T1037.001
-logon session:T1134.003
+logon persistence:T1547
+logon script:T1037,T1037.001,T1037.003
+logon trigger:T1546
+logoncommand:T1564.006
 logonuser:T1134.003
+logonuserw:T1134.003
 logouthook:T1037.002
-lolbas:T1036.003,T1127,T1216,T1218
+lojax:T1542.001
+lolbas:T1036,T1127,T1216,T1218
 lolbin:T1218
-lolesxi:T1059.012
-lookalike name:T1036.010
-low-and-slow:T1110.003
-ls:T1083
+lookalike domain:T1583.001
+lookalike filename:T1036.005
 ls -a:T1564.001
 ls -l@:T1564.009
-lsa:T1003.004,T1547.002,T1547.005,T1556.002
-lsa driver:T1547.008
-lsadump:T1003.006
-lsass:T1547.002,T1547.005,T1547.008
-lsass patch:T1556,T1556.001
-lsass.exe:T1003.001,T1547.008
+ls -la:T1083
+lsa:T1547.002
+lsa dll:T1547.008
+lsa secrets:T1003.004
+lsa\security packages:T1003.001,T1547.005
+lsadump::cache:T1003.005
+lsadump::dcshadow:T1207
+lsadump::dcsync:T1003.006
+lsadump::sam:T1003.002
+lsadump::secrets:T1003.004
+lsasrv.dll:T1547.008
+lsass:T1556
+lsass driver:T1547.008
+lsass.dmp:T1003.001
+lsass.exe:T1003.001,T1547.002,T1547.008
+lsass.exe patch:T1556.001
+lsb:T1027.003
+lsb encoding:T1001.002
 lsblk:T1680
 lsenvironment:T1647
 lsmod:T1652
 lsof:T1049
+lsquarantine:T1553.001
 lsuielement:T1647
-lua:T1059.011
+lsusb:T1120
+lua interpreter:T1059.011
+lua script:T1059.011
+lua.exe:T1059.011
 lua_state:T1059.011
+luajit:T1059.011
+luna moth:T1566.004
+lvm_getitemposition:T1055.015
 lvm_setitemposition:T1055.015
 lvm_sortitems:T1055.015
+m365 advanced auditing:T1685.002
 maas:T1588.001
-mac:T1557.002
 mac address:T1497.001
-mach-o:T1036.006,T1546.006
+mac address spoofing:T1557.002
+mach-o:T1036.006,T1546.006,T1574.004
+macos:T1036.006,T1569.001
+macos boot:T1037.005
+macos installer:T1548.004
+macro document:T1204.002
 macro trigger:T1497.002
-macros:T1059.005
+macroless document:T1559.002
 magic bytes:T1036.008
-magic packet:T1205
+magic packet:T1205,T1205.002
+magic value:T1205
 magicweb:T1556.007
 magnify.exe:T1546.008
-mail server:T1114
-mail utility:T1070.008
-mailbox:T1114
+mail flow rule:T1114.003,T1564.008
+mailbox access:T1114
 mailbox delegation:T1098.002
-mailbox export:T1070.008
-mailbox filter:T1564.008
-mailsniper:T1087.003,T1114.002
+mailbox drafts:T1071.003
+mailbox flooding:T1667
+mailitemsaccessed:T1114
+mailsniper:T1087.003,T1110.003,T1114.002
+mailx:T1070.008
 maintainer scripts:T1546.016
+mainwindowtitle:T1010
+make login item:T1547.015
+make_token:T1134.003
 makecab:T1560.001
-malicious app:T1671
-malicious attachment:T1566.001,T1598.002
-malicious package:T1204.005
+makecert:T1587.002
+makefile:T1677
+malicious email:T1566
+malicious extension:T1176,T1505
+malicious link:T1204.001
+malicious macro document:T1566.001
+malicious package:T1195.001,T1204.005
+malicious pull request:T1677
 malicious url:T1566.002
 malleable c2:T1001.003
-malloc:T1055.008
-malvertising:T1189,T1608.004
+malspam:T1566
+malvertising:T1189,T1583.008,T1608.004
+malware development:T1587.001
+malware hosting:T1608.001
+malware-as-a-service:T1588.001
 man-in-the-browser:T1185
+man-in-the-middle:T1565.002
 man-on-the-side:T1659
 managed identity:T1078.004,T1136.003,T1528
-management protocol:T1602
-mapi:T1114.003
+managed service provider:T1199,T1590.003,T1591.002
+management interface:T1686.002
+manifest.json:T1176.001
+mapi hidden rule:T1114.003
 mapped drive:T1039
-marketplace:T1176.002,T1588
-master password:T1555.005
-match keys:T1546.017
+mappedfolder:T1564.006
+mark as read:T1564.008
+mark-of-the-web:T1553.005
+masquerading:T1036
+masscan:T1046,T1595,T1595.001
+master boot record:T1542.003,T1561.002
+master file table:T1564.004
+master password:T1555.005,T1556.001
 mavinject.exe:T1218.013
 mbr:T1542.003,T1561,T1561.002
-mbr encryption:T1486
-mdns:T1046,T1557.001
-mega:T1585.003
-membership:T1069
-memcache:T1498.002
+mcisendstring:T1123
+mdns:T1557.001
+mdnsresponder:T1046
+medusa:T1110.001
+mega:T1567.002,T1585.003
+megasync:T1567.002
+memcached:T1498.002
+memfd_create:T1620
 memory corruption:T1203
-memory remapping:T1055.002
+memory scraping:T1003.007
 message broker:T1071.005
-messages:T1685.006
-messaging:T1491
-metadata:T1036,T1036.001
+message export:T1213.005
+metadata.google.internal:T1552.005
 metamorphic:T1027.014
-mfa bypass:T1550.004,T1556.006
-mfa enrollment:T1098.005
-mfa enumeration:T1589
-mfa fatigue:T1566.004,T1621
+metatwin:T1036.001
+mfa bypass:T1539,T1550.004,T1606.001
+mfa device enrollment:T1098.005
+mfa disabled:T1556.006
+mfa fatigue:T1621
+mfa interception:T1111
+mfa method enumeration:T1589
+mfa prompt approval:T1566.004
 mfa reset:T1684
-mft:T1070.006,T1564.004
+mfa spam:T1621
+mft:T1070.006
 mib:T1602.001
 microphone:T1123
+microsoft 365 app:T1671
 microsoft authenticator:T1621
-microsoft graph:T1526
-microsoft.net\framework:T1218.004
+microsoft graph api:T1102,T1102.002,T1526
+microsoft intune:T1072
+microsoft office exploit:T1203
+microsoft teams:T1213,T1213.005,T1534,T1552.008
+microsoft-windows-bits-client:T1197
+microsoft.build.tasks:T1127.001
+microsoft.compute/virtualmachines/runcommand:T1651
+microsoft.exchange.data.transport:T1505.002
+microsoft.identityserver.servicehost:T1556.007
+microsoft.net\framework:T1218.004,T1218.009
+microsoft.powershell_profile.ps1:T1546.013
 mime:T1132,T1132.001
-mimikatz:T1003.001,T1003.006,T1134.005,T1558.001,T1588.002
-mimikatz lsadump:T1003.004
+mimic gmail:T1001.003
+mimikatz:T1003,T1003.006,T1207,T1556.001,T1558.001,T1588.002
+mimikatz kerberos:T1558
+mimikatz misc::addsid:T1134.005
 mimikittenz:T1555.003
+mimilib.dll:T1547.005
 mimipenguin:T1003.007
 mingw:T1027.004
-minimal services:T1688
-misconfiguration:T1596.004
-misconfigured storage:T1530
-mitm:T1659
-mitm data alter:T1565.002
+mirai:T1584.005
+misc::skeleton:T1556.001
+mitm:T1557
+mmc -embedding:T1218.014
 mmc.exe:T1218.014
 mmc20.application:T1021.003
 mobileconfig:T1176.001
 mod_rewrite:T1665
-modem:T1011
+modified application binary:T1565.003
 modified base64:T1132.002
+modified hash:T1027.005
+modified login.js:T1056.003
+modified motherboard:T1195.003
+modified sshd:T1554
+modified web content:T1491
+modify files at rest:T1565.001
+modifysnapshotattribute:T1537
 modinfo:T1652
-modular component:T1176
+modprobe:T1547.006
 module stomping:T1055.001
-module stream:T1564.007
-mof:T1546.003
 mofcomp.exe:T1546.003
-monero mining:T1496.001
+monero:T1496.001
 mongodb:T1213.006
 monitor capture:T1040
-monolithic firmware:T1601
-motw:T1553.005
+monitor session:T1020.001
+monitorprocess:T1546.012
+monolithic os:T1601
 mount -b:T1564.013
 mount -o bind:T1564.013
+mount snapshot:T1578.002
 mouse movement:T1497.002
-mp3 player:T1052
+moustachedbouncer:T1659
+move payload:T1070.010
+move to folder:T1564.008
 mpnotify.exe:T1556.008
 mpress:T1027.002
 mqtt:T1071.005
 ms-cache v2:T1003.005
+ms-efsrpc:T1187
+ms-settings:T1548.002
 ms14-068:T1212
+ms17-010:T1210
+msbuild:T1027.004
 msbuild.exe:T1127.001
-mscache:T1003.005
+mscash:T1003.005
+mscfile:T1548.002
 msexchangeis:T1489
-mshta.exe:T1218.005
+mshta:T1204.004,T1218.005
+mshta.exe:T1059.005,T1218.005
+mshtml:T1218.011
 msi:T1546.016
+msiexec /q /i:T1218.007
 msiexec.exe:T1218.007
-msp:T1199,T1590.003,T1591.002
+msp:T1199,T1590.003
 mssaveblob:T1027.006
-mssql:T1505.001,T1558.002
-mstsc:T1021.001
+mssql:T1505.001
+mssql service ticket:T1558.002
+mstsc.exe:T1021.001
+msv1_0:T1547.002
 msxsl.exe:T1220
+msxsl:script:T1220
+multi-hop:T1090.003
 muraena:T1539
+mutating code:T1027.014
 mutation engine:T1027.014
 mutex:T1480.002
-mx:T1590.002
+mx record:T1590.002
 mx records:T1596.001
 mysql:T1213.006
-name server:T1590.001
-name servers:T1590.002
-named pipes:T1055
-nameserver:T1583.002,T1596.001
-namespace:T1036.005
-naming:T1036
+n; powershell:T1216.002
+name harvesting:T1589.003
+name servers:T1590.001,T1590.002
+named locations:T1556.009
+named pipe:T1055
+named pipes:T1559
 narrator.exe:T1546.008
-nat rewrite:T1599.001
-nbnspoof:T1557.001
+nat:T1599.001
+national vulnerability database:T1588.006
+navigator.useragent:T1036.012
 nbt-ns:T1557.001
 nbtstat:T1016
-nearest neighbor:T1669
+ncrack:T1110.001
+nearest neighbor:T1584
+nearest neighbor attack:T1669
 nessus:T1595.002
-nested payload:T1027.009
-net:T1569.002
-net accounts:T1201
-net group:T1098.007
-net group /domain:T1069.002
-net localgroup:T1069.001,T1087.001,T1098.007
+nested executable:T1027.009
+net accounts /domain:T1201
+net group:T1098
+net group /domain:T1069.002,T1087.002
+net group /domain /add:T1098.007
+net localgroup:T1069.001,T1087.001
+net localgroup administrators:T1069.001
+net localgroup administrators /add:T1098.007
 net session:T1049
 net share:T1135
-net start:T1007
+net start:T1007,T1569.002
 net stop:T1489
 net time:T1124
-net use:T1021.002,T1049
+net use:T1021.002,T1039,T1049,T1070.005,T1074.002
 net use /delete:T1070.005
-net user:T1087.001,T1531
-net user /add:T1136.001
+net user:T1078.003,T1087.001,T1098,T1531
+net user /add:T1036.010,T1136,T1136.001
 net user /add /domain:T1136.002
+net user /delete:T1070.009
 net user /domain:T1087.002
-net view:T1018,T1135
+net view:T1018,T1039,T1135
 net.com:T1574.008
 net.exe:T1574.007
+net.webclient downloadstring:T1105
+netblock:T1590.005,T1595.001
 netboot:T1542.005
 netlogon:T1037.003
 netntlm:T1187
-netsh:T1518.001
-netsh advfirewall:T1686,T1686.003
+netsh add helper:T1546.007
+netsh advfirewall:T1518.001,T1686.003
+netsh advfirewall set allprofiles state off:T1686
+netsh firewall:T1686.003
+netsh firewall add rule:T1686
+netsh interface portproxy:T1090.001
+netsh wlan:T1011
 netsh wlan show profiles:T1016.002
 netsh.exe:T1546.007
-netshell:T1546.007
+netshareenum:T1135
 netstat:T1049
 netsync:T1003.006
-network device:T1600
+network address translation:T1599.001
+network appliance:T1584.008
+network device backdoor password:T1556.004
+network device encryption:T1600
+network device firmware:T1495,T1542.004
 network device image:T1542.005
+network device implant:T1195.003
+network device os:T1601
+network devices:T1590.004
 network diagram:T1590.004
-network drive:T1039
-network interception:T1565.002
-network os:T1556.004
-network scan:T1595
-network share infection:T1080
+network flood:T1498
+network management system:T1602
+network map:T1590.004
+network probing:T1595
+network provider dll:T1556.008
+network reconnaissance:T1590
+network security group:T1686.001
+network segmentation bypass:T1599
+network share:T1070.005,T1080
 network tap:T1200
-networkmanager:T1016.002
-new account:T1136
+network topology:T1590,T1590.004
+network traffic tampering:T1565.002
+network trust:T1590.003
+networkprovider\order:T1556.008
+new ec2 instance:T1578.002
+new process token:T1134.002
+new service:T1543
+new user account:T1136
+new-aduser:T1136.002
 new-gpoimmediatetask:T1484.001
-new-inboxrule:T1564.008
+new-inboxrule:T1114,T1114.003,T1137.005,T1564.008
+new-localuser:T1036.010,T1136,T1136.001
+new-mailboxexportrequest:T1070.008
+new-mguser:T1136.003
+new-msolfederateddomain:T1484.002
 new-netfirewallrule:T1686.003
+new-selfsignedcertificate:T1587.002
+new-transportrule:T1114.003
+newly registered domain:T1583.001
 news sites:T1593
-newsletter signup bot:T1667
+newscaster:T1585,T1585.001
+newsletter subscription bombing:T1667
+ngrok:T1572
+nic firmware:T1542.002
 nids:T1590.006
+nikto:T1595.002
 ninjacopy:T1006
 nls\language:T1614.001
-nltest:T1482
-nmap:T1590.006,T1595.002
-no logging:T1690
+nltest /dclist:T1018
+nltest /domain_trusts:T1482
+nltest /trusted_domains:T1482
+nmap:T1046,T1595
+nmap -sn:T1595.001
+nmap -sv:T1595.002
+nmap firewall evasion:T1590.006
+no crypto engine accelerator:T1600.002
+no logging:T1059.008,T1690
+node.exe:T1059.007
 node.js:T1218.015
-nodejs:T1059.007
-nodes:T1613
+nodename:T1543.005
 nodeselector:T1543.005
 nohup:T1564.011
-non-volatile memory:T1495
+nointegritychecks:T1553.006
+non-c2 protocol:T1048
+non-standard encoding:T1132.002
+non-standard path:T1036.003
+non-standard port:T1571
 nop:T1027.016
+nop sled:T1027.016
 nopasswd:T1548.003
-noprofile:T1546.013
 normal.dotm:T1137.001
 notarization:T1553.001
-notify:T1547.004
+notification packages:T1556.002
 notonorafter:T1606.002
+notpetya:T1486
 nplogonnotify:T1556.008
-npm:T1195.001,T1204.005,T1608.001
+npm:T1195.001,T1608.001
+npm install:T1204.005
 nppspy:T1556.008
+ns record:T1583.002,T1584.002
+ns record rotation:T1568.001
 nsapplescript:T1059.002
+nsenter:T1611
+nslookup:T1590.002,T1596.001
 nsxpcconnection:T1559.003
 ntcreateprocess:T1106
 ntcreateprocessex:T1055.013
-ntdll:T1129
+ntcreatesection:T1055.013
+ntdelayexecution:T1497.003
+ntdll.dll:T1106,T1129
 ntds.dit:T1003.003
 ntdsdsa:T1207
-ntdsutil:T1003.003
-ntlm:T1110.002
-ntlm hash:T1550.002
-ntlmv2:T1557.001
-ntp amplification:T1498.002
+ntdsutil.exe:T1003.003
+ntfs extended attributes:T1564.004
+ntlm hash:T1110.002,T1550,T1550.002
+ntlm relay:T1187
+ntlmrelayx:T1557.001
+ntlmv2 hash:T1557.001
+ntp monlist:T1498.002
 ntqueryinformationprocess:T1574.013,T1622
+ntqueueapcthread:T1055.004
 ntraiseharderror:T1529
 ntunmapviewofsection:T1055.012
-null character:T1112
+nuclei:T1595.002
+null character registry key:T1112
+numbered panda:T1568.003
 nvd:T1588.006
 nvram:T1083
-o365:T1110.003,T1110.004
-o365 enumeration:T1589.002
-oauth:T1528,T1550.001
-oauth consent:T1566.002,T1671
-obfuscated ip:T1102.001
-obfuscated traffic:T1573
+nxdomain:T1568.002
+o365enum:T1589.002
+oauth:T1528
+oauth access token:T1114.002
+oauth application:T1671
+oauth consent:T1684
+oauth consent grant:T1566.002
+oauth token:T1550.001
+obex:T1011.001
 obfuscation:T1027
-octet port computation:T1568.003
-odbc:T1218.008
+object lifecycle management:T1485.001
+odbc driver:T1218.008
 odbcconf.exe:T1218.008
-oep modification:T1080
-off-hours:T1029
-offer:T1557.003
-office:T1559.002
-office doc:T1566.001
-office exploit:T1203
-office persistence:T1137.002
+off-hours transfer:T1029
+office 365:T1098.002,T1110.003
+office 365 mailbox:T1114.002
+office 365 partner:T1199
+office 365 user enumeration:T1589.002
+office add-in:T1137.006
+office add-ins:T1137
+office address:T1591.001
+office macro:T1564.007
+office persistence:T1137
+office template macros:T1137
 office test registry:T1137.002
-office365:T1114.002
-offline cracking:T1110.002,T1558.003
-offload:T1600.002
+office test\special\perf:T1137.002
+offline cracking:T1110.002
+offline data file:T1114.001
 oid:T1602.001
-okta:T1098.005,T1556.009
-older firmware:T1601.002
-ole:T1559.002
+okta:T1098.005
+okta sign-on policy:T1556.009
+okta verify:T1621
+older ios version:T1601.002
+olevba:T1564.007
 olympic destroyer:T1485
+oncalendar:T1053.006
+one-time passcode:T1111
 one-time url:T1608.005
 one-way c2:T1102.003
-onedrive:T1530,T1567.002,T1585.003,T1586.003
+onedrive:T1102.002,T1530,T1567.002,T1585.003,T1586.003
 onion routing:T1090.003
 ooxml:T1221
-opcode padding:T1027.016
+open redirect:T1608.005
+open technical databases:T1596
+open websites:T1593
+open wi-fi:T1669
+openai:T1588.007
+openbullet:T1110.004
+openclipboard:T1115
+openmutex:T1480.002
+openprocess:T1055
+openprocesstoken:T1134.001
 openslp:T1190
-openthread:T1055.003
-operating hours:T1591.003
-opm:T1589.003
+openssl req:T1587.003
+openthread:T1055.003,T1055.004
+openvas:T1595.002
+operational hours:T1591.003
+operational relay box:T1090.003,T1583.005
+ophcrack:T1110.002
 optical disk:T1025
-orb:T1090.003,T1583.005
-ordinal:T1218.011
-org chart:T1591.004
-org structure:T1591
+optool:T1546.006
+orb network:T1090.003,T1583.005,T1584.008
+org chart:T1589.003,T1591,T1591.004
+organizational information:T1591
 origin server:T1596.004
-os:T1592
-os image:T1601
-os rollback:T1601.002
-os version:T1082,T1592.004
-osacompile:T1059.007
-osascript:T1059.002,T1059.007
-osascript prompt:T1056.002
-osi layer 7:T1071
+original entry point:T1080
+originalfilename:T1036.003
+originalfilename mismatch:T1036
+orphan process:T1036.009
+os exhaustion flood:T1499.001
+os fingerprinting:T1592
+osacompile:T1027.008,T1059.007
+osakit:T1059.007
+osascript:T1059.002
+osascript -e:T1059.002
+osascript -l javascript:T1059.007
+osascript display dialog:T1056.002
+osconfig\security packages:T1547.005
+osint:T1589,T1593
 osk.exe:T1546.008
+otool:T1574.004
 otp:T1111,T1496.003
-out-of-band exfiltration:T1011
-outlook add-in:T1137.006
+outlook:T1114
+outlook data file:T1114.001
 outlook files:T1114.001
+outlook forms:T1137,T1137.003
+outlook home page:T1137,T1137.004
 outlook rules:T1137,T1137.005
+outlook web access:T1056.003
+outlook.application:T1021.003
+outlook.exe child process:T1566.001
 outputdebugstringw:T1622
-overpass-the-hash:T1550.002
-owa:T1114.002
+overlay:T1027.001
+overpass the hash:T1550.002
+overwrite disk sectors:T1561.001
+overwrite files:T1485
+owa:T1078
 owasp:T1190
+own indicators:T1681
 p-code:T1564.007
 p2p:T1090.003
-p=none:T1684.002
-paas:T1608
-packer:T1027.002
-packers:T1587.001
-packet capture:T1040
+paas hosting:T1608
+package hijack:T1195.001
+packed:T1027
+packed executable:T1027.002
+packer:T1027.002,T1587.001
 packet flood:T1498.001
-packet size:T1030
-packing:T1027
-pacu:T1526,T1685.002
-padding:T1001.001
-paid feeds:T1597
-paid subscriptions:T1597.001
-pam:T1556,T1556.003
-pam_unix.so:T1556.003
+packet size limit:T1030
+pacu:T1526
+pacu detection disruption:T1685.002
+paid intel feed:T1597.001
+paid threat intel feed:T1597
+pam backdoor:T1556.003
+pam_sm_authenticate:T1556.003
+pam_unix.so:T1556,T1556.003
 paragon:T1518.002
-parameters:T1574.011
+parent-child relationship:T1036.009
 partition image:T1564.005
 partition table:T1561.002
 partners:T1591.002
 partnersupported:T1505.006
-pass-the-cookie:T1539,T1606.001
-pass-the-hash:T1550
-pass-the-ticket:T1550
+pass the cookie:T1539,T1550.004,T1606.001
+pass the hash:T1550,T1550.002
+pass the ticket:T1550,T1550.003
+pass-through authentication:T1556.007
 passive dns:T1590,T1590.005,T1596,T1596.001
 passrole:T1548.005
 passwd:T1531
-password extraction:T1003
+password change:T1098,T1531
+password cracking:T1110.002
 password filter dll:T1556.002
-password guessing:T1110
-password hashes:T1003.008
-password iteration:T1098
-password manager:T1555
-password reuse:T1078.003,T1110.004
+password guessing:T1110,T1110.001
+password hashes:T1003
+password manager:T1555.005
+password protected archive:T1140
+password protected attachment:T1204.002
+password recovery:T1555
+password reuse:T1078.002,T1078.003,T1110.004
+password spraying:T1110.003,T1586.003
 password store:T1555
-password-protected:T1027.013
-password-protected archive:T1140
-password-protected document:T1204.002
-password01:T1110.003
+password-protected archive:T1027,T1560
+password-protected document:T1027.013
+password-protected zip:T1566.001
+password_value:T1555.003
+passwordchangenotify:T1556.002
+passwordfilter:T1556.002
 paste command:T1204.004
 paste site:T1567.003
-pastebin:T1567.003,T1608
+pastebin:T1102,T1102.001,T1567.003,T1583.006,T1608
+pastebin commands:T1102.003
+pastebin.com:T1567.003
+patch analysis:T1587.004
 patch diffing:T1587.004
 patch level:T1592.003
-patch vulnerability:T1668
-patched firmware:T1556.004
-path variable:T1574.007
+patch system image:T1601.001
+patch vulnerability after compromise:T1668
+patched firmware image:T1556.004
+path environment variable:T1574.007
+path hijacking:T1574.007
+path manipulation:T1574
 pathext:T1574.008
-payload copy:T1070.010
-payload hosting:T1608.001
-payloads:T1587.001
-payment:T1684.001
+payload hidden in image:T1027.003
+payload hosting:T1608
 pbkdf2 master key:T1555.002
 pbpaste:T1115
 pcalua.exe:T1202
+pcap:T1040
 pcap_setfilter:T1205.002
-pe:T1055.005
+pcileech:T1200
+pcodedmp:T1564.007
 pe injection:T1055.002
+pe overlay:T1027.009
+pe tls callback injection:T1055.005
 peb:T1564.010,T1574.013
-perf key:T1137.002
+peb walking:T1027.007
+peer-to-peer c2:T1090.001
+peer2profit:T1496.002
+pegasus:T1588
+penquin:T1205.002
 performance key:T1574.011
 performancecache:T1564.007
-perimeter router:T1599
-peripheral:T1195.003
+perimeter device:T1599,T1686.002
 peripheral firmware:T1542.002
-permission groups:T1098
-permissions:T1069
-persona:T1585,T1585.001
-persona content:T1683
-persona text:T1683.001
+permission groups:T1069,T1098
+permissions modification:T1222
+permitrootlogin:T1098.004
+persona:T1683
+persona content:T1683.001
 personal webmail:T1566.003,T1598.001
 personal.xlsb:T1137.001
+petitpotam:T1187
 phantom dll:T1574.001
-phishery:T1598.002
-phishing:T1027.012
+phishery:T1221,T1598.002
+phishing:T1566
+phishing attachment:T1598.002
+phishing for information:T1598
 phishing lure:T1683.001
-phone impersonation:T1566.004
-phs:T1556.007
-physical device:T1052.001
+phishing page:T1608.005
+phishing site certificate:T1608.003
+phishing url:T1204.001
+phone call:T1566.004
+phone number spoofing:T1598.004
+php:T1505.003
+php in .gif:T1036.008
+physical exfiltration:T1052
+physical location:T1591.001
 physical server:T1583.004
-physical site:T1591.001
+pid file:T1480.002
 pig butchering:T1657
-pii:T1589
 pikvm:T1219.003
-ping:T1016.001,T1018
-ping loop:T1678
-ping sweep:T1595.001
-pip:T1195.001
-pipes:T1559
-plaintext credentials:T1552
-plist:T1543.001,T1543.004,T1647
-plist deletion:T1070.009
+ping:T1016.001
+ping -n:T1678
+ping sweep:T1018,T1595.001
+pip:T1059.006,T1195.001
+pip install:T1204.005
+pivot:T1090.001
+places.sqlite:T1217
+plaintext exfiltration:T1048.003
+plaintext passwords:T1552
+plink:T1572
+plist:T1543.001,T1543.004
+plistbuddy:T1647
 plugin:T1176
-plugin persistence:T1505
-png payload:T1027.003
-pnl:T1557.004
-pnputil:T1543.003
-poc:T1588.005
-pod:T1552.007,T1610
-pod deployment:T1053.007
-podman:T1543.005
-pods:T1613
-poetrat:T1059.011
-point-in-time copy:T1578.001
-policy rules:T1686.002
+plutil:T1647
+png:T1001.002,T1027.003
+pnputil.exe:T1543.003
+podman run:T1543.005
+policies:T1484.001,T1615
+policies\explorer\run:T1547.001
 policy.vpol:T1555.004
-polyglot:T1036.008
+political message:T1491.002
+polyglot file:T1036.008
+polymorphic:T1027.014
 pop3:T1071.003
+port 135:T1021.003,T1047
+port 21:T1071.002
 port 22:T1021.004
-port 3389:T1021.001
+port 25:T1071.003
+port 445:T1021.002
+port 53:T1071.004
 port 587:T1571
 port 5900:T1021.005
-port 5985:T1021.006,T1047
-port 8088:T1571
-port forwarding:T1219.001,T1572
-port knocking:T1205
+port 5985:T1021.006
+port 5986:T1021.006
+port calculation:T1568
+port forwarding:T1572,T1599.001
+port knocking:T1205,T1205.001
+port mirroring:T1020.001
 port monitor:T1547.010
 port redirection:T1090
 port redirector:T1090.002
 port scan:T1046,T1595
-portable executable:T1055.005
-portal injection:T1056.003
-position-independent:T1620
+portable executable:T1055.002
+portnumber:T1571
+post/windows/gather/credentials/gpp:T1552.006
 postgresql:T1213.006
+postinst:T1546.016
 postinstall:T1546.016
-postmessage:T1055.015
+postinstall script:T1204.005
 postrm:T1546.016
 power automate:T1648
+power loader:T1055.011
 powercfg:T1653
-powerliks:T1112
-powershell bypass:T1216.002
-powershell ise:T1546.013
+powercfg /change:T1653
+powershell -enc:T1204.004
+powershell -version 2:T1689
+powershell ise profile:T1546.013
 powershell v2:T1689
 powershell.exe:T1059.001
 powersploit:T1059.001
-ppid:T1036.009,T1134.004
-pre-exfil collection:T1074
+powerview:T1615
+ppid:T1036.009
+ppid spoofing:T1134.004
+prctl pr_set_name:T1036.011
+pre-os boot:T1542
 pre-shared key:T1048.001
-preauth key:T1606
 preauthentication disabled:T1558.004
 preferences file:T1176.001
+preferred network list:T1557.004
 preinst:T1546.016
+preinstall:T1546.016
+premium rate numbers:T1496.003
+prepended bytes:T1001.001
+prerm:T1546.016
 pretext:T1683
+pretexting:T1684
+print bombing:T1486
 print processors:T1547.012
-print\monitors:T1547.010
-printer:T1120
-private databases:T1597
-privilege bypass:T1548
-privileged container:T1611
-privileged helper:T1559.003
-probe:T1595
+print spooler:T1547.010
+print\environments:T1547.012
+printing_admin_scripts:T1216.001
+private key theft:T1588.003
+private repository:T1213.003
+private use area:T1027.018
+private whois:T1583.001
+privilege escalation:T1548
+privilege escalation exploit:T1068
+privileged container:T1610,T1611
+privileged groups:T1069
+privileged helper tool:T1559.003
 probe request:T1557.004
+proc memory injection:T1055.009
 proc_thread_attribute_parent_process:T1134.004
-procdump:T1003.001
-process hollowing:T1564.010
-profile:T1217,T1585
+procdump -ma lsass:T1003.001
+process doppelganging:T1055.013
+process hollowing:T1055.012
+process injection:T1055
+process name spoofing:T1036.011
+process32first:T1057
+processparameters:T1564.010
 profile.ps1:T1546.013
-profiles tool:T1176.001
-profiling dll:T1574.012
+profiles:T1176.001
+progid:T1559.001
 program:T1543.004
-program.exe:T1574.009
-promiscuous:T1040
-propaganda:T1491.002
+programarguments:T1543.001
+promiscuous mode:T1040
+prompt:T1682
+promptforcredential:T1056.002
+proof of concept:T1587.004
+propaganda message:T1491
+protected view:T1553.005
 protocol blending:T1071
+protocol headers:T1048.003
 protocol impersonation:T1001
-protocol-port mismatch:T1571
-proton:T1125
-proximity exfiltration:T1011.001
-proxy:T1590.006,T1665
+protocol port mismatch:T1571
+protonmail:T1585.002
+providerorder:T1556.008
+proxy:T1590.006
 proxy chain:T1090.003
+proxy chaining:T1090
+proxy dll:T1574.001
+proxy execution:T1218
 proxy injection:T1185
-proxycommand:T1202
-proxyjacking:T1496,T1496.002
+proxy trap:T1027.018
+proxyjacking:T1496,T1496.002,T1584
 proxyware:T1496.002,T1584
-ps:T1057
-ps hiding:T1564.013
-ps spoofing:T1036.011
-ps_scheduledtask:T1053.005
-pseudo-random domains:T1568.002
-psexec:T1036.003,T1569.002,T1588.002,T1608.002
-psreadline:T1070.003,T1690
+ps:T1036.011,T1564.013
+ps aux:T1057
+psexec:T1021.002,T1569.002,T1588.002,T1608.002
+psexec hash:T1550.002
+psexesvc:T1569.002
+psreadline:T1070.003,T1552.003
 pta agent:T1556.007
-pth:T1550.002
 ptrace:T1055.008
+ptrace_attach:T1055.008
 ptrace_pokedata:T1055.008
 ptrace_poketext:T1055.008
+ptrace_scope:T1055.008
 ptrace_setregs:T1055.008
-pua:T1027.018
 pubkeyauthentication:T1098.004
-public key:T1048.002,T1563.001,T1573.002
-public-facing:T1491.002
+public ai service:T1682
+public bucket:T1530
+public key:T1048.002,T1573.002
+public repositories:T1593.003
+public website:T1491.002
+publish/subscribe:T1071.005
 pubprn.vbs:T1216.001
-pull request:T1102.002
 pull_request_target:T1677
-purchase:T1588
+pulse secure:T1056.003
+punycode:T1583.001
+purchase access:T1650
+purchase certificate:T1588.004
+purchase invoices:T1592.001
+purchase schedule:T1591.003
+purchased certificate:T1588.003
+purchased credentials:T1586
+purchased data:T1597.002
+purchased email credentials:T1586.002
+purchased infrastructure:T1583
+purchased malware:T1588,T1588.001
+purchased victim data:T1597
 push bombing:T1621
+push notification:T1621
 push notifications:T1189
 putbucketlifecycle:T1485.001
+putbucketlifecycleconfiguration:T1485.001
 putlifecycleconfiguration:T1485.001
-pwdumpx:T1003.002
-pwpolicy:T1201
-py2exe:T1059.006
+putty sessions:T1552.002
+putuserpolicy:T1098.003
+pwdumpx.exe:T1003.002
+pwpolicy getaccountpolicies:T1201
+pwsh:T1059.001
 pyinstaller:T1059.006
+pykek:T1212
 pypi:T1195.001,T1204.005,T1608.001
+python -c:T1059.006
+python startup:T1546.018
+python zipfile:T1560.002
 python.exe:T1059.006
+python3:T1059.006
 qemu:T1564.006
-qr quishing:T1598.003
-quarantine flag:T1553.001
+qmgr.db:T1197
+qr code:T1598.003
+quarantine attribute:T1553
+quarantined malware:T1027.005
+query user:T1033,T1563.002
+queryperformancecounter:T1497.003
 queueuserapc:T1055.004
-quota adjustment:T1578.005
+quishing:T1598.003
+quota increase:T1578.005
+quser:T1033
+raas affiliate:T1650
+radio frequency:T1011
 rainbow table:T1110.002
-raindance:T1087.004
-random characters:T1001.001
-ransom note:T1491.001
+random data overwrite:T1561.001
+random domain:T1568.002
+random padding:T1001.001
+ransom demand:T1657
+ransom note:T1486
 ransomware:T1486
-ransomware exclusions:T1679
-ransomware extortion:T1657
+ransomware as a service:T1650
+ransomware exclusion list:T1679
 rar:T1027.015
+rar -v volumes:T1030
+rar.exe:T1560.001
 rarfile:T1560.002
+raspberry pi:T1200
 rassfm.dll:T1556.005
-rat:T1219,T1588.001
-raw disk:T1561
-raw sockets:T1205.001
-raw write:T1561.001
-rawdisk:T1561.001
+rat:T1104
+raw disk write:T1561
+raw socket:T1095,T1205,T1205.001
+raw volume access:T1006
+rawdisk:T1561,T1561.001
+rc scripts:T1037.004
 rc.common:T1037.004
-rc.local:T1037.004
-rc4:T1048.001,T1558.003,T1558.004,T1573.001
-rdp:T1021,T1021.001,T1110.001,T1210
-rdp hijack:T1563
-rdp login:T1546.008
-rdp port:T1686
-rdp registry:T1070.007
+rc.local:T1037,T1037.004
+rc4:T1048.001,T1560.003,T1573.001
+rc4 etype 23:T1558.003
+rclone:T1048,T1530,T1567.002
+rcsi.exe:T1127
+rdap:T1596.002
+rdp:T1021.001,T1071,T1133
+rdp access sale:T1650
+rdp connection history:T1070.007
+rdp exploit:T1210
+rdp file transfer:T1570
+rdp logon:T1078
+rdp port change:T1686
+rdp session hijack:T1563
+rdp session hijacking:T1563.002
+rdp-tcp:T1571
 rdpwrap:T1505.005
-rds:T1213,T1213.006,T1563.002
-re-signing:T1027.005
-reagentc:T1490
-real-time face swap:T1683.002
-realms:T1558
-reboot:T1529
-recurring execution:T1053
-red team:T1588.002
-redirect:T1204.001
+rdtsc:T1497.003
+readdir hook:T1574.006
+reagentc /disable:T1490
+real-time video manipulation:T1683.002
+realvnc:T1021.005
+reboot:T1529,T1653
+recent files:T1497.002
+recompiled malware:T1027.005
+reconnaissance scan:T1595
+recycle bin:T1074.001
 redirectexe:T1546.011
 redis:T1213
-redundant communication:T1008
-reflective dll:T1055.001
+reduce key space:T1600.001
+reflection amplification:T1498.002
+reflective dll:T1620
+reflective dll injection:T1055.001
+reflectiveloader:T1620
 reflector:T1498.002
 refresh token:T1528,T1550.001
-reg query:T1518.001,T1518.002,T1552.002
+reg add:T1037.001,T1112,T1547.001
+reg delete run:T1070.009
+reg query:T1012,T1518.002
+reg query hkcu /f password:T1552.002
+reg query hklm /f password:T1552.002
 reg save hklm\sam:T1003.002
+reg save hklm\security:T1003.004
+reg save hklm\system:T1003.002
 reg.exe:T1012,T1112
+reg_sz:T1552.002
 regasm.exe:T1218.009
-reghide:T1112
-region enablement:T1578.005
+register mfa device:T1556.006
+register-scheduledtask:T1053.005
+registerclassex:T1055.011
 registermodule:T1505.004
-registrar:T1590.001,T1596.002
-registry:T1525,T1547,T1547.004,T1547.014
-registry cleanup:T1070.009
-registry hive:T1012
-registry key:T1036.005
-registry password:T1552.002
-registry poisoning:T1574
-registry storage:T1027.011,T1074.001
-regopenkey:T1012
+registerrawinputdevices:T1056.001
+registrar:T1590.001
+registrar account:T1584.001
+registrar lookup:T1596.002
+registry enumeration:T1012
+registry payload:T1027.011
+registry staging:T1074.001
+regopenkeyex:T1012
+regqueryvalueex:T1012
+regsetvalueex:T1112
 regsvcs.exe:T1218.009
 regsvr:T1218.008
 regsvr32.exe:T1218.010
 reload:T1529
-remote admin:T1602
-remote desktop:T1219
-remote desktop services:T1021.001
+relocation:T1055.002
+remote access hardware:T1219.003
+remote access tool:T1219
+remote access tool install:T1204
+remote build request:T1612
+remote code execution:T1190
+remote desktop services:T1021.001,T1563.002
 remote desktop users:T1098.007
-remote registry:T1112
-remote ssh:T1176.002
-remote template:T1221
-remote thread:T1055
-removable drive:T1052
-removable drives:T1025
-removable media:T1052.001,T1091
-remove rival malware:T1668
+remote development:T1219.001
+remote management software:T1219
+remote msi url:T1218.007
+remote services:T1021
+remote ssh extension:T1176.002
+remote staging:T1074.002
+remote template injection:T1221
+remoteregistry:T1112
+removable drive:T1052.001
+removable media:T1025,T1052,T1052.001,T1091,T1092
+removable storage:T1052,T1120
+remove competing malware:T1668
+remove service:T1070.009
 remove-eventlog:T1685.005
 remove-mailboxexportrequest:T1070.008
-rename:T1070.010
-renamed:T1036.003
-reopen windows:T1547.007
-reparent:T1036.009
+rename executable:T1070.010
+renamed account:T1036.010
+renamed binary:T1036
+renamed psexec:T1036.003
+renamed rundll32:T1036.003
+renamed utility:T1036.003
+reopen windows when logging back in:T1547.007
+repeated exploitation:T1499.004
 repeated requests:T1499.003
 replay attack:T1212
 replicaset:T1610
-replication:T1003.006
-reply-chain:T1586.002
-repo push:T1567.001
+replication:T1207
+reply-chain phishing:T1586.002
+reptile:T1547.006
+repurposed malware:T1588.001
 reputation hijacking:T1127
-reseller:T1199
-reserved disk:T1564.005
-reset:T1578.004
+requestservicequotaincrease:T1578.005
+requiresignedappinit_dlls:T1546.010
+reserved disk space:T1564.005
 residential proxy:T1583,T1665
-resolution:T1036.012
-resolver:T1102.001
+resource abuse:T1496
 resource exhaustion:T1499
 resource fork:T1564.009
-resource-intensive endpoint:T1499.003
-responder:T1557.001
-response file:T1218.008
-restart=always:T1543.005
+resource intensive feature:T1499.003
+resource section payload:T1027.009
+responder:T1187,T1557.001
+restore snapshot:T1578.004
 resumethread:T1055.003,T1055.012
-reverse:T1036.002
 reverse connection:T1219
 reverse proxy:T1496.004
-rf:T1011
-rfb protocol:T1021.005
+reverse shell:T1059
+reversed file extension:T1036.002
+revert vm:T1578.004
+rf exfiltration:T1011
+rfb:T1021.005
 rfc1918:T1599.001
-ring 0:T1547.006
+rfcomm:T1011.001
+right-to-left override:T1036.002
+ripe:T1596.002
 rir:T1596.002
-rlo:T1036.002
+rlo character:T1036.002
 rm:T1070.004
+rm -rf /var/log:T1685.006
 rmm:T1219,T1219.002
-robin sage:T1585.001
+roadtools:T1069.003,T1087.004
+robin sage:T1585,T1585.001
 robocall:T1598.004
+robocopy:T1074.002,T1119
 robots.txt:T1594
-rogue ap:T1200,T1557.004
-rogue dhcp:T1557.003
-role assignment:T1098
+rogue access point:T1200,T1557.004
+rogue device:T1200
+rogue dhcp server:T1557.003
+rogue dns server:T1557.003
+rogue domain controller:T1207
+rogue vm:T1564.006
+role assignment:T1098.003
 rolebinding:T1098.006
-rollback:T1055.013
-rommon:T1542.004,T1542.005,T1601.001
-root:T1036.010,T1078.001
-root ca:T1553.004,T1587.003
-root of trust:T1588.004
-root prompt:T1548.004
-rootkit:T1547.006
-rop:T1055.009
+rollbacktransaction:T1055.013
+rom monitor:T1542.004
+rommon:T1542.004,T1601.001
+root:T1036.010,T1068
+root certificate:T1553.004,T1587.003
+root memory scan:T1555.002
+root privileges:T1548.004
+root\securitycenter2:T1518.001
+root\subscription:T1546.003
+rootkit:T1014
+rop gadgets:T1055.009
+ror13:T1027.007
 round robin dns:T1568.001
-route:T1016
-route53:T1583.001,T1584.001
+route print:T1016
+route53:T1584.001
+route53 registerdomain:T1583.001
 router:T1686.002
+router authentication bypass:T1556.004
+router botnet:T1584.008
 router cli:T1059.008
+router compromise:T1599
+router configuration:T1599.001
+router implant:T1600
 routers:T1590.004
-rpc:T1021.003
+rpm -qa:T1518
 rsa:T1573.002
 rsa securid:T1111
+rsp file:T1218.008
+rss feed:T1102.003
 rsync:T1570
-rtf \\template:T1221
 rtlo:T1036.002
-rubeus:T1558.004
-ruler:T1137,T1137.005
-run:T1547.001
+rubber ducky:T1200,T1674
+rubeus:T1558
+rubeus asreproast:T1558.004
+rubeus kerberoast:T1558.003
+rubeus ptt:T1550.003
+ruler:T1137,T1137.003,T1137.004,T1137.005
 run dialog:T1204.004
+run level:T1037.004
 run+=:T1546.017
 run-only applescript:T1027.008
+run-only script nested:T1027.009
 runas:T1134,T1134.002
+runas /netonly:T1134.003
 runatload:T1543.001,T1543.004
-runbook:T1651
-runcommand:T1651
-rundll32:T1036.003,T1548.002
+rundll32 shell32.dll control_rundll:T1218.002
 rundll32.exe:T1218.011
-runinstaller:T1218.004
+rundll32.exe dfshim.dll:T1127.002
+runhtmlapplication:T1218.005,T1218.011
+runinstaller(true):T1218.004
+runinstances:T1535,T1578.002
+runmru:T1204.004
 running-config:T1602.002
 runonce:T1547.001
 runonceex:T1547.001
-runtime memory:T1601.001
-runtime mutation:T1027.014
-runtime patch:T1601
+runpe:T1055.012
+runtime data manipulation:T1565.003
 russian market:T1589.001
-s3:T1530,T1585.003,T1586.003,T1619
+s3 bucket:T1586.003,T1619
 s3 download:T1048
-s3 lifecycle:T1485.001
+s3 lifecycle policy:T1485.001
 s3recon:T1595.003
-saas:T1567.004
-saas auth:T1550.004
-saas consent:T1684
-saas domain verification:T1584.002
-saas persistence:T1671
-saas registration:T1583.006
+saas api:T1550.001
+saas security boundary:T1687
+saas session:T1606.001
+saas webhook:T1567.004
 safe mode with networking:T1688
+safeboot:T1688
+safeboot\minimal:T1688
+safeboot\network:T1688
 salesforce:T1213.004
-sam:T1003.002,T1556,T1556.002
-sam account:T1078.003
-same protocol:T1041
-saml signing:T1484.002
+sam:T1078.003,T1556
+sam database:T1003.002
+samba:T1021.002
+same protocol as c2:T1041
+saml 2.0:T1606.002
 saml token:T1606
-san:T1649
-sandbox:T1497
-sandbox evasion:T1678
+san:T1596.003
+sandbox evasion:T1497
+sandbox timeout:T1678
 sas uri:T1537
-sbl bypass:T1689
-sc config:T1685.001
+sc config:T1574.011
+sc config eventlog start=disabled:T1685.001
+sc config start= disabled:T1489
+sc create:T1036.004,T1569.002
+sc create tscon:T1563.002
+sc delete:T1070.009
 sc query:T1007
 sc sdset:T1543.003
-sc stop:T1489
-sc.exe:T1543.003,T1569.002
-scan databases:T1597.002
+sc start:T1569.002
+sc.exe:T1569,T1569.002
+sc.exe create:T1543.003
+scan database:T1596.005,T1597.002
 scan exclusion:T1564.012
-scanbox:T1608.004
+scanbox:T1589.001,T1592,T1592.004,T1608.004
 sccm:T1072
-scheduled job:T1053
-scheduled transfer:T1020
+scheduled exfiltration:T1029
+scheduled file copy:T1119
+scheduled task:T1053
+scheduled upload:T1020
 scheduledtasks.xml:T1484.001
-schtasks:T1007,T1036.004,T1053.005
-scm:T1569.002
-scp:T1105,T1570
+schtasks:T1007,T1036.004,T1053
+schtasks /create:T1053.005
+schtasks /delete:T1070.009
+schtasks.exe:T1053.005
+scp:T1048.002,T1105,T1570
+screen resolution:T1036.012
 screen sharing:T1021.005
 screencapture:T1113
 screenconnect:T1219.002
 screensaveactive:T1546.002
+screensaverissecure:T1546.002
 screensavetimeout:T1546.002
 screenshot:T1113
+script block logging:T1689
 script execution:T1059
 script tag:T1027.017
 script: moniker:T1216.001,T1546.015
-scripted collection:T1119
-scripted exfil:T1020
-scriptlet:T1216
+scripting interpreter:T1059
+scriptpath:T1037.003
 scriptrunner.exe:T1202
-scrnsave:T1546.002
 scrnsave.exe:T1546.002
+scrnsave.scr:T1546.002
 scrobj.dll:T1218.010
-sct:T1218.003,T1218.010
-sd registry:T1053.005
+sct scriptlet:T1216.001
 sdbinst.exe:T1546.011
-sdelete:T1070.004
-sdk:T1059.009
-search ads:T1583.008
-search order:T1574,T1574.008
-search order hijack:T1574.001
-search ranking:T1608.006
+sdelete:T1070.004,T1485
+search engine ads:T1583.008
+search engine ranking:T1608.006
+search order:T1574
+search order hijacking:T1574.008
+search-mailbox -deletecontent:T1070.008
 search-ms:T1105
 sec edgar:T1591
-second-stage rat:T1104
-secondary access:T1136
+second-order compromise:T1195
+second-stage c2:T1104
+secondary domain:T1008
 secpol.msc:T1685.001
-secrets:T1555
-secrets manager:T1555.006
-secretsdump:T1003.002,T1003.003
-sector overwrite:T1561.001
-sector wipe:T1561
+secret manager:T1555.006
+secrets vault:T1555
+secretsdump.py:T1003,T1003.002,T1003.003,T1003.004
 secure boot bypass:T1689
 secure preferences:T1176.001
+security dashboard spoofing:T1685.003
+security descriptor sd:T1053.005
 security dump-keychain:T1555.001
-security find-generic-password:T1016.002
-security groups:T1686.001
-security packages:T1547.005
-security tool cve:T1687
-security zones:T1686.002
+security find-generic-password:T1016.002,T1555.001
+security group:T1578.002,T1686.001
+security software vulnerability:T1687
+security support provider:T1547.005
+security tool vulnerability:T1211
+security zone:T1686.002
+security.evtx:T1654
+security_authtrampoline:T1548.004
 securityd:T1555.002
-sedebugprivilege:T1185
-sedexp:T1546.017
+securityd memory:T1555.002
+sedebugprivilege:T1134,T1185
 seed:T1568.002
 seenabledelegationprivilege:T1484.001
-segmentation bypass:T1599
-seh:T1622
-sekurlsa:T1003.001
-self-built botnet:T1584.005
-self-extracting:T1574.005
-self-hosted:T1583.004
+sekurlsa::logonpasswords:T1003.001
+sekurlsa::pth:T1550.002
+selectmyparent:T1134.004
+self-copy:T1070.010
+self-delete:T1070.004
+self-extracting:T1027.013
+self-extracting archive:T1027.015
+self-extracting installer:T1574.005
 self-hosted runner:T1677
-self-reconnaissance:T1681
-self-signed:T1587.003,T1608.003
-self-signed cert:T1587.002
+self-modifying code:T1027.014
+self-signed certificate:T1573.002,T1587,T1587.003,T1608.003
+self-signed code signing certificate:T1587.002
 seloaddriverprivilege:T1547.012
-sender persona:T1585.002
+sendas:T1098.002
+sendcommand:T1651
 sendgrid:T1496.004,T1584.006,T1586.003
-sendmessage:T1055.015
-sensor:T1685
-seo poisoning:T1583.008
-server banner:T1592.001
-server extension:T1505
-server-side script:T1505.003
-serverless redirector:T1583.007
-service:T1543
-service account:T1036.010,T1078.002,T1552.007
-service account creds:T1003.004
+sendinput:T1674
+sendsshpublickey:T1021.008
+sensepost:T1137.003,T1137.004
+sentry mba:T1110.004
+seo:T1583.008
+seo poisoning:T1608.006
+serial over lan:T1095
+server application backdoor:T1505
+server banner:T1595.002
+server banners:T1592.001,T1592.002
+server plugin:T1505
+server software component:T1505
+serverless redirector:T1583.007,T1584.007
+service account:T1036.010,T1078.002,T1098.006
 service account hash:T1558.002
-service account token:T1528
-service binary:T1574.010
-service disable:T1489
+service account impersonation:T1548.005
+service account passwords:T1003.004
+service account token:T1528,T1552.007
+service binary permissions:T1574.010
+service control manager:T1569.002
+service control policies:T1666
+service crash:T1499.004
+service creation:T1543
+service display name:T1036.004
+service enumeration:T1526
+service executable overwrite:T1574.010
 service execution:T1569
-service name:T1036.004
-service path:T1574.009
-service principal:T1098.001,T1136.003,T1671
-service removal:T1070.009
-serviceaccounts.actas:T1648
+service exhaustion:T1499,T1499.002
+service modification:T1543
+service principal:T1078.004,T1136.003,T1671
+service principal credentials:T1098.001
+service provider account:T1586.003
+service quota:T1578.005
+service ticket:T1550.003
 servicedll:T1505.005
-services:T1569
-services.exe:T1543.003,T1569.002
-ses:T1496.004,T1586.003
+services.exe:T1569.002
+services\eventlog:T1685.001
 seshutdownprivilege:T1529
-session:T1563.002
-session cookie:T1550.004,T1606,T1606.001
-session hijack:T1563.001
-session manager:T1546.009
-session takeover:T1563
-session token:T1539
+session cookie:T1539,T1550.004,T1606.001
+session cookie forgery:T1606
+session cookie interception:T1557
+session hijacking:T1550.004,T1563
+session manager:T1021.008,T1546.009
+set-aadintdomainauthentication:T1484.002
 set-acl:T1222.001
 set-adaccountpassword:T1531
-set-aduser:T1556.005
-set-inboxrule:T1564.008
+set-addomain:T1484
+set-aduser:T1098,T1556.005
+set-inboxrule:T1114.003,T1564.008
+set-itemproperty:T1112
 set-localuser:T1531
+set-mailbox:T1114.003
 set-mailboxauditbypassassociation:T1685.002
-set-netfirewallprofile:T1686.003
+set-msoldomainauthentication:T1484.002
+set-netfirewallprofile:T1686,T1686.003
+set-psreadlineoption:T1690
+setfacl:T1222,T1222.002
 setfattr:T1564.014
+setfiletime:T1070.006
 setgid:T1548.001
 sethc.exe:T1546.008
+setiampolicy:T1098.003
+setsid:T1564.011
 setsockopt:T1205.002
-setthreadcontext:T1055.003
+setspn:T1558.003
+setthreadcontext:T1055.003,T1055.012
 setthreadtoken:T1134.001,T1134.003
-setuid:T1548.001
+settings.xml.rels:T1221
+setuid:T1548,T1548.001
+setup.py:T1204.005
 setwindowlong:T1055.011
-setwindowshookex:T1056.004
-sftp:T1570
-sfx:T1027.013,T1027.015
-sh:T1059.004
-shadow copies:T1490
-shadow copy:T1006
-shadowcopy delete:T1047
+setwindowlongptr:T1055.011
+setwindowshookex:T1056.001,T1056.004
+sftp:T1048.002,T1570
+sfx archive:T1027.013
+sh -c:T1059.004
 shadowlink:T1133
-shamoon:T1485,T1561.002
-shared algorithm:T1568
+shamoon:T1485,T1561.001,T1561.002
+shared access signature:T1537
 shared key:T1573.001
-shared memory:T1027.011
-shared object:T1055.014
-sharepoint:T1213.002,T1558.002
+shared library:T1574.006
+sharedaccess:T1686.003
+sharepoint:T1213.002
+sharepoint online:T1213.002
+sharepoint search:T1213.002
 sharing -l:T1135
-shell:T1059,T1547.004
-shell script:T1059.004
-shell trap:T1546.005
+sharpgpoabuse:T1484.001
+shatter attack:T1055.015
+shell extension:T1218.012
+shell script .sh:T1059.004
+shell.application:T1559.001
+shell32.dll:T1218.011
 shell\open\command:T1546.001
+shell_traywnd:T1055.011
+shellbrowserwindow:T1021.003
 shellcode:T1055.002,T1620
+shellcode in registry value:T1027.011
 shellwindows:T1021.003
-shipment schedule:T1591.003
-shodan:T1596,T1596.005
-shopenverbapplication1:T1127.002
+shipment dates:T1591.003
+shipment interdiction:T1195
+shipment paths:T1591.002
+shlayer:T1548.004
+shodan:T1593.002,T1596,T1596.005,T1597.002
+shopenverbapplication:T1127.002
 short ttl:T1568.001
-shortcut:T1027.012,T1547.009
+shortcut icon location:T1027.012
+shortcut modification:T1080
+shortcut path:T1574.009
+shortcut target path:T1547.009
+shortened url:T1204.001
+show aaa common-criteria policy:T1201
 show cdp neighbors:T1018
-show clock:T1124
+show clock detail:T1124
 show flash:T1083
 show ip route:T1016
+show ip sockets:T1049
 show processes:T1057
-show running-config:T1005
+show running-config:T1005,T1059.008,T1602.002
+show ssh:T1033
 show tcp brief:T1049
 show users:T1033
-show version:T1082
-shutdown:T1529
+show version:T1082,T1601.002
+shred:T1485
+shutdown /r:T1529,T1688
+shutdown binary deletion:T1653
+shutdown.exe:T1529
 sid-history:T1134.005
-siem:T1592.002,T1654,T1685
+sidhistory:T1134.005
+siem:T1654
+siem forwarding disruption:T1685
+siet:T1602.002
 sighup:T1564.011
 sigint:T1546.005
-signature:T1036.001,T1036.008
-signature evasion:T1027.005
-signed binary:T1127,T1218
-signed vbscript:T1216
-signing certificate:T1553.002
-silentlycontinue:T1564.011
+signal handler:T1546.005
+signal ignore:T1564.011
+signature modification:T1027.005
+signature validation:T1553
+signature validation failed:T1036.001
+signed backdoor:T1195.002
+signed binary:T1218
+signed malware:T1588.003
+signed script:T1216
+signing certificate:T1484.002
+signtool:T1587.002
+signtool.exe:T1553.002
+sigterm:T1546.005
+sigthief:T1036.001
+silentbreak:T1137.005
 silentprocessexit:T1546.012
-silver ticket:T1550.003
+silver ticket:T1558.002
+sim swapping:T1213.004
 simulated keystrokes:T1674
 single instance:T1480.002
 single-flux:T1568.001
-sip:T1553.006
+sinkhole redirect:T1584.005
 sip disabled:T1548.006
-sip guid:T1553.003
-site collection:T1213.002
+sip_guid:T1553.003
 site-packages:T1546.018
 site::T1593.002
 sitecustomize.py:T1546.018
 sitemap.xml:T1594
 skeleton key:T1556.001
-skip files:T1679
-slack:T1213.005,T1552.008,T1567.004
-sleep:T1497.003,T1678
-sleep timer:T1497
-smart app control:T1127
-smart app control bypass:T1127.003
-smart card:T1111,T1120
-smart install:T1602.002
+skip folders:T1679
+slack:T1213,T1213.005,T1218.015,T1552.008
+slack api:T1102.002
+slack integration:T1671
+slack webhook:T1567.004
+slack workflows:T1552.008
+sleep:T1497,T1497.003,T1678
+sleep acceleration:T1497.003
+sleep api:T1678
+smart app control:T1127,T1127.003
+smart card:T1111
+smart contract:T1608.001
+smart install:T1602,T1602.002
 smartscreen:T1553,T1553.005
-smb:T1021.002,T1048,T1071.002,T1110.001,T1187,T1190,T1210
-smb copy:T1570
-smb p2p:T1090.001
+smb:T1070.005,T1071,T1187
+smb exploit:T1210
+smb file copy:T1570
+smb named pipe:T1071.002,T1090.001
 smb relay:T1557.001
-smb share:T1039
-smb share cleanup:T1070.005
+smb share:T1039,T1080
 smb shares:T1135
-smi:T1602.002
+smbclient:T1021.002
+smbclient -l:T1135
 smloginitemsetenabled:T1547.015
-sms:T1496.003
-sms hijack:T1111
-sms pumping:T1496
-smtp:T1048,T1071.003
-smtps:T1071.003
+sms interception:T1111
+sms pumping:T1496,T1496.003
+sms toll fraud:T1496.003
+smtp:T1071.003
+smtp exfiltration:T1048
+smtps:T1048.002
 snap-in:T1218.014
-snapshot:T1578,T1578.001
-snapshot mount:T1578.002
+snapshot:T1578
 snapshot restore:T1578.004
 snapshot sharing:T1537
-sni mismatch:T1090.004
-snmp:T1602.001
-snmp export:T1602.002
+sni:T1090.004
+snmp:T1602,T1602.001
+snmp config copy:T1602.002
+snmpget:T1602.001
 snmpwalk:T1602.001
 snowflake:T1213.006
-sns:T1496.004,T1586.003,T1685.002
+sns:T1496.004
 so_attach_filter:T1205.002
-social engineering:T1204,T1566
-social media:T1566.003,T1589.003,T1593
-social media c2:T1102
-social media dm:T1598.001
-social media post:T1102.001
-socket:T1563.001
+social engineering:T1204,T1598
+social engineering email:T1566
+social media c2:T1102.003
+social media hijack:T1586.001
+social media message:T1598.001
+social media messaging:T1566.003
+social media reconnaissance:T1593.001
+sock puppet:T1585,T1585.001
 sockets:T1559
-socks:T1095
-software cipher:T1600.002
-software update:T1195
+socks:T1090,T1095
+sofacy:T1137.002
+softperfect network scanner:T1046
+software encryption fallback:T1600.002
+software extension:T1176
+software license:T1588
+software reconnaissance:T1592.002
+software update hijack:T1195.002
+software versions:T1592.002
 soho router:T1583.005,T1584.008
-sol:T1095
-source code:T1027.004,T1195.002,T1213.003,T1552.001
-sourceforge:T1593.003
-spaces:T1213.001
-spaces in path:T1574.009
-spam:T1496,T1586.002
-spam wave:T1667
+solarwinds:T1195.002
+source code payload:T1027.004
+source code theft:T1213.003
+sourceforge:T1213.003,T1593.003
+sp_configure:T1505.001
+sp_procoption:T1505.001
+space after filename:T1036.006
+spam:T1496.004
+spam campaign:T1586.002
+spam flood:T1667
+spam via cloud messaging:T1496
 span port:T1020.001,T1040
-spearphishing:T1566,T1598
-spearphishing link:T1204.001
-specialaccounts:T1564.002
-spf:T1590.002,T1684.002
+spctl --master-disable:T1553.001
+spearphishing attachment:T1566.001
+spearphishing link:T1204.001,T1566.002
+specialaccounts\userlist:T1564.002
+speedtest:T1016.001
+spf:T1684.002
+spf record:T1590.002
+spi flash:T1495,T1542.001
 split:T1218
-spn:T1558.002,T1558.003
-spoof browser:T1036.012
-spoofed source:T1498.002
+split -b:T1030
+split file:T1030
+spn:T1558.003
+sponsored results:T1583.008
+spoofed headers:T1036.012
+spoofed sender:T1684.002
+spoofed signer metadata:T1036.001
+spoofed source ip:T1498.002
+spoofed tray icon:T1685.003
 spoolsv.exe:T1547.010,T1547.012
-spraying:T1110
-spreadsheet:T1559.002
-sqli:T1190
+spray:T1110.003
+sql injection:T1190
+sql server service stop:T1489
+sql update:T1565.001
 squiblydoo:T1218.010
 squiblytwo:T1220
-ssdt:T1014
+ssdp:T1498.002
+ssdt hook:T1014
 sse-c:T1486
-ssh:T1021,T1021.004,T1059.008,T1110.001,T1190
-ssh client backdoor:T1554
+ssh:T1021,T1021.004,T1071
+ssh -l:T1572
+ssh -o:T1202
+ssh -r:T1572
+ssh agent forwarding:T1563.001
+ssh agent socket:T1563
 ssh hijack:T1563
+ssh session hijack:T1563.001
 ssh tunneling:T1572
 ssh-agent:T1563.001
-ssh.exe:T1202
+ssh.exe proxycommand:T1202
+ssh_auth_sock:T1563.001
 sshd:T1021.004
 sshd_config:T1098.004
 ssid:T1557.004
-ssl:T1048.002,T1573.002,T1587.003,T1596.003
-ssl downgrade:T1557
+ssl:T1048.002
+ssl certificate lookup:T1596.003
 ssl renegotiation:T1499.002
 ssl stripping:T1689
-ssl/tls:T1102,T1588.004
-ssl/tls certificate:T1608.003
-ssl/tls cover:T1567
-ssm:T1072
-sso:T1021.007,T1110.001,T1110.003,T1110.004,T1606.002
-sso bypass:T1606.001
-ssp:T1547.005
-ssp dll:T1003.001
+ssl/tls:T1573.002
+ssl/tls certificate:T1587.003,T1588.004,T1608.003
+sslshopper:T1596.003
+ssm agent:T1072
+ssm run command:T1651
+ssm start-session:T1021.008
+ssp dll:T1547.005
 sspr:T1589,T1621
 ssrf:T1552.005
-sssd cache.ldb:T1003.005
-staff directory:T1589.003
-staged c2:T1104
+staff directory:T1589.003,T1594
+staged archive:T1560
+staged data:T1074
+staged payload:T1104
 stager:T1104
-staging:T1560,T1608
 staging directory:T1074
-standby:T1653
-start-process:T1059.001
+staging server:T1074.002,T1608
+standby-timeout:T1653
+start application rule:T1137.005
+start menu\programs\startup:T1547.001,T1547.009
+start-bitstransfer:T1197
 startprograminguest:T1675
-startup:T1037,T1053
-startup folder:T1547.001,T1547.009
-startup procedure:T1505.001
-startup-config:T1602.002
+startup execution:T1547
+startup folder:T1547.009
+startup item:T1037.005
+startup script:T1037
+startup-config:T1542.005,T1602.002
+startupinfoex:T1134.004
 startupparameters.plist:T1037.005
-state table:T1499.001
-steal:T1588
-steganography:T1001
-stego:T1001.002
+steam profile:T1102.001
+steganography:T1001,T1001.002,T1027.003
+stego:T1027.003
 sticky keys:T1546.008
-stolen cert:T1588.003
+stolen certificate:T1553.002,T1588,T1588.004
+stolen code signing certificate:T1588.003
+stolen cookies:T1550.004
+stolen credentials:T1078
+stolen exploit:T1588.005
+stolen malware:T1588.001
+stolen web service credentials:T1584.006
 stomp:T1071.005
 stonedrill:T1485,T1561.002
-storage modification:T1601
-stored email alteration:T1565.001
-stored passwords:T1552
+stop security service:T1685
+stop-service:T1489
+stop-service eventlog:T1685.001
+stoplogging:T1685.002
+stored credentials:T1552,T1555
+stored data manipulation:T1565.001
 stored procedure:T1505.001
 storm-0558:T1212
 stormspotter:T1526
+strategic web compromise:T1189,T1608.004
+stratum+tcp:T1496.001
 stream cipher:T1560.003
 stresser:T1583.005
-string splitting:T1027.010
+string concatenation:T1027.010
+string encoding:T1027
+strip account privileges:T1668
+strip symbols:T1027.008
 stripped binary:T1027.008
+stripped elf:T1027.008
+strongauthenticationmethod:T1556.006
 sts:getfederationtoken:T1550.001
 stubpath:T1547.014
-subdomain:T1596.001
 subdomain encoding:T1071.004
+subdomain enumeration:T1596.001
 subdomain takeover:T1584.001
-subdomains:T1584.007,T1590.002
-subscription:T1578.005,T1597
-subscription bombing:T1667
+subdomains:T1590.002
+subject alternative name:T1649
+subject interface package:T1553.003
+subprocess:T1059.006
+subscription association:T1578.005
 subscription hijacking:T1666
-substitution:T1574.001
-sudo:T1548
-sudoers:T1098.007,T1548.003
-supply chain:T1591.002
-suspended process:T1564.010
+subscription transfer:T1666
+sudo:T1548,T1548.003
+sudo -l:T1548.003
+sudoers group:T1098.007
+suid:T1548.001
+sunburst:T1001.001,T1195.002
+superfish:T1553.004
+suppliers:T1591.002
+supply chain:T1195,T1591.002
 suspendthread:T1055.003
-svchost.exe:T1036.005,T1134.004
+svchost.exe:T1036.005,T1505.005
 svg:T1027.017
-switch:T1686.002
-symbiote:T1574.006
+svg smuggling:T1027.017
+sw_hide:T1564.003
+swift message:T1565.002
 symbol removal:T1027.008
 symbolic link:T1547.009
-symlink permissions:T1222
-symmetric key:T1048.001
-syn flood:T1499.001
+symmetric encryption:T1048.001,T1573.001
+syn flood:T1498.001,T1499.001
+syncappvpublishingserver.exe:T1216.002
 syncappvpublishingserver.vbs:T1216.002
-synced account:T1078.004
-synful knock:T1205,T1556.004
-synthetic media:T1683
+synful knock:T1205,T1542.004,T1556.004,T1600,T1600.001,T1601.001
+synthetic media:T1683.002
 synthetic voice:T1683.002
 syscall:T1106
 syscall stubs:T1055.014
-sysinternals:T1497
 syslistview32:T1055.015
 sysmain.sdb:T1546.011
-sysmon:T1685
-system:T1068,T1134,T1563.002
+sysmon event 13:T1112
+sysmon event id 10:T1055
+sysmon event id 8:T1055
+sysmon unload:T1685
+system:T1068,T1574.010
 system events:T1547.015
-system mutex:T1480.002
-system service:T1574.010
-system tray:T1685.003
+system image:T1601
+system integrity protection:T1553.006
+system language:T1036.012,T1592.004
+system services:T1569
+system token:T1134
+system tscon:T1563.002
+system.componentmodel.runinstaller:T1218.004
 system.keychain:T1553.004
 system.management.automation:T1059.001
 system32:T1036.005
-systemctl:T1007,T1053.006,T1543,T1543.002,T1569.003
-systemctl enable:T1569.003
+system_profiler spapplicationsdatatype:T1518
+system_profiler spusbdatatype:T1120
+systemcertificates\root:T1553.004
+systemctl:T1053.006,T1569,T1569.003
+systemctl --type=service:T1007
+systemctl daemon-reload:T1569.003
+systemctl enable:T1543.002,T1569.003
 systemctl start:T1569.003
-systemctl stop:T1685.004
-systemd:T1036.004,T1569.003
+systemctl stop auditd:T1685.004
+systemd:T1543,T1569.003
 systemd generator:T1543.002
+systemd timer:T1053,T1053.006
+systemd unit:T1036.004
 systemd-sleep:T1653
+systemd-udevd:T1546.017
 systeminfo:T1082
-systemsetup:T1082,T1124
-sysvol:T1484.001,T1552.006,T1615
-takeown:T1222.001
+systemparametersinfo:T1491.001
+systemsetup:T1082
+systemsetup -gettimezone:T1124
+sysvol:T1037.003,T1484.001,T1552.006,T1615
+ta18-106a:T1602
+takeown:T1222,T1222.001
+talappstorelaunchatlogin:T1547.007
+tamper protection bypass:T1685
+tampered database:T1565.001
 tar:T1560.001
 target research:T1682
 target-specific:T1480
-target-specific decryption:T1480.001
+target="http:T1221
 tarrask:T1053.005
+task description:T1036.004
 task scheduler:T1053,T1053.005
+taskcache\tree:T1053.005
+taskeng.exe:T1053.005
+taskkill:T1489
 tasklist:T1057,T1518.001,T1518.002
 tasklist /svc:T1007
 tcc.db:T1548.006
 tccd:T1548.006
-tcp flood:T1498.001
+tccutil:T1548.006
+tcp 3389:T1021.001
+tcp 4786:T1602.002
 tcp state exhaustion:T1499.001
-tcp/ip:T1686.001
+tcp state table:T1499.001
+tcpdump:T1040
 tdbdump:T1003.005
-teams:T1213.005,T1534,T1552.008
+tds:T1665
+teams help desk call:T1667
 teams.exe:T1218.015
 teamviewer:T1219.002
-tech support:T1598.004
 tech support scam:T1204
-telecom fraud:T1496.003
-telegram:T1589.001
-telnet:T1021,T1059.008,T1563
-temp directory:T1074.001
-template injection:T1221
-tenant config:T1484
-tenant policy:T1578.005
-terminal server client:T1070.007
-terminal services:T1563.002
-termservice:T1505.005
+telegram:T1566.003,T1583.006
+telegram api:T1102,T1567
+telegram bot:T1102.002
+telegram stealer logs:T1589.001
+telemetry suppression:T1211
+telnet:T1021
+telnet session:T1563
+temp folder:T1074
+tenant discovery:T1590.001
+tenant settings:T1484
+tenant-wide policy:T1578.005
+terminal server client\cache:T1070.007
+terminal server client\default:T1070.007
+terminal server client\servers:T1070.007
+terminal.app:T1036.006
+terminate instance:T1578.003
+terminate security process:T1687
+terminateinstances:T1578.003
+termservice:T1021.001,T1505.005
 termsrv.dll:T1505.005
-text dump:T1567.003
-tftp:T1071.002,T1542.005,T1601.001
-tftp upgrade:T1542.004
-tgs:T1550.003,T1558
-tgs forgery:T1558.002
-tgs-rep:T1558.003
+test mode:T1553.006
+test-netconnection:T1016.001
+text storage site:T1567.003
+text/html attachment:T1027.006
+tftp:T1048.003,T1071.002,T1105,T1542.004,T1542.005,T1601.001
+tftp-server:T1542.005
+tgs:T1558
 tgt:T1550.003,T1558
-tgt forgery:T1558.001
-third-party:T1199,T1590.003
-third-party vps c2:T1584.003
+theharvester:T1589.002
+themida:T1027.002
+third-party access:T1199,T1590.003
+third-party messaging:T1598.001
+thread execution hijacking:T1055.003
 thread hijacking:T1566,T1586.002
-threat intel:T1681
-threat intel portals:T1597.001
-threshold evasion:T1030
-time acceleration:T1497.003
-time-based domains:T1568.002
-timed exfiltration:T1029
+thread local storage:T1055.005
+threat intel subscription:T1597.001
+threat intelligence reports:T1681
+threat intelligence vendor:T1597.001
+threat vendor blog:T1681
+throttled logins:T1110.003
+ticket theft:T1558
+ticketer.py:T1558.001,T1558.002
+tightvnc:T1021.005
+time provider dll:T1547.003
+time zone:T1036.012,T1592.004,T1614
+time-based exfiltration:T1029
+timedatectl:T1124
+timeout:T1678
 timeproviders:T1547.003
 timestamp_timeout:T1548.003
-timezone:T1036.012,T1592.004,T1614
-timing:T1678
+timestomp:T1070.006
 tinypilot:T1219.003
-tls:T1048.002,T1573.002,T1587.003,T1596.003
+tls:T1048.002,T1090.004
+tls c2:T1573.002
 tls callback:T1055.005
-tls host header:T1090.004
-tls interception:T1553.004
-token:T1111
-token renewal:T1212
-token reuse:T1550
+tls certificate:T1596.003
+tls directory:T1055.005
+tls downgrade:T1557,T1689
+tls renegotiation attack:T1499.002
+token forgery:T1212
 token stealing:T1134
+token theft:T1134.001
 token-signing certificate:T1606.002
-tool modification:T1027.005
-top hiding:T1564.013
-topology:T1590,T1590.004
-tor:T1090.003,T1133
+tool hosting:T1608.002
+top:T1564.013
+topic subscription:T1071.005
+tor:T1090.003
+tor hidden service:T1133
 torrent seeding:T1496.002
 touch -r:T1070.006
+touch -t:T1070.006
+traceroute:T1590.004
 tracerpid:T1622
 tracert:T1016.001
+tracker.exe:T1127
 tracking pixel:T1598.003
-traffic injection:T1659
 traffic interception:T1557
-traffic mirroring:T1020.001,T1040
+traffic manipulation:T1659
+traffic mirroring:T1020.001
+traffic obfuscation:T1001
+traffic saturation:T1498
 trailing space:T1036.006
-transact:T1055.013
+transaction display tampering:T1565.003
+transaction records:T1565.001
 transactional ntfs:T1055.013
-transport rule:T1114.003
-transport rules:T1070.008,T1564.008
+transmitted data manipulation:T1565.002
+transparency consent and control:T1548.006
+transport pipeline:T1505.002
+transport rule:T1070.008,T1564.008
+trap:T1546.005
 trap command:T1546.005
+treatas:T1546.015
 tree:T1083
 trello:T1552.008
-trial accounts:T1585
-trial signup:T1585.002
-trigger:T1546
 trojanized binary:T1554
-trojanized installer:T1195.002
-trust abuse:T1586.001
+trojanized installer:T1195.002,T1583.008
+trojanized update:T1195
+trufflehog:T1589.001,T1593.003
 trust boundary:T1599
-trust enumeration:T1482
-trust mechanisms:T1553
-trust policy:T1484
-trusted ip:T1556.009
-trusted path:T1036.005
-trusted paths:T1564.012
-trusted sender:T1534,T1684.001
+trust controls:T1553
+trusted directory:T1036.005
+trusted internal account:T1534
+trusted ip ranges:T1556.009
+trusteddomain:T1482
 trustroot:T1553.004
-tscon:T1021.001
+tscon:T1021.001,T1563
 tscon.exe:T1563.002
-ttp reports:T1597.001
+tshark:T1040
+ttp trends:T1597.001
 tty_tickets:T1548.003
-tweet:T1102.002
 twilio:T1496.003,T1496.004,T1586.003
-twitter:T1102,T1583.006,T1584.006,T1585.001,T1586.001,T1593.001
+twitter:T1102,T1583.006,T1593.001
+twitter commands:T1102.003
+twitter persona:T1585.001
+twitter profile:T1102.001
 txf:T1055.013
-txt:T1590.002
-txt record:T1071.004
-type:T1140
+txt record:T1071.004,T1590.002
+txtfile:T1546.001
+type command reassemble:T1140
 typelib:T1546.015
-typosquat:T1608.005
-typosquat ads:T1583.008
-typosquatting:T1195.001,T1204.005,T1583.001,T1608.001
+typosquatted binary name:T1036.005
+typosquatted extension:T1176
+typosquatting:T1195.001,T1204.005,T1583.001
+typosquatting package:T1608.001
+u+200b:T1027.018
 u+202e:T1036.002
-uac:T1548
-uac bypass:T1218.003,T1548.002
-uac spoof:T1056.002
+uac bypass:T1548,T1548.002
 uacme:T1548.002
+ubiquiti edgerouter:T1584.008
 udev:T1546.017
+udevadm:T1546.017
 udp:T1095
+udp 161:T1602.001
+udp 5355:T1557.001
 udp flood:T1498.001
-uefi:T1495,T1542
-uefi firmware:T1542.001
+uefi:T1542,T1542.001,T1592.003
+uefi flash:T1495
+uefi rootkit:T1542.001
 uf_hidden:T1564.001
-unc path:T1129
-unicode:T1036.002,T1132,T1132.001
-unit file:T1543.002
+ufw disable:T1686
+uls logs:T1213.002
+ultravnc:T1021.005
+uname -a:T1082
+unattend.xml:T1552.001
+unc path dll:T1129
+underground forum:T1588.001
+unicode:T1132,T1132.001
+uninstall method:T1218.004
+uninstall registry key:T1518
+unit file:T1569.003
 unlink:T1070.004
-unmanaged profiler:T1574.012
+unpacking in memory:T1027.002
 unquoted path:T1574.009
-unset histfile:T1690
+unquoted service path:T1574.009
+unsecured credentials:T1552
+unset histfile:T1070.003,T1690
 unshadow:T1003.008
 unshare:T1611
-unsigned:T1036.001
+untrusted program warning:T1553
 unused region:T1535
-update mechanism:T1195.002
+update conditional access policy:T1556.009
+update_url:T1176.001
+updateprocthreadattribute:T1134.004
+updatetrail:T1685.002
 uptime:T1497.003
 upx:T1027.002
-urgency:T1684
-urgent:T1684.001
+urgency lure:T1684
+urgent payment request:T1684.001
+uri mimicry:T1001.003
+url:T1137.004
 url click:T1204.001
-url shortener:T1665
-usb:T1025,T1052,T1052.001,T1091,T1120,T1200
-usb charging:T1091
-usb relay:T1092
-usb rubber ducky:T1674
+url masking:T1608.005
+url obfuscation:T1566.002,T1598.003
+url shortener redirect:T1665
+usb:T1052.001,T1091,T1092
+usb drive:T1025,T1052,T1091
+usb drive exfiltration:T1052.001
+usb hid device:T1219.003
 usbstealer:T1092
-user enumeration:T1087
-user interaction:T1204
-user-agent:T1036.012,T1071.001,T1480,T1592
-user-agent filter:T1665
-user.namespace:T1564.014
+usbstor:T1052.001
+user agent filtering:T1592,T1665
+user agent strings:T1592.004
+user clicked:T1204
+user input logging:T1056
+user interaction:T1497.002
+user listing:T1087
+user shell folders:T1547.001
+user-agent:T1036.012,T1071.001
+user-agent filtering:T1480
+user-agent header:T1592
+user-agent spoofing:T1001.003
+user. namespace:T1564.014
 user32.dll:T1546.010,T1574.013
-useradd:T1136.001
+useradd:T1036.010,T1136,T1136.001
+userchoice:T1546.001
 usercustomize.py:T1546.018
-userdata:T1552.005
-userinit:T1547.004
-userinitmprlogonscript:T1037.001
-userlist:T1564.002
-usermod:T1098.007
-username:T1033
-username enum:T1589.002
+userinit.exe:T1037.001,T1547.004
+userinitmprlogonscript:T1037,T1037.001
+usermod -ag:T1098.007
+username enumeration:T1589
+username generation:T1589.003
+userparameters:T1556.005
+usingtask:T1127.001
 utilman.exe:T1546.008
 utmp:T1685.006
+valid accounts:T1087
 valid signature:T1553.002
-variation selector:T1027.018
-vault database:T1555.005
+variation selectors:T1027.018
+vas_auth.vdb:T1003.005
 vaultcmd.exe:T1555.004
-vb:T1059.005
-vba:T1059.005,T1137.001
-vba add-in:T1137.006
-vbr:T1542.003,T1564.005
-vbscript:T1059.005,T1218.005,T1220
-vcenter:T1021,T1072,T1190,T1210,T1673
+vba macro:T1059.005
+vba macro template:T1137.001
+vba stomping:T1564.007
+vbc.exe:T1027.004
+vbe add-in:T1137.006
+vboxservice:T1497.001
+vbr:T1542.003
+vbs proxy execution:T1216
+vbscript:T1059.005
+vbscript form:T1137.003
+vbscript:close(execute:T1218.005
+vcenter:T1021,T1190,T1210,T1673
 vdso:T1055.014
-vector graphic:T1027.017
+vdso hijacking:T1055.014
 veeam:T1518.002
-vendor:T1684.001
-vendor pretext:T1684
+vendor email compromise:T1684.001
+vendor reports:T1597.001
 vendors:T1591.002
+verclsid /s /c:T1218.012
 verclsid.exe:T1218.012
+verify /md5:T1601.001
 version detection:T1595.002
-version enumeration:T1518
-vfs:T1564.005
+versionlock.list:T1554
 vhd:T1553.005
 vib:T1505.006
-video impersonation:T1683.002
+victim host information:T1592
+victim website:T1594
+video capture:T1125
 vim-cmd:T1059.012
 vim-cmd hostsvc/enable_ssh:T1021.004
-vim-cmd snapshot:T1490
-vim-cmd vmsvc/getallvms:T1673
+vim-cmd vmsvc/getallvms:T1564.006,T1673
+vim-cmd vmsvc/snapshot.removeall:T1490
 virtual file system:T1564.005
-virtual memory:T1003.007
-virtualallocex:T1055.001,T1055.002,T1055.003
-virtualbox:T1564.006
-virtualization:T1564,T1592.004
+virtual machine:T1578
+virtual machine detection:T1497
+virtual machine evasion:T1564
+virtual machine files:T1005
+virtual private server:T1583.003,T1584.003
+virtualalloc:T1106,T1620
+virtualallocex:T1055,T1055.001,T1055.002,T1055.003
+virtualbox:T1497.001,T1564.006
+virtualization:T1592.004
+virtualpita:T1505.006
+virustotal:T1681
 virustotal size limit:T1027.001
-vishing:T1204,T1566.004,T1598,T1598.004
-visual modification:T1491
+vishing:T1204,T1566.004,T1598.004,T1684
+visual studio marketplace:T1176.002
 vm agent:T1651
-vm backup:T1578.001
-vm creation:T1578.002
-vm deletion:T1578.003
-vm modification:T1578
-vm protection:T1027.002
-vm rollback:T1578.004
+vm escape:T1068,T1611
 vmci:T1095
-vme:T1497
-vme artifacts:T1497.001
-vmtoolsd:T1675
+vme artifacts:T1497
+vmprotect:T1027.002
+vmsvc/getallvms:T1059.012
+vmsvc/power.off:T1059.012
+vmtoolsd:T1497.001
+vmtoolsd.exe:T1675
 vmware:T1497.001
+vmware i/o port:T1497.001
 vmware tools:T1675
-vmx:T1564.006
-vnc:T1021,T1021.005,T1133,T1219.002
-voice recording:T1123
-volume copy:T1578.001
+vmware-tools-daemon:T1675
+vnc:T1021,T1021.005,T1219.002
+vncviewer:T1021.005
+voice call capture:T1123
+voice cloning:T1683.002
+voice phishing:T1566.004,T1598.004
+volume boot record:T1542.003
 volume shadow copy:T1003.003
-vpn:T1133,T1665
-vpn login:T1056.003
-vpn logins:T1078
-vps:T1583.003,T1583.005
-vps chain:T1090.003
-vps proxy:T1090.002
-vps rental:T1583
+volume snapshot:T1578.001
+volumetric attack:T1498
+vpc firewall:T1686.001
+vpn:T1133
+vpn login:T1078
+vpn login page:T1056.003
+vps:T1090.003,T1583.003,T1584.003
+vps redirector:T1090.002
 vpxuser:T1078.001
-vscode:T1219.001
+vs code:T1219.001
 vscode extension:T1176.002
-vsphere sdk:T1675
-vssadmin:T1006,T1490
+vscode.dev:T1219.001
+vsix:T1176.002
+vsphere installation bundle:T1505.006
+vsphere web services sdk:T1675
+vssadmin:T1006
+vssadmin create shadow:T1003.003
+vssadmin delete shadows:T1490
 vsto:T1137.006
-vtap:T1040
-vulnerability crash:T1499.004
 vulnerability database:T1588.006
+vulnerability disclosure:T1588.006
 vulnerability research:T1587.004
-vulnerability scan:T1046
-vulnerable driver:T1068,T1553.006
+vulnerability scan:T1046,T1595.002
+vulnerable driver:T1068,T1553.006,T1687
+vultr:T1583.003
 w:T1033
 w32time:T1547.003
-w32tm:T1124
+w32tm:T1547.003
+w32tm /tz:T1124
+w3wp.exe:T1505.003
+waf detection:T1590.006
+wafw00f:T1590.006
 wake-on-lan:T1205
-wallpaper change:T1491.001
-watering hole:T1189,T1608.004
-watering hole host:T1584.004
-watering hole hosting:T1583.004
-watering hole prep:T1608
-watering hole staging:T1584
-wbadmin:T1006,T1490
-wbadmin.msc:T1218.014
-wbemtool:T1047
-weak acl:T1574.005,T1574.010
-weak ciphers:T1601.002
-weak linking:T1574.004
-web backdoor:T1505.003
-web console:T1538
-web server:T1499.002
-web service tasking:T1102.003
-web2c2:T1102.002
+wallpaper:T1491.001
+wannacry:T1486
+watering hole:T1189,T1584.004,T1608,T1608.004
+watering hole server:T1583.004
+waveinopen:T1123
+wbadmin:T1006
+wbadmin delete catalog:T1490
+wbadmin.msc delete catalog:T1218.014
+wbem\repository:T1027.011
+wbemtool.exe:T1047
+wdigest:T1003.001
+weak file permissions:T1574.005
+weak service permissions:T1574.010
+weaken encryption:T1600
+weaponized pdf:T1566.001
+web application dos:T1499.003
+web beacon:T1598.003
+web portal credential capture:T1056.003
+web server dos:T1499.002
+web server exploit:T1190
+web service account registration:T1583.006
+web session cookie:T1550
+web shell:T1505.003
+web shell access:T1650
+web.config:T1552.001
 webcam:T1125
-webcam audio:T1123
-webcam enumeration:T1120
 webdav:T1187
 webhook:T1567.004
+webhook exfiltration:T1567
 webhook.site:T1567.004
-webshell:T1505.003
-website defacement:T1491.002
+webshell:T1190
+website crawling:T1594
+website defacement:T1491,T1491.002
 websocket:T1071.001
-webviewurl:T1137.004
-werfault:T1003.001
-wevtutil:T1685.001
+webview:T1137.004
+well-known sid:T1134.005
+werfault.exe:T1003.001
 wevtutil cl:T1685.005
+wevtutil qe:T1654
 wevtutil.exe:T1654
 wget:T1105
-whitelisted folders:T1564.012
-who:T1033,T1049
+wh_keyboard_ll:T1056.001
+whatsapp:T1566.003,T1598.001
+who:T1033
+who -a:T1049
 whoami:T1033
-whois:T1583.001,T1590,T1590.001,T1590.005,T1596,T1596.002
+whoami /all:T1087
+whois:T1584.001,T1590,T1590.001,T1590.005,T1596,T1596.002
+whois command:T1596.002
+wi-fi:T1669
+wi-fi password:T1016.002
 wi-fi pineapple:T1557.004
-wifi:T1011
-wiki:T1213
+wifi exfiltration:T1011
 wiki pages:T1213.001
+win+r:T1204.004
+win32_computersystem:T1497.001
+win32_fan:T1497.001
+win32_pnpentity:T1120
+win32_process create:T1047
+win32_product:T1518
 win32_scheduledjob:T1053.002
-window class:T1055.011
+win32_systemdriver:T1652
+windbg.exe:T1127
 window titles:T1010
-windows defender firewall:T1686.003
-windows installer:T1218.007
-windows message loop:T1674
-windows nt currentversion windows:T1546.010
-windows procedure:T1055.011
+windowposition:T1564.003
+windows defender ui spoof:T1685.003
+windows directory exclusion:T1679
+windows downdate:T1689
+windows nt\currentversion\windows:T1546.010
 windows sandbox:T1564.006
-windows time service:T1547.003
-windowstyle hidden:T1564.003
+windows vault:T1555.004
+windowspowershell\profile.ps1:T1546.013
 winevt\logs:T1685.005
-winexec:T1546.009
-winlogon:T1547.004,T1556.008
+winexec:T1546.009,T1574.008
+winget:T1105
+winlogon defaultpassword:T1552.002
+winlogon load:T1547.001
 winlogon.exe:T1547.004
+winlogon\notify:T1547.004
+winlogon\shell:T1547.004
+winlogon\userinit:T1547.004
 winpcap:T1205.002
 winrar:T1560.001
-winrm:T1021.006,T1047,T1133
-winrm.exe:T1021.006
+winrm:T1021.006
+winrs:T1021.006
+winsock2\parameters:T1574.011
 winverifytrust:T1553.003
-wiper:T1485
-wire fraud:T1657
+winword.exe child process:T1203
+winword.exe spawning cmd.exe:T1559.002
+winzip:T1560.001
+wiper:T1485,T1561,T1561.001
+wire transfer:T1657
+wire transfer fraud:T1684.001
 wireless access point:T1669
-wireshark:T1497
+wireshark:T1040
+with hidden answer:T1056.002
 wlanapi:T1110.001
 wlanapi.dll:T1016.002
+wlanenuminterfaces:T1016.002
 wll:T1137.006
-wmi:T1047,T1546,T1546.003
+wm_copydata:T1574.013
+wmi event:T1546
 wmi repository:T1027.011
+wmi\autologger\eventlog-security:T1685.001
 wmic /format:T1220
-wmic logicaldisk:T1680
+wmic logicaldisk get:T1680
+wmic product get:T1518
+wmic service get pathname:T1574.009
+wmic shadowcopy delete:T1047,T1490
 wmic.exe:T1047
-wmiprvse.exe:T1546.003
-wordlist scan:T1046
-workflow:T1677
-workflows:T1552.008
-wow6432node:T1547.001
-writeprocessmemory:T1055.001,T1055.002,T1055.003,T1055.012,T1564.010,T1574.013
-wscript:T1216.002
-wsl:T1202
+wmiexec:T1550.002
+wmiprvse.exe:T1047,T1546.003
+word template:T1598.002
+wordlist:T1595.003
+workers.dev:T1583.007,T1584.007
+workflow artifact:T1677
+working hours:T1591.003
+worm:T1091
+wow6432node:T1546.010
+wpa:T1669
+writeprocessmemory:T1055,T1055.001,T1055.002,T1055.003,T1055.012,T1564.010,T1574.013
+wscript.exe:T1059.005,T1059.007,T1216,T1216.002
+wscript.shell:T1559.001
+wscript.shell createshortcut:T1547.009
+wsl.exe:T1202
+wsmprovhost.exe:T1021.006
 wtmp:T1685.006
-x.509:T1587.003
-x509:T1098.001
-xattr:T1553.001,T1564.014
+x.509 subject:T1596.003
+xattr:T1222.002
+xattr -c:T1553.001
+xattr -d:T1553.001
 xattr -l:T1564.009
-xcopy:T1560.001
-xdg:T1547.013
+xattr -p:T1564.014
+xattr -w:T1564.014
+xclip:T1115
+xcopy:T1074.001,T1570
+xdg autostart:T1547.013
 xll:T1137.006
-xml:T1027.017
-xml descriptor:T1505.006
-xml project:T1127.001
+xlstart:T1137.001,T1137.006
 xmpp:T1071.005
 xmrig:T1496.001
-xor:T1560.003
+xor:T1027,T1027.013
+xor decrypt:T1140
+xor encryption:T1560.003
+xor key:T1573.001
 xorddos:T1036.011
 xp_cmdshell:T1505.001
-xpc:T1559.003
-xss:T1189
+xpc:T1559,T1559.003
+xpc client validation:T1559.003
+xpc_connection_create:T1559.003
+xsel:T1115
+xsl:T1220
+xslt:T1220
 xwd:T1113
+youtube description:T1102.001
 yum-versionlock:T1554
 zendesk:T1213.004
+zenity:T1056.002
+zero-day:T1587.004
 zero-day dos:T1499.004
+zero-day purchase:T1588.005
+zero-day research:T1588.006
 zero-width space:T1027.018
+zerologon:T1210
 zip:T1027.015,T1560.001
-zip password:T1566.001
+zipfile:T1560.002
 zipfldr.dll:T1218.011
 zlib:T1560.002
-zmprov:T1606
+zmap:T1595.001
+zmprov gdpak:T1606
 zoho:T1213.004
-zone.identifier:T1553.005
+zone transfer:T1590.002,T1596.001
+zone.identifier:T1553.005,T1564.004
 zoomeye:T1596.005
 zsh:T1059.004
+zwloaddriver:T1543.003
 zwunmapviewofsection:T1055.012
-zxportmap:T1090
-zxproxy:T1090,T1090.001
+zxportmap:T1090,T1090.001
+zxproxy:T1090
+~/.bash_history:T1070.003
+~/.bash_logout:T1546.004
+~/.bash_profile:T1546.004
+~/.bashrc:T1546.004
 ~/.config/autostart:T1547.013
-~/.config/systemd/user:T1053.006
+~/.config/systemd/user:T1053.006,T1543.002
+~/.ssh:T1552.004
+~/.ssh/authorized_keys:T1098.004
+~/.zlogin:T1546.004
+~/.zprofile:T1546.004
+~/.zshrc:T1546.004
 ~/library/keychains:T1555.001
+~/library/launchagents:T1543.001
+~/library/preferences:T1647
+~/library/preferences/byhost:T1547.007

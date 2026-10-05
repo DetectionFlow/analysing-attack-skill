@@ -9,7 +9,7 @@ description: Analyse Mitre ATT&CK tactics, techniques and sub-techniques. Use wh
 
 This document provides best practices and resources for use when mapping ATT&CK tactics and techniques to threat detections, threat models, security risks or cyber threat intelligence.
 
-Contains information on v19.1 (latest) version of Mitre ATT&CK
+Contains information on v19.2 (latest) version of Mitre ATT&CK
 
 ## Available Resources
 
@@ -33,9 +33,9 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 **ATT&CK Technique Keyword Index**: Index file for quick keyword searching to identify suitable ATT&CK IDs for further research. Sorted alphabetically and fomatted as keyword:technique_ids (comma seperated when multiple). See -> [resources/attack_keywords.idx](resources/attack_keywords.idx)
 
-**ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
+**ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Sub-technique names are prefixed with their parent ("Parent: Sub-technique"). Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
 
-**ATT&CK Version Changelog**: Reference for v15->v19.1 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
+**ATT&CK Version Changelog**: Reference for v15->v19.2 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
 
 ## Best Practice
 
@@ -82,7 +82,7 @@ Drive mapping|attached drives -> T1039 Data from Network Shared Drive
 Auth redirect|intercept -> T1557 Adversary-in-the-Middle
 
 ### Infrastructure
-DDNS|dynamic DNS|No-IP|FreeDNS -> T1568.002 Domain Generation + T1583.006 Web Services
+DDNS|dynamic DNS|No-IP|FreeDNS -> T1568 Dynamic Resolution + T1583.006 Web Services
 Typosquat|lookalike domain -> T1583.001 Domains
 Compromised server -> T1584.004 Server
 
@@ -97,7 +97,7 @@ Spoofed|mimicked|fake page -> T1036.005 Match Legitimate Resource Name or Locati
 Credential harvest|fake login -> T1598.003 Spearphishing Link (Recon)
 
 ### Technique Pairs
-T1566 Spearphishing -> check T1204 User Execution
+T1566 Phishing -> check T1204 User Execution
 T1027 Obfuscation -> check T1140 Deobfuscation
 T1053 Scheduled Task -> check T1059 Interpreter
 T1021.001 RDP -> check T1115, T1039, T1557
