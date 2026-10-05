@@ -257,6 +257,7 @@ def compress(pending: list[dict], cache: dict) -> None:
     """Compress techniques into the cache, retrying missing or invalid items. Exits if any remain."""
     client = anthropic.Anthropic()
     rejected: dict[str, str] = {}
+    done: set[str] = set()
     for attempt in range(1, MAX_ATTEMPTS + 1):
         if not pending:
             return
@@ -266,7 +267,8 @@ def compress(pending: list[dict], cache: dict) -> None:
             for accepted in pool.map(partial(compress_batch, client, rejected), batches):
                 cache.update(accepted)
                 save_cache(cache)
-        pending = [t for t in pending if is_stale(t, cache)]
+                done.update(accepted)
+        pending = [t for t in pending if t["id"] not in done]
     if pending:
         details = "\n".join(f"  {t['id']}: {rejected.get(t['id'], 'no valid response')}" for t in pending)
         sys.exit(f"Failed to compress {len(pending)} techniques after {MAX_ATTEMPTS} attempts:\n{details}")
