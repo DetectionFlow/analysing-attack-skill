@@ -25,10 +25,11 @@ import requests
 from dotenv import load_dotenv
 from pydantic import BaseModel, ValidationError
 
-ATTACK_VERSION = "19.2"
+ATTACK_VERSION = "20"
+STIX_VERSION = ATTACK_VERSION if "." in ATTACK_VERSION else f"{ATTACK_VERSION}.0"  # STIX files are named X.Y
 STIX_URL = (
     "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/"
-    f"enterprise-attack/enterprise-attack-{ATTACK_VERSION}.json"
+    f"enterprise-attack/enterprise-attack-{STIX_VERSION}.json"
 )
 
 # Release dates. An object is attributed to the first release on or after its creation date.
@@ -44,6 +45,7 @@ RELEASES = {
     "19": "2026-04-28",
     "19.1": "2026-05-12",
     "19.2": "2026-08-05",
+    "20": "2026-10-13",
 }
 CHANGELOG_SINCE = "2023-11-16"  # v14.1 release: the changelog covers everything after it
 

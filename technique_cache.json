@@ -426,18 +426,18 @@
   "description": "Remotely activates COM objects over RPC (DCOM) with admin credentials to execute commands, shellcode, Office macros or DDE on another host for lateral movement."
  },
  "T1021.004": {
-  "source": "cc0e5b30f5c75cd4",
+  "source": "b5ac908ee663e879",
   "keywords": [
    "ssh",
    "sshd",
-   "authorized_keys",
    "port 22",
    "vim-cmd hostsvc/enable_ssh",
+   "authorized_keys",
+   "OpenSSH",
    "ESXi SSH",
-   "/var/log/auth.log",
-   "id_rsa"
+   "/var/log/auth.log"
   ],
-  "description": "Logs into remote Linux, macOS or ESXi hosts over Secure Shell using valid passwords or keypairs, including enabling SSH on ESXi, to run commands as that user."
+  "description": "Log into remote Linux, macOS, Windows or ESXi hosts over Secure Shell using valid credentials or keypairs to execute commands as the authenticated user."
  },
  "T1021.005": {
   "source": "fdb27ed67fe2244f",
@@ -577,16 +577,17 @@
   "description": "Deliver payloads as uncompiled source code or non-native formats that are compiled on the victim with native or bundled compilers like csc.exe, ilasm.exe, or GCC before execution."
  },
  "T1027.005": {
-  "source": "c2ecc84e3b941a9f",
+  "source": "801657e1fa1706e6",
   "keywords": [
-   "signature modification",
-   "quarantined malware",
-   "AV evasion",
-   "modified hash",
-   "indicator removal from tool",
-   "recompiled malware"
+   "signature evasion",
+   "modified malware",
+   "AV quarantine",
+   "recompiled tool",
+   "hash change",
+   "string removal",
+   "YARA evasion"
   ],
-  "description": "Modify a detected or quarantined tool to strip the specific signature or indicator that triggered detection, then reuse the altered version against the same or other targets."
+  "description": "Modify a detected or quarantined tool to strip the specific signatures, strings or indicators that triggered defenses, then redeploy the altered version undetected."
  },
  "T1027.006": {
   "source": "b6f57ea9c0b1bd69",
@@ -760,27 +761,30 @@
   "description": "Conceals encoded payloads or prompt injections using non-rendering Unicode code points like zero-width spaces, variation selectors, bidi controls, or PUA characters, reconstructed at runtime via eval or JavaScript Proxy traps."
  },
  "T1029": {
-  "source": "d45765345748b0d7",
+  "source": "a88f305aefd57fe1",
   "keywords": [
    "scheduled exfiltration",
    "exfiltration interval",
-   "beacon schedule",
    "time-based exfiltration",
+   "cron exfil",
+   "sleep timer",
+   "beacon schedule",
    "off-hours transfer"
   ],
-  "description": "Schedules data exfiltration to occur only at specific times of day or fixed intervals to blend with normal traffic patterns, typically combined with another exfiltration channel."
+  "description": "Schedule data exfiltration to run only at specific times of day or fixed intervals so outbound transfers blend with normal traffic patterns."
  },
  "T1030": {
-  "source": "54bf78f952f37040",
+  "source": "c15b3f613ca3c41a",
   "keywords": [
    "chunked exfiltration",
-   "split file",
    "fixed size chunks",
+   "split archive",
    "packet size limit",
-   "split -b",
-   "rar -v volumes"
+   "chunked encoding",
+   "multi-volume rar",
+   "split -b"
   ],
-  "description": "Exfiltrates data in fixed-size chunks or packets kept below thresholds instead of whole files, avoiding network data transfer volume alerts."
+  "description": "Exfiltrate data in fixed-size chunks or capped packet sizes rather than whole files to stay below network transfer volume alert thresholds."
  },
  "T1033": {
   "source": "4e1efb0c284e0382",
@@ -1042,18 +1046,18 @@
   "description": "Create a directory with an executable and StartupParameters.plist in macOS /Library/StartupItems so the deprecated startup items mechanism runs it as root during the final boot phase."
  },
  "T1039": {
-  "source": "b0253644b4347d86",
+  "source": "50f0bfc52a85e710",
   "keywords": [
    "net use",
-   "net view",
-   "SMB share",
+   "net share",
    "\\\\server\\share",
+   "SMB share",
+   "network drive",
    "file server",
-   "mapped drive",
    "dir /s",
-   "Copy-Item"
+   "robocopy"
   ],
-  "description": "Search and collect files of interest from accessible network shares and file servers on remote systems, staging sensitive data from shared drives prior to exfiltration."
+  "description": "Search and collect files of interest from network shared drives and remote file servers accessible from a compromised system before exfiltration."
  },
  "T1040": {
   "source": "c0ff626d43b4c603",
@@ -1072,15 +1076,16 @@
   "description": "Capture network traffic via promiscuous-mode interfaces, SPAN ports, cloud traffic mirroring or device capture commands to harvest cleartext credentials and environment details passively."
  },
  "T1041": {
-  "source": "e1f60f794813b213",
+  "source": "cf00c1881f80d993",
   "keywords": [
    "exfiltration over C2",
    "C2 channel",
    "beacon upload",
-   "encoded data in C2 traffic",
-   "same protocol as C2"
+   "download command",
+   "HTTP POST exfil",
+   "implant upload"
   ],
-  "description": "Exfiltrate stolen data by encoding it into the existing command and control channel, using the same protocol and destination as normal C2 communications."
+  "description": "Exfiltrate stolen data over the existing command and control channel, encoding it into normal C2 communications using the same protocol."
  },
  "T1046": {
   "source": "775ffec3592c2c82",
@@ -1127,29 +1132,31 @@
   "description": "Exfiltrate data over a protocol or destination different from the main C2 channel, such as FTP, SMTP, DNS, SMB, HTTP or cloud platform downloads."
  },
  "T1048.001": {
-  "source": "648b894817cfa344",
+  "source": "8200acd789d48864",
   "keywords": [
    "RC4",
    "AES",
    "symmetric encryption",
    "pre-shared key",
-   "encrypted HTTP exfiltration",
-   "encrypted FTP"
+   "encrypted FTP upload",
+   "encrypted HTTP exfil",
+   "XOR exfil"
   ],
-  "description": "Exfiltrate data over a non-C2 protocol using manually implemented symmetric encryption like RC4 or AES with shared keys, layered on or inside otherwise plaintext protocols."
+  "description": "Exfiltrate data over a non-C2 protocol using manually implemented symmetric encryption with pre-shared keys, often layering ciphers like RC4 or AES over HTTP, FTP or HTTPS."
  },
  "T1048.002": {
-  "source": "c7cab0ac0df0d6c9",
+  "source": "63a6a3acfa69a0fd",
   "keywords": [
-   "HTTPS exfiltration",
+   "HTTPS exfil",
    "TLS",
    "SSL",
-   "public key",
    "SFTP",
-   "SCP",
-   "SMTPS"
+   "SMTPS",
+   "public-key cryptography",
+   "scp",
+   "FTPS"
   ],
-  "description": "Exfiltrate data over a non-C2 protocol with built-in asymmetric/public-key encryption such as HTTPS, TLS or SSL, relying on the protocol's native encryption."
+  "description": "Exfiltrate data over a non-C2 protocol with built-in asymmetric public-key encryption such as HTTPS/TLS, often to a destination separate from the C2 server."
  },
  "T1048.003": {
   "source": "107bde03de9baf08",
@@ -1181,28 +1188,28 @@
   "description": "List active network connections to or from the compromised or remote systems, including sessions and cloud VPC links, using netstat, net session, lsof or device CLI commands."
  },
  "T1052": {
-  "source": "949e7df0a49b83e4",
+  "source": "e109ca428fc97d7a",
   "keywords": [
-   "USB drive",
-   "removable media",
+   "removable drive",
    "air-gapped",
    "external hard drive",
-   "physical exfiltration",
-   "removable storage"
+   "USBferry",
+   "removable media exfiltration",
+   "mobile phone"
   ],
-  "description": "Exfiltrate data by copying it to removable physical media such as USB drives, external disks or phones, often to bridge air-gapped networks."
+  "description": "Exfiltrate data via physical media such as removable drives, phones or external disks, often to bridge air-gapped networks or as the final exfiltration point."
  },
  "T1052.001": {
-  "source": "c6cb22db54a22ccf",
+  "source": "6f1ad5730a855dca",
   "keywords": [
-   "USB",
-   "removable media",
+   "USB exfiltration",
+   "USB drive",
    "air-gapped",
-   "USB drive exfiltration",
-   "removable drive",
-   "USBStor"
+   "USBSTOR",
+   "removable storage",
+   "thumb drive"
   ],
-  "description": "Exfiltrate data by copying it to a USB-connected device, often to bridge air-gapped networks or hop between disconnected systems, rather than over a network channel."
+  "description": "Exfiltrate data by copying it to a USB-connected device, used as the final destination or to hop between air-gapped, disconnected systems."
  },
  "T1053": {
   "source": "58cc06e31e84d5f0",
@@ -1556,20 +1563,20 @@
   "description": "Execute commands, scripts or binaries through built-in or cross-platform interpreters such as shells, PowerShell, Python, JavaScript or VBScript; parent technique for interpreter-based execution."
  },
  "T1059.001": {
-  "source": "0766217f1f0dc093",
+  "source": "6697f7a92d5ee92e",
   "keywords": [
    "powershell.exe",
-   "Invoke-Expression",
-   "IEX",
-   "-EncodedCommand",
    "Invoke-Command",
+   "Start-Process",
    "System.Management.Automation",
-   "DownloadString",
+   "-EncodedCommand",
+   "IEX",
    "PowerSploit",
    "Empire",
-   "pwsh"
+   "PowerPick",
+   "DownloadString"
   ],
-  "description": "Execute PowerShell cmdlets and scripts, including download cradles, encoded commands and in-memory payloads, or invoke System.Management.Automation via .NET without powershell.exe."
+  "description": "Executes PowerShell cmdlets and scripts for discovery, download-and-execute, or in-memory payloads, including unmanaged PowerShell via the System.Management.Automation .NET assembly without launching powershell.exe."
  },
  "T1059.002": {
   "source": "66385edec3b671a4",
@@ -2225,7 +2232,7 @@
   "description": "Lists cloud and SaaS identity accounts, roles and service accounts with authenticated tools like aws iam list-users, az ad user list, Get-MsolRoleMember or gcloud iam commands."
  },
  "T1090": {
-  "source": "1b383000beb584e3",
+  "source": "9c531df6ea1c6764",
   "keywords": [
    "HTRAN",
    "ZXProxy",
@@ -2233,34 +2240,36 @@
    "port redirection",
    "proxy chaining",
    "CDN routing",
-   "SOCKS"
+   "connection proxy"
   ],
-  "description": "Routes command and control traffic through intermediary proxies, port redirectors or CDNs to avoid direct connections to adversary infrastructure, possibly chaining multiple hops to hide the source."
+  "description": "Routes C2 traffic through intermediary proxies, port redirectors, chained hops, or CDN routing to avoid direct connections to adversary infrastructure; use sub-techniques when internal, external, multi-hop, or domain-fronting specifics are known."
  },
  "T1090.001": {
-  "source": "a080dc05fc68de38",
+  "source": "3f1556eec7912622",
   "keywords": [
    "internal proxy",
-   "SMB named pipe",
-   "peer-to-peer C2",
-   "netsh interface portproxy",
+   "SMB peer-to-peer",
+   "named pipe C2",
    "HTRAN",
    "ZXPortMap",
+   "port forwarding",
+   "netsh portproxy",
    "pivot"
   ],
-  "description": "Relays C2 traffic between compromised systems inside the victim network, often over SMB or peer-to-peer protocols, so only one internal host communicates externally."
+  "description": "Relays C2 traffic between compromised hosts inside the victim network, often over peer-to-peer protocols like SMB, so only one internal system talks to the outside."
  },
  "T1090.002": {
-  "source": "2dbf2405b9f60711",
+  "source": "9c10369175617b23",
   "keywords": [
    "external proxy",
-   "VPS redirector",
    "port redirector",
+   "VPS",
+   "redirector",
    "HTRAN",
    "compromised server relay",
-   "cloud redirector"
+   "cloud proxy"
   ],
-  "description": "Places Internet-facing proxies such as VPSs, cloud hosts or compromised external servers between victims and the C2 server, forwarding traffic to mask the true C2 destination."
+  "description": "Forwards victim C2 traffic through an Internet-hosted intermediary, such as a VPS, cloud resource, or compromised third-party server running port redirectors, masking the real C2 server."
  },
  "T1090.003": {
   "source": "638332e226bf4dc0",
@@ -2347,19 +2356,20 @@
   "description": "Modifies existing accounts, such as credentials, group membership, or permissions, to preserve or elevate access, including subverting policies like repeated password resets to extend credential lifetime."
  },
  "T1098.001": {
-  "source": "e6aa95448693db7e",
+  "source": "e1b53f1994a13f1b",
   "keywords": [
    "CreateAccessKey",
    "CreateLoginProfile",
    "ImportKeyPair",
    "CreateKeyPair",
-   "service principal credentials",
-   "gcloud iam service-accounts keys create",
    "GetFederationToken",
+   "gcloud iam service-accounts keys create",
+   "service principal credentials",
+   "Add service principal credentials",
    "app password",
-   "Add-AzADServicePrincipalCredential"
+   "os-login ssh-keys add"
   ],
-  "description": "Adds attacker-controlled credentials, such as service principal secrets or certificates, AWS access keys, login profiles, SSH key pairs, federation tokens, or app passwords, to cloud accounts for persistent access."
+  "description": "Adds attacker-controlled keys, passwords, certificates, SSH keys, or app passwords to existing cloud accounts, service principals, or applications in AWS, GCP, or Entra ID for persistence and possible privilege escalation."
  },
  "T1098.002": {
   "source": "8c2bbfdc583a8016",
@@ -2458,17 +2468,18 @@
   "description": "Relay C2 traffic through legitimate external web services like Google, Microsoft, or social media to blend with normal TLS traffic and shield back-end infrastructure."
  },
  "T1102.001": {
-  "source": "e15277f5cddeb3e7",
+  "source": "494d6a2c73e15a79",
   "keywords": [
    "dead drop resolver",
    "Pastebin",
-   "GitHub profile",
-   "Twitter profile",
+   "GitHub",
+   "Twitter",
+   "YouTube comments",
    "encoded C2 address",
-   "YouTube description",
-   "Steam profile"
+   "Google Docs",
+   "social media profile"
   ],
-  "description": "Post encoded C2 domains or IP addresses on legitimate web services that malware retrieves to resolve and redirect to the actual C2 infrastructure."
+  "description": "Posts encoded C2 domains or IPs on legitimate web services like social media or paste sites, which malware retrieves to locate the actual C2 infrastructure, not to exchange commands."
  },
  "T1102.002": {
   "source": "9363647ac14aac54",
@@ -2674,18 +2685,19 @@
   "description": "Copy locally stored email data, such as Outlook .pst and .ost files from user profile directories, directly from a compromised endpoint."
  },
  "T1114.002": {
-  "source": "9c7912928b76c198",
+  "source": "97e1bf6c6f317dcc",
   "keywords": [
    "MailSniper",
    "Exchange Web Services",
    "EWS",
-   "Office 365 mailbox",
+   "Office 365",
    "Google Workspace",
-   "Invoke-GlobalMailSearch",
    "Graph API Mail.Read",
-   "OAuth access token"
+   "MailItemsAccessed",
+   "New-MailboxExportRequest",
+   "Outlook Web Access"
   ],
-  "description": "Access email remotely on Exchange, Office 365, or Google Workspace servers using stolen credentials or tokens, often searching mailboxes for keywords with tools like MailSniper rather than reading local mail files."
+  "description": "Collects email directly from Exchange servers, Office 365, or Google Workspace using stolen credentials or tokens, rather than from local mail files or forwarding rules."
  },
  "T1114.003": {
   "source": "dc3373e1e2fbd1bb",
@@ -2850,16 +2862,17 @@
   "description": "Loads shared modules (DLLs, .so, .dylib) from arbitrary local or UNC paths via LoadLibrary or dlopen/dlsym to execute modular malware payloads within a process."
  },
  "T1132": {
-  "source": "2a27b2eacf664318",
+  "source": "37c1dddf5bfdc70b",
   "keywords": [
    "Base64",
    "MIME",
-   "Unicode",
+   "Unicode encoding",
+   "ASCII encoding",
    "gzip",
-   "binary-to-text",
-   "encoded C2"
+   "binary-to-text encoding",
+   "encoded C2 traffic"
   ],
-  "description": "Encodes command and control traffic contents using binary-to-text or character encoding schemes to make C2 data harder to detect; parent of standard and non-standard encoding."
+  "description": "Encodes C2 traffic content using standard or custom encoding schemes like Base64, MIME, or gzip to hinder detection, distinct from encryption of the channel."
  },
  "T1132.001": {
   "source": "a5d689571d5890ed",
@@ -3251,19 +3264,20 @@
   "description": "Manipulate products, source code, development tools, update mechanisms or hardware before delivery to the final consumer so victims receive compromised software or devices through trusted channels."
  },
  "T1195.001": {
-  "source": "01a985051b4d54ae",
+  "source": "13dfb1dafaf6879d",
   "keywords": [
    "npm",
    "PyPI",
-   "pip",
    "typosquatting",
    "dependency confusion",
    "GitHub Actions",
-   "CI/CD pipeline",
+   "tasks.json",
+   "SKILL.md",
    "malicious package",
-   "package hijack"
+   "CI/CD pipeline",
+   "revival hijack"
   ],
-  "description": "Inject malicious code into third-party dependencies, package repositories, or CI/CD components like GitHub Actions, including typosquatted or re-registered abandoned packages, to compromise downstream consumers and builds."
+  "description": "Poisons third-party packages, CI/CD components like GitHub Actions, or IDE and AI agent configuration files such as tasks.json and SKILL.md, often via typosquatting, so downstream developers execute malicious code."
  },
  "T1195.002": {
   "source": "37ef14dd4b4dc62f",
@@ -3572,29 +3586,30 @@
   "description": "Mines collaboration, messaging, and database repositories such as Teams, Slack, CRM, or exposed cloud databases for documentation, credentials, PII, and network information."
  },
  "T1213.001": {
-  "source": "d0f288f5f4ddf824",
+  "source": "6a3ffbd4f9497d7a",
   "keywords": [
    "Confluence",
    "Atlassian",
-   "JIRA",
+   "/wiki/rest/api",
    "/rest/api/content",
-   "wiki pages",
-   "confluence search"
+   "Confluence search",
+   "space export",
+   "JIRA"
   ],
-  "description": "Mines Atlassian Confluence wiki pages for development documentation, network diagrams, credentials, and internal resource links."
+  "description": "Mines Atlassian Confluence wiki pages for documentation, network diagrams, credentials, source code, and links to internal resources, distinct from other repository types like SharePoint or code repositories."
  },
  "T1213.002": {
-  "source": "39b0586d8d4ab948",
+  "source": "418cdbdca68fd79b",
   "keywords": [
    "SharePoint",
-   "_api/web",
    "SharePoint Online",
+   "network diagrams",
    "document library",
-   "FileAccessed",
-   "ULS logs",
-   "SharePoint search"
+   "site collection",
+   "SharePoint audit log",
+   "FileAccessed"
   ],
-  "description": "Mines SharePoint sites and document libraries for policies, network diagrams, technical documentation, credentials, and links to internal resources."
+  "description": "Mines SharePoint sites and document libraries for internal network diagrams, architecture documentation, policies, credentials, source code, and links to internal shares to learn about the environment."
  },
  "T1213.003": {
   "source": "a86cb21d3373d301",
@@ -4186,16 +4201,16 @@
   "description": "Delete shadow copies, backup catalogs, snapshots and cloud backups or disable recovery features like WinRE and boot repair to prevent restoration after destructive or ransomware activity."
  },
  "T1491": {
-  "source": "46a2c54be14e333f",
+  "source": "8d0558f9b6fbbc00",
   "keywords": [
    "defacement",
-   "defaced",
    "website defacement",
-   "modified web content",
-   "hacktivist",
-   "propaganda message"
+   "modified web page",
+   "index.html",
+   "wallpaper change",
+   "hacktivist message"
   ],
-  "description": "Modify visual content of internal or external systems to deliver messaging, intimidate, or claim credit, damaging integrity of the original content."
+  "description": "Modifies visual content on internal or external enterprise systems, such as websites or desktops, to deliver messages, intimidate, or claim credit, damaging the integrity of the original content."
  },
  "T1491.001": {
   "source": "83ac243849bf6b16",
@@ -6532,17 +6547,18 @@
   "description": "Modify application binaries or file associations so data is altered as it is accessed and displayed to users, deceiving business processes and decision making without changing stored data."
  },
  "T1566": {
-  "source": "113b9a44d3f0f8c9",
+  "source": "87eee4cf00101a42",
   "keywords": [
    "phishing",
-   "malspam",
+   "spearphishing",
+   "malicious attachment",
+   "malicious link",
    "thread hijacking",
-   "email spoofing",
    "callback phishing",
-   "malicious email",
-   "social engineering email"
+   "email spoofing",
+   "calendar invite"
   ],
-  "description": "Send electronically delivered social engineering messages, targeted or mass, containing malicious attachments, links, or callback instructions to gain initial access to victim systems."
+  "description": "Sends electronically delivered social engineering messages, via email, social media, or calendar invites, with malicious attachments, links, or callback phone numbers to gain initial access to victim systems."
  },
  "T1566.001": {
   "source": "620c27b5a8e0af5b",
@@ -6823,7 +6839,7 @@
   "description": "Applies an encryption algorithm to command and control traffic itself instead of relying on protections inherent to the transport protocol, often with keys embedded in malware or configuration."
  },
  "T1573.001": {
-  "source": "14194add26bb4450",
+  "source": "0c8309c547e25388",
   "keywords": [
    "AES",
    "RC4",
@@ -6832,33 +6848,36 @@
    "Blowfish",
    "XOR key",
    "symmetric encryption",
-   "shared key"
+   "encrypted C2"
   ],
-  "description": "Encrypts command and control traffic with a known symmetric algorithm such as AES, RC4, DES, or Blowfish, using the same shared key for encryption and decryption."
+  "description": "Encrypts command and control traffic with a known symmetric algorithm such as AES, RC4, or Blowfish using a shared key, independent of protections provided by the underlying protocol."
  },
  "T1573.002": {
-  "source": "2e953f465dae2124",
+  "source": "27ff9ab97fdac5ac",
   "keywords": [
    "RSA",
    "ElGamal",
    "public key",
-   "SSL/TLS",
-   "TLS C2",
-   "self-signed certificate",
-   "key exchange"
+   "TLS",
+   "SSL",
+   "key exchange",
+   "asymmetric encryption",
+   "encrypted C2"
   ],
-  "description": "Protects command and control traffic with public-key cryptography such as RSA or TLS, using asymmetric keys to encrypt data or exchange a session key."
+  "description": "Conceals command and control traffic using public key cryptography such as RSA, or protocols like SSL/TLS that use asymmetric keys to establish sessions, rather than relying on inherent protocol protections."
  },
  "T1574": {
-  "source": "4dc38174bcbb5041",
+  "source": "603fb00b598ed5e9",
   "keywords": [
-   "execution hijack",
-   "search order",
-   "PATH manipulation",
-   "library loading",
-   "hijack execution flow"
+   "DLL search order",
+   "DLL side-loading",
+   "PATH variable",
+   "LD_PRELOAD",
+   "unquoted service path",
+   "dylib hijacking",
+   "execution flow hijack"
   ],
-  "description": "Runs payloads by manipulating how the operating system locates and loads programs or libraries, poisoning directories, paths, or Registry locations for persistence, privilege escalation, or evasion."
+  "description": "Hijacks how the operating system locates and loads programs or libraries, by poisoning search paths, directories, or registry locations, to run malicious payloads for persistence, privilege escalation, or defense evasion."
  },
  "T1574.001": {
   "source": "fa2c1f7a7e5a485d",
@@ -7435,16 +7454,16 @@
   "description": "Hijack existing third-party cloud accounts (storage, compute, messaging like SendGrid or SES) to host tools, exfiltrate data, send phishing, or abuse provider trust, rather than creating new accounts."
  },
  "T1587": {
-  "source": "72b72a205c827049",
+  "source": "d26ac0b14b4914b8",
   "keywords": [
    "custom malware",
    "in-house development",
    "exploit development",
    "self-signed certificate",
-   "contractor",
-   "bespoke tooling"
+   "code signing",
+   "malware contractor"
   ],
-  "description": "Build attack capabilities in-house or via exclusive contractors, such as malware, exploits, and self-signed certificates, instead of buying, downloading, or stealing them."
+  "description": "Builds capabilities in-house or through exclusive contractors, such as custom malware, exploits, and self-signed certificates, rather than purchasing, downloading, or stealing them, to support operations."
  },
  "T1587.001": {
   "source": "d4b56b8458b0ae75",
@@ -7473,17 +7492,17 @@
   "description": "Generate self-signed code signing certificates to later sign executables or scripts, lending apparent authenticity without obtaining a certificate from a trusted CA."
  },
  "T1587.003": {
-  "source": "0605f24d29a7ddae",
+  "source": "792cd8f1c9bcfc93",
   "keywords": [
    "self-signed certificate",
-   "SSL/TLS certificate",
    "openssl req",
-   "JA3S",
+   "x509",
+   "SSL certificate",
+   "TLS certificate",
    "certificate issuer",
-   "C2 encryption",
-   "root certificate"
+   "JA3S"
   ],
-  "description": "Create self-signed SSL/TLS certificates for adversary infrastructure to encrypt C2 traffic or enable adversary-in-the-middle when installed as trusted roots."
+  "description": "Creates self-signed SSL/TLS certificates lacking third-party CA trust for use in encrypting C2 traffic, hosting infrastructure, or enabling adversary-in-the-middle if installed as a trusted root."
  },
  "T1587.004": {
   "source": "5bad587632eb3d85",
@@ -7512,17 +7531,17 @@
   "description": "Acquire capabilities by purchasing, downloading, or stealing malware, tools, exploits, certificates, or vulnerability information from vendors, marketplaces, or other actors instead of developing them."
  },
  "T1588.001": {
-  "source": "4bb4824775633f78",
+  "source": "46da9dd1fad39d8f",
   "keywords": [
    "Malware-as-a-Service",
    "MaaS",
-   "purchased malware",
-   "stolen malware",
-   "repurposed malware",
+   "criminal marketplace",
    "underground forum",
-   "crypter"
+   "commodity malware",
+   "purchased malware",
+   "stolen malware"
   ],
-  "description": "Buy, download, or steal existing malware such as payloads, backdoors, and packers, including via Malware-as-a-Service offerings or repurposing other actors' code."
+  "description": "Buys, steals, or downloads existing malware such as backdoors, droppers, packers, or C2 frameworks from marketplaces, MaaS vendors, individuals, or other threat actors instead of developing it."
  },
  "T1588.002": {
   "source": "a8d82529b61f9d0e",
@@ -7589,18 +7608,18 @@
   "description": "Acquire vulnerability information by monitoring open or closed vulnerability databases and disclosures or compromising vulnerability researchers, to later find or build matching exploits."
  },
  "T1588.007": {
-  "source": "02228a607397fedd",
+  "source": "cfec67394c084f2a",
   "keywords": [
-   "large language model",
    "LLM",
    "ChatGPT",
    "generative AI",
-   "deepfake",
-   "AI-generated phishing",
+   "large language model",
    "OpenAI",
-   "Gemini"
+   "Gemini",
+   "deepfake",
+   "AI-generated"
   ],
-  "description": "Obtain access to generative AI tools like LLMs to automate reconnaissance, write phishing lures, generate or obfuscate scripts and payloads, and produce deepfake media for impersonation."
+  "description": "Obtains access to generative AI tools like LLMs to draft phishing content, write or obfuscate scripts and payloads, aid research, and produce deepfake text, audio, or video for impersonation."
  },
  "T1589": {
   "source": "37e889a9e5c1976d",
@@ -8253,16 +8272,16 @@
   "description": "Disable a network device's dedicated encryption hardware, forcing software encryption on general processors that can then be weakened alongside key-space reduction."
  },
  "T1601": {
-  "source": "99fff487b1e5a6b9",
+  "source": "e2ad628d9777bfc5",
   "keywords": [
-   "system image",
+   "network device firmware",
    "IOS image",
-   "firmware modification",
-   "monolithic OS",
-   "network device OS",
-   "boot system"
+   "system image modification",
+   "monolithic OS file",
+   "router firmware patch",
+   "boot image replacement"
   ],
-  "description": "Modify or replace the single-file monolithic operating system image of an embedded network device, in memory or storage, to weaken defenses or add adversary capabilities."
+  "description": "Modify or replace the single monolithic operating system image of embedded network devices, in memory at runtime or in storage for next boot, to weaken defenses or add capabilities."
  },
  "T1601.001": {
   "source": "000a2e0be4382ae8",
@@ -8460,6 +8479,19 @@
    "GitHub search manipulation"
   ],
   "description": "Manipulate search engine or in-site search rankings via keyword stuffing, planted backlinks and cloaking to push malicious staged sites or repositories to victims searching for content."
+ },
+ "T1608.007": {
+  "source": "cdc6cf87f97591cf",
+  "keywords": [
+   "AI result poisoning",
+   "GEO poisoning",
+   "AI search",
+   "AI summaries",
+   "retrieval-augmented generation",
+   "chatbot recommendations",
+   "fabricated sources"
+  ],
+  "description": "Publish attacker-controlled or fabricated web content so generative AI search and RAG systems retrieve, cite, or recommend phishing, fraud, or malware links in synthesized answers, unlike SEO poisoning of ranked results."
  },
  "T1609": {
   "source": "17a77c30b7300364",
@@ -9148,6 +9180,19 @@
   ],
   "description": "Delete or truncate Linux or macOS system logs under /var/log, such as auth, secure, wtmp/utmp, kernel, and cron logs, to remove evidence of intrusion activity."
  },
+ "T1685.007": {
+  "source": "0297db0eda8abad2",
+  "keywords": [
+   "LLM triage",
+   "AI SOC assistant",
+   "prompt injection in malware",
+   "fake system message",
+   "Gaslight",
+   "abort analysis",
+   "autonomous defenses"
+  ],
+  "description": "Embed prompts or fake LLM system/error messages in malware or artifacts so LLM-assisted defensive analysis aborts, ignores data, fails to alert, or is disabled."
+ },
  "T1686": {
   "source": "f34e6e3ec2178009",
   "keywords": [
@@ -9260,5 +9305,92 @@
    "no logging"
   ],
   "description": "Prevents shell command history recording by unsetting HISTFILE, zeroing history size, abusing HISTCONTROL ignorespace, redirecting or disabling PSReadLine history, or disabling logging on network device CLIs."
+ },
+ "T1696": {
+  "source": "f2cf4cbd149ef4d0",
+  "keywords": [
+   "CAPTCHA",
+   "reCAPTCHA",
+   "CAPTCHA solving service",
+   "CapSolver",
+   "bot detection bypass",
+   "anti-automation"
+  ],
+  "description": "Evade or complete automation checks such as CAPTCHA and reCAPTCHA using human solving services, AI solvers, or bots to let automated traffic reach protected web pages."
+ },
+ "T1696.001": {
+  "source": "b233dd1dbee612c1",
+  "keywords": [
+   "CAPTCHA solver script",
+   "ImageMagick",
+   "CapSolver",
+   "RGB image comparison",
+   "automated account creation",
+   "PurpleUrchin"
+  ],
+  "description": "Use scripts or toolkits like ImageMagick or AI solvers to automatically solve CAPTCHA puzzles, enabling bots to access protected pages and mass-create accounts."
+ },
+ "T1696.002": {
+  "source": "ff5b3e263e8b6f02",
+  "keywords": [
+   "Selenium",
+   "browser automation",
+   "headless browser",
+   "browser fingerprint spoofing",
+   "navigator object",
+   "DOM injection",
+   "AudioContext"
+  ],
+  "description": "Avoid triggering CAPTCHA by having automated browsers like Selenium mimic humans via spoofed fingerprints, injected DOM JavaScript altering navigator, fonts, audio and rendering attributes, session history, and IP reputation."
+ },
+ "T1697": {
+  "source": "3233b60a735c7829",
+  "keywords": [
+   "application specific password",
+   "app password",
+   "ASP",
+   "MFA bypass",
+   "legacy authentication",
+   "APT42",
+   "UNC6293"
+  ],
+  "description": "Steal, phish, or generate Application Specific Passwords for third-party or legacy app access, then use them to access accounts and persist while bypassing MFA."
+ },
+ "T1698": {
+  "source": "79dcd703727dca1e",
+  "keywords": [
+   "indirect prompt injection",
+   "hidden instructions",
+   "LLM agent",
+   "copilot",
+   "embedded prompt",
+   "RAG content",
+   "poisoned document"
+  ],
+  "description": "Embed malicious instructions in web pages, documents, emails, tickets, or code that an LLM agent or copilot later retrieves, causing it to execute unintended actions."
+ },
+ "T1699": {
+  "source": "31feb0a5ac29e320",
+  "keywords": [
+   "direct prompt injection",
+   "jailbreak",
+   "ignore previous instructions",
+   "guardrail bypass",
+   "role impersonation",
+   "LLM chat interface"
+  ],
+  "description": "Enter malicious prompts directly into an LLM interface to override instructions, bypass guardrails via jailbreaks or role impersonation, and coerce prohibited content or capability use."
+ },
+ "T1700": {
+  "source": "ca944e024404d4ab",
+  "keywords": [
+   "AI agent exfiltration",
+   "prompt injection exfil",
+   "MCP tool abuse",
+   "AI assistant",
+   "agent tool connections",
+   "markdown image exfiltration"
+  ],
+  "description": "Induce enterprise AI agents through prompt injection to misuse their sanctioned tool connections to collect and send sensitive data outside the organization."
  }
 }
