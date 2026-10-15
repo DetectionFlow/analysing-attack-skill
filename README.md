@@ -4,7 +4,7 @@
 
 Claude skill to assist LLM-powered analysis of Mitre ATT&CK techniques and sub-techniques. Use during detection engineering, CTI analysis, threat modelling, incident response or any other cybersecurity tasks.
 
-Equips Claude with best practice and guidance for mapping ATT&CK techniques. Includes LLM optimised, token-efficient, resource files containing up to date context on all ATT&CK v19.2 technques and sub-techniques in a format specifiaclly designed for AI agents.
+Equips Claude with best practice and guidance for mapping ATT&CK techniques. Includes LLM optimised, token-efficient, resource files containing up to date context on all ATT&CK v20 technques and sub-techniques in a format specifiaclly designed for AI agents.
 
 ## Usage
 

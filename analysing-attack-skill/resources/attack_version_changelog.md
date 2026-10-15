@@ -1,4 +1,4 @@
-# ATT&CK Version Changes (v15→v19.2)
+# ATT&CK Version Changes (v15→v20)
 
 Quick reference for deprecated, renamed, and new technique IDs. Use when analysing older reports or validating mappings.
 
@@ -84,6 +84,7 @@ Quick reference for deprecated, renamed, and new technique IDs. Use when analysi
 | T1574.014 | Hijack Execution Flow: AppDomainManager | v15 |
 | T1584.008 | Compromise Infrastructure: Network Devices | v15 |
 | T1588.007 | Obtain Capabilities: Artificial Intelligence | v15 |
+| T1608.007 | Stage Capabilities: AI Result Poisoning | v20 |
 | T1665 | Hide Infrastructure | v15 |
 | T1666 | Modify Cloud Resource Hierarchy | v16 |
 | T1667 | Email Bombing | v17 |
@@ -112,6 +113,7 @@ Quick reference for deprecated, renamed, and new technique IDs. Use when analysi
 | T1685.004 | Disable or Modify Tools: Disable or Modify Linux Audit System Log | v19 |
 | T1685.005 | Disable or Modify Tools: Clear Windows Event Logs | v19 |
 | T1685.006 | Disable or Modify Tools: Clear Linux or Mac System Logs | v19 |
+| T1685.007 | Disable or Modify Tools: Impair Autonomous Defenses | v20 |
 | T1686 | Disable or Modify System Firewall | v19 |
 | T1686.001 | Disable or Modify System Firewall: Cloud Firewall | v19 |
 | T1686.002 | Disable or Modify System Firewall: Network Device Firewall | v19 |
@@ -120,6 +122,13 @@ Quick reference for deprecated, renamed, and new technique IDs. Use when analysi
 | T1688 | Safe Mode Boot | v19 |
 | T1689 | Downgrade Attack | v19 |
 | T1690 | Prevent Command History Logging | v19 |
+| T1696 | Anti-Automation Evasion | v20 |
+| T1696.001 | Anti-Automation Evasion: Automate CAPTCHA Completion | v20 |
+| T1696.002 | Anti-Automation Evasion: Avoid CAPTCHA | v20 |
+| T1697 | Steal Application Specific Passwords | v20 |
+| T1698 | Indirect Prompt Injection | v20 |
+| T1699 | Direct Prompt Injection | v20 |
+| T1700 | AI-Enabled Exfiltration | v20 |
 <!-- /generated:technique-changes -->
 
 ## Platform Changes
@@ -166,7 +175,9 @@ Some techniques are now mapped to **both** ST and DIM (intent isn't always clean
 
 **When analysing pre-v18 content:** Data Source references map to Detection Strategies. Analytics format changed from CAR pseudocode (pre-v15) → Splunk-style queries (v15-v17) → structured Analytics objects (v18).
 
-## New Coverage Areas (v17-v19)
+## New Coverage Areas (v17-v20)
+
+**v20:** AI and LLM abuse — prompt injection (T1698 Indirect, T1699 Direct), AI-enabled exfiltration via agent tool connections (T1700), AI result poisoning (T1608.007), impairing LLM-assisted defences (T1685.007); CAPTCHA evasion (T1696); application specific password theft (T1697); PowerShell (T1059.001) now also Linux/macOS, SSH (T1021.004) now also Windows
 
 **v19:** AI services abuse (T1682 Query Public AI Services, T1683 Generate Content), unified Social Engineering parent (T1684), Safe Mode Boot evasion (T1688), ICS sub-techniques (first-class), Mobile Detection Strategies (initial)
 
@@ -177,6 +188,8 @@ Some techniques are now mapped to **both** ST and DIM (intent isn't always clean
 ## New Groups
 
 <!-- generated:groups -->
+**v20:** G1058 The Gentlemen, G1059 NIMBUS MANTICORE
+
 **v19.2:** G1056 TeamPCP, G1057 ShinyHunters
 
 **v19:** G1054 MirrorFace, G1055 VOID MANTICORE
@@ -194,7 +207,8 @@ Some techniques are now mapped to **both** ST and DIM (intent isn't always clean
 
 | Ver | Date | Key Change |
 |-----|------|------------|
-| v19.2 | Aug 2026 | Current - no technique changes; new groups and software only |
+| v20 | Oct 2026 | Current - AI/LLM techniques (prompt injection, AI-enabled exfiltration, AI result poisoning); no revocations |
+| v19.2 | Aug 2026 | No technique changes; new groups and software only |
 | v19.1 | May 2026 | v19 minor fixes |
 | v19 | Apr 2026 | Defense Evasion split → Stealth + Defense Impairment; AI/social-engineering techniques; ICS sub-techniques |
 | v18.1 | Nov 2025 | v18 minor fixes |
@@ -204,7 +218,7 @@ Some techniques are now mapped to **both** ST and DIM (intent isn't always clean
 | v15 | Apr 2024 | Analytics → Splunk-style, ICS cross-mapping |
 
 <!-- generated:stats -->
-## Stats (v19.2)
+## Stats (v20)
 
-Enterprise: 15 tactics, 222 techniques, 475 sub-techniques | Groups: 176 | Software: 825 | Campaigns: 56
+Enterprise: 15 tactics, 227 techniques, 479 sub-techniques | Groups: 178 | Software: 842 | Campaigns: 57
 <!-- /generated:stats -->

@@ -9,7 +9,7 @@ description: Analyse Mitre ATT&CK tactics, techniques and sub-techniques. Use wh
 
 This document provides best practices and resources for use when mapping ATT&CK tactics and techniques to threat detections, threat models, security risks or cyber threat intelligence.
 
-Contains information on v19.2 (latest) version of Mitre ATT&CK
+Contains information on v20 (latest) version of Mitre ATT&CK
 
 ## Available Resources
 
@@ -35,7 +35,7 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 **ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Sub-technique names are prefixed with their parent ("Parent: Sub-technique"). Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
 
-**ATT&CK Version Changelog**: Reference for v15->v19.2 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
+**ATT&CK Version Changelog**: Reference for v15->v20 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
 
 ## Best Practice
 
