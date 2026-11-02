@@ -156,6 +156,7 @@ def load_techniques(objects: list[dict]) -> dict[str, dict]:
         techniques[tid] = {
             "id": tid,
             "name": f"{parent['name']}: {obj['name']}" if parent else obj["name"],
+            "own_name": obj["name"],
             "description": obj.get("description", ""),
             "tactics": [
                 TACTIC_ABBR[p["phase_name"]]
@@ -303,14 +304,17 @@ def render_techniques(techniques: dict[str, dict], cache: dict) -> str:
 
 
 def render_keywords(techniques: dict[str, dict], cache: dict) -> str:
+    """Model keywords plus every technique's own name and, for sub-techniques, "Parent: Sub".
+    The model is told to skip names and ubiquitous terms, so without them "PowerShell" or
+    "Ingress Tool Transfer" find nothing."""
     index: dict[str, list[str]] = {}
-    for tid in techniques:
-        for kw in cache[tid]["keywords"]:
+    for tid, t in techniques.items():
+        for kw in [*cache[tid]["keywords"], t["own_name"], t["name"]]:
             ids = index.setdefault(kw.lower(), [])
             if tid not in ids:
                 ids.append(tid)
     lines = [
-        f"# ATT&CK Keyword Index | Enterprise | v{ATTACK_VERSION}",
+        f"# ATT&CK Keyword Index | Enterprise | v{ATTACK_VERSION} | keywords and technique names",
         "# Format: keyword:technique_ids (IDs follow the last colon)",
         '# Usage: grep -i "keyword" attack_keywords.idx',
     ]
@@ -330,6 +334,28 @@ def changelog_blocks(objects: list[dict], techniques: dict[str, dict]) -> dict[s
         if old and new and old["type"] == "attack-pattern" and rel["created"][:10] > CHANGELOG_SINCE:
             revoked.append((attack_id(old), old["name"], attack_id(new), new["name"], release_of(rel["created"])))
     revoked.sort(key=lambda row: sort_key(row[0]))
+
+    # Every retired technique, whatever the release: older reports and rules still cite them
+    revoked_by = {
+        o["source_ref"]: o["target_ref"]
+        for o in objects
+        if o["type"] == "relationship" and o["relationship_type"] == "revoked-by"
+    }
+    retired_rows = []
+    for o in objects:
+        if o["type"] != "attack-pattern" or is_active(o):
+            continue
+        if o.get("revoked"):
+            live = by_stix_id[revoked_by[o["id"]]]
+            while live.get("revoked"):  # follow chains to the live technique
+                live = by_stix_id[revoked_by[live["id"]]]
+            row = (attack_id(o), o["name"], "revoked", attack_id(live), techniques[attack_id(live)]["name"])
+        else:
+            row = (attack_id(o), o["name"], "deprecated", "—", "no replacement: map the behaviour itself")
+        retired_rows.append(row)
+    retired_rows.sort(key=lambda row: sort_key(row[0]))
+    retired = ["|Old ID|Old Name|Status|Live ID|Live Name|", "|---|---|---|---|---|"]
+    retired += [f"|{a}|{b}|{c}|{d}|{e}|" for a, b, c, d, e in retired_rows]
 
     new = [t for t in techniques.values() if t["created"][:10] > CHANGELOG_SINCE]
 
@@ -358,7 +384,7 @@ def changelog_blocks(objects: list[dict], techniques: dict[str, dict]) -> dict[s
         f"Enterprise: {count('x-mitre-tactic')} tactics, {len(techniques) - subs} techniques, {subs} sub-techniques"
         f" | Groups: {count('intrusion-set')} | Software: {count('malware', 'tool')} | Campaigns: {count('campaign')}"
     )
-    return {"technique-changes": "\n".join(changes), "groups": "\n\n".join(group_lines), "stats": stats}
+    return {"technique-changes": "\n".join(changes), "retired": "\n".join(retired), "groups": "\n\n".join(group_lines), "stats": stats}
 
 
 def sub_once(pattern: str, replacement: str | Callable, text: str, path: Path, flags: int = 0) -> str:
@@ -407,8 +433,13 @@ def reference_errors(objects: list[dict], techniques: dict[str, dict], files: di
     """Check the hand-written parts of the skill against the STIX data."""
     errors = []
     known = {attack_id(o) for o in objects if o["type"] == "attack-pattern"}
-    for tid in sorted(set(TECHNIQUE_ID.findall(files[SKILL_PATH])) - techniques.keys(), key=sort_key):
-        errors.append(f"SKILL.md cites {tid}, which is not an active technique in v{ATTACK_VERSION}")
+    # SKILL.md may cite a retired ID only on a line that also gives an active technique,
+    # as its v20 renames do ("-> T1685 (not T1562.001)")
+    for line in files[SKILL_PATH].splitlines():
+        ids = TECHNIQUE_ID.findall(line)
+        retired = [tid for tid in ids if tid not in techniques]
+        if retired and (set(retired) - known or not set(ids) & techniques.keys()):
+            errors += [f"SKILL.md cites {tid} without an active v{ATTACK_VERSION} technique beside it" for tid in retired]
     for tid in sorted(set(TECHNIQUE_ID.findall(files[CHANGELOG_PATH])) - known, key=sort_key):
         errors.append(f"attack_version_changelog.md cites {tid}, which does not exist in Enterprise ATT&CK")
     if f"| v{ATTACK_VERSION} |" not in files[CHANGELOG_PATH]:

@@ -19,15 +19,17 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 ### Searching Examples
 
-**By keyword (recommended for discovery)**:
+**By keyword (recommended for discovery)**. Substring search finds variants (`vssadmin` also finds `vssadmin delete shadows`). Technique names are keywords too:
 ```grep -i "cron\|bash\|/proc/\|cryptocurrency" resources/attack_keywords.idx```
 
-**By technique ID (for validation)**:
-```grep "T1053" resources/attack_techniques.md```
+**By technique ID (to validate an ID)**. Anchor it so sub-techniques and keyword mentions do not match:
+```grep "^|T1053.005|" resources/attack_techniques.md```
 
-**By tactic abbreviation (find all persistance techniques)**:
-```grep "PE" resources/attack_techniques.md```
+**By tactic abbreviation (all Persistence techniques)**. Match the Tactics column only:
+```grep -E "^\|T[0-9.]+\|([A-Z0-9]+,)*PE[,|]" resources/attack_techniques.md```
 
+**Retired IDs**. An ID missing from attack_techniques.md is revoked or deprecated. Look it up:
+```grep "^|T1086|" resources/attack_version_changelog.md``` (T1086 is revoked; the table gives its live ID, T1059.001)
 
 ### Resource Files
 
@@ -35,78 +37,66 @@ Tactics are abreviated: REC=Reconnaissance, RD=Resource Development, IA=Initial 
 
 **ATT&CK Technique List**: Markdown table containing ATT&CK ID, name, keywords, description and platforms. Sorted by ID. Sub-technique names are prefixed with their parent ("Parent: Sub-technique"). Use when researching techniques, valdiating IDs, searching for up-to-date descriptions or filtering by platform. See -> [resources/attack_techniques.md](resources/attack_techniques.md)
 
-**ATT&CK Version Changelog**: Reference for v15->v20 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
+**ATT&CK Version Changelog**: Every retired (revoked or deprecated) technique ID with its live replacement. Reference for v15->v20 changes including deprecated techniques, renamed platforms, the v18 detection model overhaul, and the v19 Defense Evasion split into Stealth and Defense Impairment. Use when analysing older reports or understanding structural changes. See -> [resources/attack_version_changelog.md](resources/attack_version_changelog.md)
 
 ## Best Practice
 
 Use your judgment alongside these guidelines to generate high-quality ATT&CK analysis.
 
-- Do not assume your knowledge is 100% complete or up to date. Use the resources provided
-- Carefully read any supplied information, perform deep analysis line by line if needed
-- Search broadly for keywords, you may need to iterate multiple times to find every correct technique
-- Think about the specific procedure being performed and consider the attacker (or defender) intent before determining appropriate tactic, technique or sub-technique
-- Some techniques are part of multiple tactics (for ex. T1078 Valid Accounts) and may appear different for each tactic
-- Other techniques are similar but distinct depending on tactic (for ex. T1213.003 and T1593.003 are both Code Respositories)
-- Map to the most specific sub-technique when possible
+- Do not assume your knowledge is complete or up to date. Your memory of ATT&CK is probably older than v20: Defense Evasion is gone (now Stealth and Defense Impairment), T1562 Impair Defenses and its sub-techniques are revoked (now T1685/T1686/T1688-T1690), T1656 is now T1684.001
+- Map only what the supplied text shows. Each technique needs a line, command, field or artefact in the input that demonstrates it. Do not add techniques because they usually accompany others
+- Search broadly for keywords, you may need to iterate to find every technique the text shows
+- Think about the specific procedure being performed and the attacker (or defender) intent before choosing the tactic, technique or sub-technique
+- Some techniques belong to several tactics (for ex. T1078 Valid Accounts); others are similar but distinct by tactic (T1213.003 and T1593.003 are both Code Repositories)
+- Map to the most specific sub-technique the text supports; use the parent when the text does not say which sub-technique
+- **Validate every final ID** with `grep "^|ID|" resources/attack_techniques.md`. If it is not there, look it up in the changelog's Retired Technique IDs table and use the live ID, or drop it if deprecated
 
-### When Analysing CTI Reports
+## By Source
 
-- IMPORTANT: Read the whole report fully, including tables of IOCs, appendixes or linked STIX files
-- Screenshots contain valuable intelligence, ensure they are processed
-- Break down the report into granular procedures when mapping to techniques
-- Think about attacker objectives. What did they take that action? What did they hope to achieve?
-- Avoid infering techniques that are not contained in the report
-- Once initial analysis is complete, perform a second analysis to valdiate your findings and idenitify any missed techniques
+### CTI Reports
+- Read the whole report, including IOC tables, appendixes, screenshots and linked STIX files
+- Break the report into granular procedures and map each one
+- Report-supplied technique IDs and tactic names may be from an older ATT&CK version: translate them via the Retired Technique IDs table, never copy them blindly
+- Ignore page furniture (navigation, image links, share buttons); it matches keywords by accident
+- Finish with a second pass to validate findings and find missed techniques
 
-### When Analysing Detections
+### Detection Rules (Sigma, EDR, SIEM)
+- Tags are the rule author's claim, not ground truth. Check each tag against the logsource and detection logic, and drop tags the logic cannot observe
+- Older rules carry retired IDs (`attack.t1086`) and retired tactics (`attack.defense_evasion`): translate them
+- Map what the matched process, command line, registry key or event shows. A rule matching only an image name supports less than one matching specific arguments
+- Detection logic may cover several techniques; map all the logic supports
 
-- Detection logic may detect multiple techniques, map all that are applicable
-- Analyse detection log sources and fields, these can help determine distinct tactics or techniques
-- Consider the intent (hypothesis) of the detection, what was the engineers objective?
+### Atomic Red Team Tests
+- The technique the test is filed under (`attack_technique`) is a strong prior: include it unless the commands clearly do something else
+- Add a technique only for what the executed commands themselves do (the interpreter that runs them, a service they create, a registry key they set)
+- Test values (names, paths, accounts) are placeholders, not evidence
+
+### ATT&CK Procedure Examples
+- The line is already filed under a technique; include it
+- Add other techniques only when the line names a distinct action (a tool run, a file copied, a service used)
 
 ## Commonly Missed Techniques
 
+Use these as prompts to check the text, not as automatic additions. Add the technique only if the text shows it.
+
 ### Command-Line Indicators
-`-windowstyle hidden`|`-w hidden` -> T1564.003 Hidden Window
-`-encodedcommand`|`-enc`|`base64` -> T1027.010 Command Obfuscation
-`-noprofile`|`-ep bypass` -> T1059.001 PowerShell
+`-windowstyle hidden`|`-w hidden` -> check T1564.003 Hidden Window
+`-encodedcommand`|`-enc` -> check T1027.010 Command Obfuscation
+`powershell.exe` or PowerShell cmdlets executed -> T1059.001 PowerShell
+`cmd.exe /c` -> T1059.003 Windows Command Shell
+`wmic`|`Win32_Process`|`Invoke-WmiMethod` -> T1047 Windows Management Instrumentation
+`sc create`|new service -> T1543.003 Windows Service; `sc start`|PsExec -> T1569.002 Service Execution
 
-### Encoding
-Encoded payload delivered -> T1027.013 Encrypted/Encoded File
-Decoded at runtime -> T1140 Deobfuscate/Decode
-
-### RDP-Related
-RDP connection|`.rdp` file -> T1021.001 Remote Desktop Protocol
-Clipboard redirect -> T1115 Clipboard Data
-Drive mapping|attached drives -> T1039 Data from Network Shared Drive
-Auth redirect|intercept -> T1557 Adversary-in-the-Middle
-
-### Infrastructure
-DDNS|dynamic DNS|No-IP|FreeDNS -> T1568 Dynamic Resolution + T1583.006 Web Services
-Typosquat|lookalike domain -> T1583.001 Domains
-Compromised server -> T1584.004 Server
-
-### Network
+### Network and Infrastructure
+Tool or payload downloaded onto the victim -> T1105 Ingress Tool Transfer
+Tools copied between victim hosts -> T1570 Lateral Tool Transfer
 SSH tunnel|port forward -> T1572 Protocol Tunneling
-Downloaded|fetched payload -> T1105 Ingress Tool Transfer
-Over port 80/443 -> T1071.001 Web Protocols
+DDNS|No-IP|FreeDNS -> T1568 Dynamic Resolution
+Typosquat|lookalike domain registered -> T1583.001 Domains
 
-### Social Engineering
-Masqueraded|posed as|impersonated -> T1684.001 Impersonation
-Spoofed|mimicked|fake page -> T1036.005 Match Legitimate Resource Name or Location
-Credential harvest|fake login -> T1598.003 Spearphishing Link (Recon)
-
-### Technique Pairs
-T1566 Phishing -> check T1204 User Execution
-T1027 Obfuscation -> check T1140 Deobfuscation
-T1053 Scheduled Task -> check T1059 Interpreter
-T1021.001 RDP -> check T1115, T1039, T1557
-T1059.001 PowerShell -> check T1564.003 Hidden Window
-
-### Red Flag Phrases
-"downloads and executes" -> T1105 + T1059
-"persistence via task" -> T1053 + T1059
-"C2 over HTTPS" -> T1071.001 + T1573.002
-"compromised infrastructure" -> T1584.004
-"redirects traffic" -> T1572 or T1090
-"harvests credentials via fake page" -> T1598.003 (Recon tactic)
+### v19/v20 Renames (models often use the old ID)
+Disable AV/EDR/security tools -> T1685 (not T1562.001)
+Clear Windows event logs -> T1685.005 (not T1070.001)
+Disable host firewall -> T1686 / T1686.003 (not T1562.004)
+Impersonation in social engineering -> T1684.001 (not T1656)
+Safe Mode boot to evade -> T1688 (not T1562.009)
