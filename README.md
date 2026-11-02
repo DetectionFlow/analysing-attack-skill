@@ -40,6 +40,10 @@ Compressed rows are cached in `technique_cache.json`, keyed on a hash of each te
 
 To move to a new ATT&CK release, bump `ATTACK_VERSION` and add the release date to `RELEASES` in `generate.py`, add a row to the Version Timeline in the changelog, then run the script.
 
+## Evaluation
+
+[evals/](evals/) holds a small blind test across Sigma, Atomic and ATT&CK inputs, with results for five models before and after the latest skill changes.
+
 ## TODO
 
 Additional resources will be added, such as Detection Strategies and Analytics. 
