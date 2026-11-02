@@ -1,0 +1,156 @@
+{
+ "case01": {
+  "kind": "atomic",
+  "source": "atomic:e895677d-4f06-49ab-91b6-ae3742d0a2ba",
+  "gold": [
+   "T1027",
+   "T1027.011",
+   "T1053.005",
+   "T1059.001",
+   "T1140"
+  ]
+ },
+ "case02": {
+  "kind": "attack",
+  "source": "relationship--e998971c-c944-4255-8831-89d49d0e5285",
+  "gold": [
+   "T1003.001",
+   "T1047",
+   "T1569.002",
+   "T1570"
+  ]
+ },
+ "case03": {
+  "kind": "sigma",
+  "source": "sigma:19b08b1c-861d-4e75-a1ef-ea0c1baf202b",
+  "gold": [
+   "T1105"
+  ]
+ },
+ "case04": {
+  "kind": "sigma",
+  "source": "synthetic",
+  "gold": [
+   "T1059.001",
+   "T1685"
+  ]
+ },
+ "case05": {
+  "kind": "sigma",
+  "source": "sigma:b9cbbc17-d00d-4e3d-a827-b06d03d2380d",
+  "gold": [
+   "T1197",
+   "T1218.010"
+  ]
+ },
+ "case06": {
+  "kind": "sigma",
+  "source": "sigma:c947b146-0abc-4c87-9c64-b17e9d7274a2",
+  "gold": [
+   "T1047",
+   "T1490"
+  ]
+ },
+ "case07": {
+  "kind": "sigma",
+  "source": "sigma:1eeed653-dbc8-4187-ad0c-eeebb20e6599",
+  "gold": [
+   "T1087.002"
+  ]
+ },
+ "case08": {
+  "kind": "attack",
+  "source": "relationship--54de26f7-7981-49b8-a353-d342a89552c8",
+  "gold": [
+   "T1204",
+   "T1219",
+   "T1684.001"
+  ]
+ },
+ "case09": {
+  "kind": "atomic",
+  "source": "atomic:2e5eac3e-327b-4a88-a0c0-c4057039a8dd",
+  "gold": [
+   "T1021",
+   "T1053.005"
+  ]
+ },
+ "case10": {
+  "kind": "attack",
+  "source": "relationship--c7697490-b9ad-45b9-9e69-ddc4a7a6d94c",
+  "gold": [
+   "T1059.001",
+   "T1091",
+   "T1140",
+   "T1200"
+  ]
+ },
+ "case11": {
+  "kind": "atomic",
+  "source": "atomic:6b1dbaf6-cc8a-4ea6-891f-6058569653bf",
+  "gold": [
+   "T1070.004",
+   "T1490"
+  ]
+ },
+ "case12": {
+  "kind": "attack",
+  "source": "relationship--bdee01a7-16cb-417e-8d9b-c98afd445bbc",
+  "gold": [
+   "T1021.002",
+   "T1053.005",
+   "T1078",
+   "T1570"
+  ]
+ },
+ "case13": {
+  "kind": "attack",
+  "source": "relationship--db2be919-e747-430b-a7ee-d619a11abd93",
+  "gold": [
+   "T1036.004",
+   "T1053.005",
+   "T1059.001"
+  ]
+ },
+ "case14": {
+  "kind": "report",
+  "source": "synthetic",
+  "gold": [
+   "T1566.001",
+   "T1059.001",
+   "T1547.001",
+   "T1685.005",
+   "T1685",
+   "T1021.001",
+   "T1105"
+  ],
+  "optional": [
+   "T1204.002",
+   "T1059.005",
+   "T1071.001"
+  ]
+ },
+ "case15": {
+  "kind": "sigma",
+  "source": "sigma:7ec2c172-dceb-4c10-92c9-87c1881b7e18",
+  "gold": [
+   "T1003",
+   "T1550.002",
+   "T1550.003",
+   "T1558.001",
+   "T1558.002",
+   "T1558.003",
+   "T1558.004"
+  ]
+ },
+ "case16": {
+  "kind": "atomic",
+  "source": "atomic:ef0581fd-528e-4662-87bc-4c2affb86940",
+  "gold": [
+   "T1036.004",
+   "T1112",
+   "T1543.003",
+   "T1569.002"
+  ]
+ }
+}
